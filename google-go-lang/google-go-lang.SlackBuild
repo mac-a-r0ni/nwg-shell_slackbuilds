@@ -1,0 +1,171 @@
+#!/bin/bash
+
+# Slackware build script for google-go-lang
+
+# Written by Eric Schultz eric at schultzter.ca
+# Taken over by Vincent Batts vbatts@hashbangbash.com
+
+# Copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, 2018  Vincent Batts
+# Copyright (c) 2012 Eric Schultz
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+cd $(dirname $0) ; CWD=$(pwd)
+
+PRGNAM=google-go-lang
+VERSION=${VERSION:-1.19.4}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_SBo}
+PKGTYPE=${PKGTYPE:-tgz}
+
+RELEASE=${RELEASE:-linux}
+
+RUN_TEST=${RUN_TEST:-false}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i586 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+if [ "$ARCH" = "i586" ]; then
+  LIBDIRSUFFIX=""
+  GOARCH="386"
+elif [ "$ARCH" = "x86_64" ]; then
+  LIBDIRSUFFIX="64"
+  GOARCH="amd64"
+elif [ "$ARCH" = "arm" ]; then
+  LIBDIRSUFFIX=""
+  GOARCH="arm"
+  export GOARM="6" # can be '5' as well, to use soft float instead of hardware
+else
+  LIBDIRSUFFIX=""
+  GOARCH=386
+fi
+
+# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
+# the name of the created package would be, and then exit. This information
+# could be useful to other scripts.
+if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
+  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
+  exit 0
+fi
+
+TMP=${TMP:-/tmp/SBo}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG/usr/lib${LIBDIRSUFFIX}/go${VERSION} $OUTPUT
+cd $PKG/usr/lib${LIBDIRSUFFIX}/go${VERSION}
+tar xvf $CWD/go${VERSION}.src.tar.gz
+cd go
+chown -R root:root .
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+ -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+ -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+# as of >= go1.5, the cross-compiler does not need to be bootstrap, so the
+# compiler need only be compiled for the host OS, which it detects
+unset GOBIN GOPATH GOOS GOARCH
+
+# Not sure why, but this causes run.bash to fail --rworkman
+unset BASH_ENV
+
+if [ "$ARCH" = "i586" ]; then
+  # issue with gccgo+go1.16 on x86
+  # https://www.linuxquestions.org/questions/showthread.php?p=6253507
+  # hopefully this is not needed forever...
+  tar -C $TMP -xf $CWD/go1.4-bootstrap-20171003.tar.gz
+  pushd $TMP/go
+  export GOROOT=$TMP/go
+  cd ./src
+  ./make.bash
+  popd
+  export GOROOT_BOOTSTRAP="$TMP/go"
+else
+  # gcc 5+ is go1.4 API, so we'll bootstrap with it
+  export GOROOT_BOOTSTRAP="/usr"
+fi
+
+# Default GOROOT is the parent directory of all.bash,
+# which is the current directory we're in.
+# Defining it here means we can use it below when building
+# shared libraries
+export GOROOT="$(pwd)"
+
+# The value of GOROOT once the package is installed
+export GOROOT_FINAL="/usr/lib${LIBDIRSUFFIX}/go${VERSION}/go"
+
+cd src
+
+if [ "x${RUN_TEST}" = "xtrue" ] ; then
+	LC_ALL=C \
+	./all.bash
+else
+	LC_ALL=C \
+	./make.bash
+fi
+
+# As of go1.5, golang supports shared libraries, so generate them for use.
+$GOROOT/bin/go install -buildmode=shared std
+
+cd ..
+
+# remove Go build cache
+rm -rf pkg/obj/go-build/*
+
+# remove the doc Makefile
+rm -f doc/Makefile
+
+mkdir -p $PKG$GOROOT_FINAL
+
+# Put the profile scripts for setting PATH and env variables
+mkdir -p $PKG/etc/profile.d
+cat > $PKG/etc/profile.d/go.csh << EOF
+#!/bin/csh
+setenv GOROOT ${GOROOT_FINAL}
+setenv PATH \${GOROOT}/bin:\${PATH}
+EOF
+cat > $PKG/etc/profile.d/go.sh << EOF
+#!/bin/sh
+export GOROOT="${GOROOT_FINAL}"
+export PATH="\${GOROOT}/bin:\${PATH}"
+EOF
+
+chmod 0755 $PKG/etc/profile.d/go.csh
+chmod 0755 $PKG/etc/profile.d/go.sh
+
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a \
+  CONTRIBUTING.md LICENSE PATENTS README.md SECURITY.md VERSION \
+  $PKG/usr/doc/$PRGNAM-$VERSION
+cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
