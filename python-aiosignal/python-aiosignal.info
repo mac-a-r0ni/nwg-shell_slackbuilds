@@ -1,4 +1,4 @@
-PRGNAM="aiosignal"
+PRGNAM="python-aiosignal"
 VERSION="1.3.1"
 HOMEPAGE="https://github.com/aio-libs/aiosignal"
 DOWNLOAD="https://github.com/aio-libs/aiosignal/releases/download/v1.3.1/aiosignal-1.3.1.tar.gz"

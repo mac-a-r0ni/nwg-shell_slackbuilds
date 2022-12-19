@@ -1,4 +1,4 @@
-PRGNAM="async-timeout"
+PRGNAM="python-async-timeout"
 VERSION="4.0.2"
 HOMEPAGE="https://github.com/aio-libs/async-timeout"
 DOWNLOAD="https://github.com/aio-libs/async-timeout/releases/download/v4.0.2/async-timeout-4.0.2.tar.gz"
