@@ -31,8 +31,8 @@ cd $(dirname $0) ; CWD=$(pwd)
 PRGNAM=google-go-lang
 VERSION=${VERSION:-1.19.4}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
-PKGTYPE=${PKGTYPE:-tgz}
+TAG=${TAG:-_nwg}
+PKGTYPE=${PKGTYPE:-txz}
 
 RELEASE=${RELEASE:-linux}
 
@@ -69,7 +69,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
