@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for sway
+# Slackware build script for swappy
 
-# Copyright 2022 Damian Perticone Berisso,Argentina
-# based on Biker-rat user work, kudos to him!.
+# Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -25,8 +24,8 @@
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=sway
-VERSION=${VERSION:-1.7}
+PRGNAM=swappy
+VERSION=${VERSION:-1.5.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -35,6 +34,7 @@ if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
+
        *) ARCH=$( uname -m ) ;;
   esac
 fi
@@ -55,10 +55,10 @@ elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
-  SLKCFLAGS="-O2 -fPIC -Wno-error"
+  SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
 elif [ "$ARCH" = "aarch64" ]; then
-  SLKCFLAGS="-O2 -fPIC -Wno-error"
+  SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
 else
   SLKCFLAGS="-O2"
@@ -66,6 +66,7 @@ else
 fi
 
 set -e
+
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
@@ -78,9 +79,6 @@ find -L . \
   -o -perm 511 \) -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
-
-#sed -i 's/0.60.0/0.59.4/g' meson.build
-sed -i "s/'libsystemd', 'libelogind'/'libelogind'/g" meson.build
 
 mkdir build
 cd build
@@ -95,18 +93,8 @@ cd build
     --prefix=/usr \
     --sysconfdir=/etc \
     -Dstrip=true \
-    -Ddefault-wallpaper=true \
-    -Dswaybar=true \
-    -Dxwayland=enabled \
-    -Dtray=enabled \
-    -Dgdk-pixbuf=enabled \
-    -Dswaynag=true \
-    -Dbash-completions=true \
-    -Dzsh-completions=true \
-    -Dfish-completions=true \
-    -Dsd-bus-provider=libelogind
 
-   "${NINJA:=ninja}"
+  "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
 cd ..
 
@@ -118,13 +106,8 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
-find $PKG -name perllocal.pod \
-  -o -name ".packlist" \
-  -o -name "*.bs" \
-  | xargs rm -f
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a CONTRIBUTING.md LICENSE *.md  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a CHANGELOG.md LICENSE README.md $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install

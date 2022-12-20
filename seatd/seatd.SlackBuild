@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for slurp
+# Slackware build script for seatd
 
-# Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2022 Damian Perticone  Berisso,Argentina
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -24,8 +24,8 @@
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=slurp
-VERSION=${VERSION:-1.4.0}
+PRGNAM=seatd
+VERSION=${VERSION:-0.7.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -34,7 +34,6 @@ if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
-
        *) ARCH=$( uname -m ) ;;
   esac
 fi
@@ -71,7 +70,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.gz || tar xvf $CWD/$VERSION.tar.gz
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -93,6 +92,11 @@ cd build
     --prefix=/usr \
     --sysconfdir=/etc \
     -Dstrip=true \
+    -Dlibseat-logind=elogind \
+    -Dlibseat-seatd=enabled \
+    -Dlibseat-builtin=enabled \
+    -Dserver=enabled \
+    -Dman-pages=enabled \
 
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
@@ -106,8 +110,13 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
+find $PKG -name perllocal.pod \
+  -o -name ".packlist" \
+  -o -name "*.bs" \
+  | xargs rm -f
+
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a LICENSE README.md $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a  LICENSE README.md $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install

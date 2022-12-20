@@ -1,4 +1,4 @@
-PRGNAM="wheel"
+PRGNAM="python-wheel"
 VERSION="0.38.4"
 HOMEPAGE="https://github.com/pypa/wheel"
 DOWNLOAD="https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
