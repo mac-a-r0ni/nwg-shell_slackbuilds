@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+            |-----handy-ruler------------------------------------------------------|
+python-i3ipc: python-i3ipc (library to control i3/sway window managers)
+python-i3ipc:
+python-i3ipc: python-3ipc is a Python library for controlling the window manager.
+python-i3ipc: This project is intended to be useful for general scripting, and for
+python-i3ipc: applications that interact with the window manager like status line
+python-i3ipc: generators, notification daemons, and window pagers.
+python-i3ipc:
+python-i3ipc: Homepage: https://github.com/altdesktop/i3ipc-python
+python-i3ipc:
+python-i3ipc:
+python-i3ipc:
