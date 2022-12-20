@@ -1,0 +1,73 @@
+Summary:	Powerful image loading and rendering library
+Name:		@PACKAGE@
+Version:	@VERSION@
+Release:	@RPM_RELEASE@
+License:	BSD
+Group:		System Environment/Libraries
+URL:		http://www.enlightenment.org
+Source:		%{name}-%{version}.tar.gz
+Vendor:		The Enlightenment Project (http://www.enlightenment.org/)
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+
+%description
+Imlib2 is an advanced replacement library for libraries like libXpm that
+provides many more features with much greater flexibility and speed than
+standard libraries, including font rasterization, rotation, RGBA space
+rendering and blending, dynamic binary filters, scripting, and more.
+
+%package devel
+Summary: Imlib2 headers, static libraries and documentation
+Group: System Environment/Libraries
+Requires: %{name} = %{version}
+
+%description devel
+Headers, static libraries and documentation for Imlib2.
+
+%prep
+%setup -q
+
+%build
+archopts="--disable-mmx --disable-amd64"
+%ifarch x86_64
+archopts="--disable-mmx --enable-amd64"
+%endif
+%ifarch %ix86
+archopts="--enable-mmx --disable-amd64"
+%endif
+%configure $archopts %{?acflags}
+make %{?_smp_mflags}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+rm -f $RPM_BUILD_ROOT%{_libdir}/libImlib2.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/filters/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/loaders/*.la
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+/sbin/ldconfig
+
+%postun
+/sbin/ldconfig
+
+%files
+%doc AUTHORS COPYING COPYING-PLAIN README
+%dir %{_libdir}/%{name}
+%dir %{_libdir}/%{name}/filters
+%dir %{_libdir}/%{name}/loaders
+%{_libdir}/lib*.so.*
+%{_libdir}/imlib2/filters/*.so
+%{_libdir}/imlib2/loaders/*.so
+
+%files devel
+%{_libdir}/*.so
+%{_libdir}/*.a
+%{_libdir}/pkgconfig/*
+%{_includedir}/*
+%{_datadir}/%{name}
+%{_bindir}/imlib2_*
+
+%changelog
