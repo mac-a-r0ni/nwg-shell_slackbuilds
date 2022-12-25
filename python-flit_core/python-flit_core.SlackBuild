@@ -28,7 +28,7 @@ PRGNAM=python-flit_core
 SRCNAM=$(echo $PRGNAM | sed "s/python-//")
 VERSION=${VERSION:-3.8.0}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_gcs}
+TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
 if [ -z "$ARCH" ]; then
@@ -47,7 +47,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/gcs}
+TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 

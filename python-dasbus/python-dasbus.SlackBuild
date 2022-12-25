@@ -28,7 +28,7 @@ SRCNAM=dasbus
 PRGNAM=python-dasbus
 VERSION=${VERSION:-1.7}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_gcs}
+TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
 if [ -z "$ARCH" ]; then
@@ -44,7 +44,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/gcs}
+TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
@@ -86,10 +86,7 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a \
-  PKG-INFO \
-  README.md \
-  LICENSE \
+cp -a PKG-INFO README.md LICENSE \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
