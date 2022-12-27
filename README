@@ -1,0 +1,17 @@
+This repo contains SlackBuilds (tested on -current) for nwg-shell - https://github.com/nwg-piotr/nwg-shell
+
+This is currently IN DEVELOPMENT and I consider it to be ALPHA stage and may very well be broken
+or not work at all.
+
+Some of these scripts (mostly python deps) have been edited from their packages on SBo, if you 
+have any of them installed, they should work as-is, but I cannot make any guarantees. My advice 
+is to build/install fresh packages.
+
+This is technically not released in any semi-professional manner, and as such, any edits done to 
+SlackBuilds will not recieve BUILD flag updates until I see that it's fit for public release. 
+At which point, I will offer binary package downloads from a repo for stable (15.0) and possibly 
+-current as well, which I'll setup when I feel nwg-shell is ready.
+
+Do NOT ask for packages as of now please, if you're interested and willing to test, please build
+it and report any errors (if any). The Go code is not optimized, as the flags fail for me locally, 
+which is why they are commented out.
