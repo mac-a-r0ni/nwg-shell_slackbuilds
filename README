@@ -3,6 +3,10 @@ This repo contains SlackBuilds (tested on -current) for nwg-shell - https://gith
 This is currently IN DEVELOPMENT and I consider it to be ALPHA stage and may very well be broken
 or not work at all.
 
+The first package you need to build/install is google-go-lang and you should have python3 already,
+one or two of the nwg packages dep on another, but I haven't done a clean build yet to know for
+sure which ones dep on which ones.
+
 Some of these scripts (mostly python deps) have been edited from their packages on SBo, if you 
 have any of them installed, they should work as-is, but I cannot make any guarantees. My advice 
 is to build/install fresh packages.
