@@ -6,7 +6,7 @@
 # customary to leave one space after the ':'.
 
        |-----handy-ruler------------------------------------------------------|
-nwg-bar: nwg-bar (wlroots golang command bar)
+nwg-bar: nwg-bar (GTK3-based button bar for wlroots-based compositors)
 nwg-bar:
 nwg-bar: The nwg-bar command creates a button bar on the basis of a JSON
 nwg-bar: template placed in the ~/.config/nwg-bar/ folder. By default the
