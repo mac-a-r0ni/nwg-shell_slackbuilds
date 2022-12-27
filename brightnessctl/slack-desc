@@ -1,0 +1,12 @@
+             |-----handy-ruler------------------------------------------------------|
+brightnessctl: brightnessctl (cli device brightness control)
+brightnessctl:
+brightnessctl: This program allows you read and control device brightness. Devices,
+brightnessctl: by default, include backlight and LEDs (searched for in corresponding
+brightnessctl: classes). If omitted, the first found device is selected.
+brightnessctl:
+brightnessctl: Homepage: https://github.com/Hummer12007/brightnessctl
+brightnessctl:
+brightnessctl:
+brightnessctl:
+brightnessctl:
