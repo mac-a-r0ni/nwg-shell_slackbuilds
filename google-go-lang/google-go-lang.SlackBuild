@@ -1,171 +1,267 @@
 #!/bin/bash
-
-# Slackware build script for google-go-lang
-
-# Written by Eric Schultz eric at schultzter.ca
-# Taken over by Vincent Batts vbatts@hashbangbash.com
-
-# Copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, 2018  Vincent Batts
-# Copyright (c) 2012 Eric Schultz
+# $Id: google-go-lang.SlackBuild,v 1.5 2022/12/07 09:19:15 root Exp root $
+# Copyright 2012, 2013, 2014, 2015, 2016, 2017, 2018  Vincent Batts
+# Copyright 2012 Eric Schultz
+# Copyright 2022  Eric Hameleers, Eindhoven, NL
+# All rights reserved.
 #
-# Permission is hereby granted, free of charge, to any person obtaining a copy of
-# this software and associated documentation files (the "Software"), to deal in
-# the Software without restriction, including without limitation the rights to
-# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-# the Software, and to permit persons to whom the Software is furnished to do so,
-# subject to the following conditions:
+#   Permission to use, copy, modify, and distribute this software for
+#   any purpose with or without fee is hereby granted, provided that
+#   the above copyright notice and this permission notice appear in all
+#   copies.
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+#   THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+#   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#   IN NO EVENT SHALL THE AUTHORS AND COPYRIGHT HOLDERS AND THEIR
+#   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+#   LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+#   USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+#   ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+#   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+#   OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#   SUCH DAMAGE.
+# -----------------------------------------------------------------------------
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
-cd $(dirname $0) ; CWD=$(pwd)
+# Slackware SlackBuild script 
+# ===========================
+# By:          Eric Hameleers <alien@slackware.com>
+# For:         google-go-lang
+# Descr:       Google's Go Language kit with gc tool chain
+# URL:         http://golang.org
+# Build needs: 
+# Needs:       
+# Changelog:   
+# 1.17.5-1:    04/jan/2022 by Eric Hameleers <alien@slackware.com>
+#              * Initial build.
+# 1.19.2-1:    12/oct/2022 by Eric Hameleers <alien@slackware.com>
+#              * Update.
+# 1.19.4-1:    07/dec/2022 by Eric Hameleers <alien@slackware.com>
+#              * Update.
+# 
+# Run 'sh google-go-lang.SlackBuild' to build a Slackware package.
+# The package (.t?z) and .txt file as well as build logs are created in /tmp .
+# Install the package using 'installpkg' or 'upgradepkg --install-new'.
+#
+# -----------------------------------------------------------------------------
 
 PRGNAM=google-go-lang
+SRCNAM=go
 VERSION=${VERSION:-1.19.4}
+BOOTSTRAP="1.4-bootstrap-20171003"
 BUILD=${BUILD:-1}
-TAG=${TAG:-_nwg}
-PKGTYPE=${PKGTYPE:-txz}
+NUMJOBS=${NUMJOBS:-" -j$(nproc) "}
+TAG=${TAG:-nwg}
 
-RELEASE=${RELEASE:-linux}
+DOCS="*.md AUTHORS CONTRIBUTORS LICENSE PATENTS VERSION"
 
-RUN_TEST=${RUN_TEST:-false}
+# Where do we look for sources?
+SRCDIR=$(cd $(dirname $0); pwd)
 
-if [ -z "$ARCH" ]; then
-  case "$( uname -m )" in
-    i?86) ARCH=i586 ;;
-    arm*) ARCH=arm ;;
-       *) ARCH=$( uname -m ) ;;
-  esac
-fi
-
-if [ "$ARCH" = "i586" ]; then
-  LIBDIRSUFFIX=""
-  GOARCH="386"
-elif [ "$ARCH" = "x86_64" ]; then
-  LIBDIRSUFFIX="64"
-  GOARCH="amd64"
-elif [ "$ARCH" = "arm" ]; then
-  LIBDIRSUFFIX=""
-  GOARCH="arm"
-  export GOARM="6" # can be '5' as well, to use soft float instead of hardware
-else
-  LIBDIRSUFFIX=""
-  GOARCH=386
-fi
-
-# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
-# the name of the created package would be, and then exit. This information
-# could be useful to other scripts.
-if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
-  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
-  exit 0
-fi
-
+# Place to build (TMP) package (PKG) and output (OUTPUT) the program:
 TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
+SOURCE[0]="$SRCDIR/${SRCNAM}${VERSION}.src.tar.gz"
+SRCURL[0]="https://golang.org/dl/${SRCNAM}${VERSION}.src.tar.gz"
+
+SOURCE[1]="$SRCDIR/${SRCNAM}${BOOTSTRAP}.src.tar.gz"
+SRCURL[1]="https://dl.google.com/${SRCNAM}/${SRCNAM}${BOOTSTRAP}.tar.gz"
+
+##
+## --- with a little luck, you won't have to edit below this point --- ##
+##
+
+# Automatically determine the architecture we're building on:
+if [ -z "$ARCH" ]; then
+  case "$(uname -m)" in
+  i?86) ARCH=i586 ;;
+    arm*) readelf /usr/bin/file -A | egrep -q "Tag_CPU.*[4,5]" && ARCH=arm || ARCH=armv7hl ;;
+    # Unless $ARCH is already set, use uname -m for all other archs:
+    *) ARCH=$(uname -m) ;;
+  esac
+  export ARCH
+fi
+# Set CFLAGS/CXXFLAGS and LIBDIRSUFFIX:
+case "$ARCH" in
+  i?86)      SLKCFLAGS="-O2 -march=${ARCH} -mtune=i686"
+             SLKLDFLAGS=""; LIBDIRSUFFIX=""
+             export GOARCH="386"
+             ;;
+  x86_64)    SLKCFLAGS="-O2 -fPIC"
+             SLKLDFLAGS="-L/usr/lib64"; LIBDIRSUFFIX="64"
+             export GOARCH="amd64"
+             ;;
+  armv7hl)   SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16"
+             SLKLDFLAGS=""; LIBDIRSUFFIX=""
+             export GOARCH="arm"
+             # Can be '5' of '6' as well, to use soft instead of hw float:
+             export GOARM="7"
+             ;;
+  *)         SLKCFLAGS=${SLKCFLAGS:-"-O2"}
+             SLKLDFLAGS=${SLKLDFLAGS:-""}; LIBDIRSUFFIX=${LIBDIRSUFFIX:-""}
+             export GOARCH="386"
+             ;;
+esac
+
+case "$ARCH" in
+    arm*)    TARGET=$ARCH-slackware-linux-gnueabi ;;
+    *)       TARGET=$ARCH-slackware-linux ;;
+esac
+
+# Exit the script on errors:
 set -e
+trap 'echo "$0 FAILED at line ${LINENO}" | tee $OUTPUT/error-${PRGNAM}.log' ERR
+# Catch unitialized variables:
+set -u
+P1=${1:-1}
 
-rm -rf $PKG
-mkdir -p $TMP $PKG/usr/lib${LIBDIRSUFFIX}/go${VERSION} $OUTPUT
+# Save old umask and set to 0022:
+_UMASK_=$(umask)
+umask 0022
+
+# Create working directories:
+mkdir -p $OUTPUT          # place for the package to be saved
+mkdir -p $TMP/tmp-$PRGNAM # location to build the source
+mkdir -p $PKG             # place for the package to be built
+rm -rf $PKG/*             # always erase old package's contents
+rm -rf $TMP/tmp-$PRGNAM/* # remove the remnants of previous build
+rm -rf $OUTPUT/{configure,make,install,error,makepkg,patch}-${PRGNAM}*.log
+                          # remove old log files
+
+# Source file availability:
+for (( i = 0; i < ${#SOURCE[*]}; i++ )) ; do
+  if ! [ -f ${SOURCE[$i]} ]; then
+    echo "Source '$(basename ${SOURCE[$i]})' not available yet..."
+    # Check if the $SRCDIR is writable at all - if not, download to $OUTPUT
+    [ -w "$SRCDIR" ] || SOURCE[$i]="$OUTPUT/$(basename ${SOURCE[$i]})"
+    if [ -f ${SOURCE[$i]} ]; then echo "Ah, found it!"; continue; fi
+    if ! [ "x${SRCURL[$i]}" == "x" ]; then
+      echo "Will download file to $(dirname $SOURCE[$i])"
+      wget --no-check-certificate -nv -T 20 -O "${SOURCE[$i]}" "${SRCURL[$i]}" || true
+      if [ $? -ne 0 -o ! -s "${SOURCE[$i]}" ]; then
+        echo "Fail to download '$(basename ${SOURCE[$i]})'. Aborting the build."
+        mv -f "${SOURCE[$i]}" "${SOURCE[$i]}".FAIL
+        exit 1
+      fi
+    else
+      echo "File '$(basename ${SOURCE[$i]})' not available. Aborting the build."
+      exit 1
+    fi
+  fi
+done
+
+if [ "$P1" == "--download" ]; then
+  echo "Download complete."
+  exit 0
+fi
+
+# --- PACKAGE BUILDING ---
+
+echo "++"
+echo "|| $PRGNAM-$VERSION"
+echo "++"
+
+# We work with go directly in the package directory:
+mkdir -p $PKG/usr/lib${LIBDIRSUFFIX}/go${VERSION}
 cd $PKG/usr/lib${LIBDIRSUFFIX}/go${VERSION}
-tar xvf $CWD/go${VERSION}.src.tar.gz
-cd go
+echo "Extracting the source archive(s) for $PRGNAM..."
+tar -xvf ${SOURCE[0]}
+cd ${SRCNAM}
 chown -R root:root .
-find -L . \
- \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
- -o -perm 511 \) -exec chmod 755 {} \; -o \
- \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
- -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+chmod -R u+w,go+r-w,a+rX-st .
 
-# as of >= go1.5, the cross-compiler does not need to be bootstrap, so the
-# compiler need only be compiled for the host OS, which it detects
+echo Building ...
+# As of >= go1.5, the cross-compiler does not need to be bootstrapped, so the
+# compiler needs only be compiled for the host OS, which it detects.
 unset GOBIN GOPATH GOOS GOARCH
 
-# Not sure why, but this causes run.bash to fail --rworkman
-unset BASH_ENV
-
-if [ "$ARCH" = "i586" ]; then
-  # issue with gccgo+go1.16 on x86
-  # https://www.linuxquestions.org/questions/showthread.php?p=6253507
-  # hopefully this is not needed forever...
-  tar -C $TMP -xf $CWD/go1.4-bootstrap-20171003.tar.gz
-  pushd $TMP/go
-  export GOROOT=$TMP/go
-  cd ./src
-  ./make.bash
+if [ "$ARCH" = "i586" ] || [ $(gcc -dumpversion |cut -d. -f1) -lt 7 ]; then
+  # There's an issue using GCC's go as bootstrap for Google's go >= 1.16 on x86.
+  # See https://www.linuxquestions.org/questions/showthread.php?p=6253507
+  # Solution is to use the old go1.4 compiler as the bootstrap.
+  # This 1.4 release is the last to be compiled with a C compiler.
+  echo "-- Compiling go1.4 bootstrap compiler on ARCH $ARCH..."
+  tar -C $TMP/tmp-$PRGNAM -xf ${SOURCE[1]}
+  pushd $TMP/tmp-$PRGNAM/go
+    export GOROOT=$TMP/tmp-$PRGNAM/go
+    cd ./src
+    LC_ALL=C ./make.bash \
+      2>&1 | tee $OUTPUT/make-${PRGNAM}_bootstrap.log
   popd
-  export GOROOT_BOOTSTRAP="$TMP/go"
+  export GOROOT_BOOTSTRAP="$TMP/tmp-$PRGNAM/go"
 else
   # gcc 5+ is go1.4 API, so we'll bootstrap with it
   export GOROOT_BOOTSTRAP="/usr"
 fi
 
-# Default GOROOT is the parent directory of all.bash,
-# which is the current directory we're in.
-# Defining it here means we can use it below when building
-# shared libraries
+# Default GOROOT is parent directory of all.bash, i.e. the current directory.
+# Defining it here means we can use it below when building shared libraries:
 export GOROOT="$(pwd)"
-
-# The value of GOROOT once the package is installed
 export GOROOT_FINAL="/usr/lib${LIBDIRSUFFIX}/go${VERSION}/go"
 
 cd src
+  echo "-- Compiling go${VERSION} suite using bootstrap ${GOROOT_BOOTSTRAP} ..."
+  LC_ALL=C ./make.bash \
+    2>&1 | tee $OUTPUT/make-${PRGNAM}.log
+  # As of go1.5, golang supports shared libraries, so generate them for use.
+  echo "-- Installing go${VERSION} suite..."
+  $GOROOT/bin/go install -buildmode=shared std \
+    2>&1 | tee $OUTPUT/install-${PRGNAM}.log
+cd - 1>/dev/null
 
-if [ "x${RUN_TEST}" = "xtrue" ] ; then
-	LC_ALL=C \
-	./all.bash
-else
-	LC_ALL=C \
-	./make.bash
-fi
-
-# As of go1.5, golang supports shared libraries, so generate them for use.
-$GOROOT/bin/go install -buildmode=shared std
-
-cd ..
-
-# remove Go build cache
+# Remove Go build cache:
 rm -rf pkg/obj/go-build/*
 
-# remove the doc Makefile
+# Remove the doc Makefile:
 rm -f doc/Makefile
 
-mkdir -p $PKG$GOROOT_FINAL
-
-# Put the profile scripts for setting PATH and env variables
+# Add profile scripts for go:
 mkdir -p $PKG/etc/profile.d
-cat > $PKG/etc/profile.d/go.csh << EOF
+cat << EOT > $PKG/etc/profile.d/go.csh
 #!/bin/csh
 setenv GOROOT ${GOROOT_FINAL}
 setenv PATH \${GOROOT}/bin:\${PATH}
-EOF
-cat > $PKG/etc/profile.d/go.sh << EOF
+EOT
+chmod 0755 $PKG/etc/profile.d/go.csh
+cat << EOT > $PKG/etc/profile.d/go.sh
 #!/bin/sh
 export GOROOT="${GOROOT_FINAL}"
 export PATH="\${GOROOT}/bin:\${PATH}"
-EOF
-
-chmod 0755 $PKG/etc/profile.d/go.csh
+EOT
 chmod 0755 $PKG/etc/profile.d/go.sh
 
+# Add documentation:
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a \
-  CONTRIBUTING.md LICENSE PATENTS README.md SECURITY.md VERSION \
-  $PKG/usr/doc/$PRGNAM-$VERSION
-cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+cp -a $DOCS $PKG/usr/doc/$PRGNAM-$VERSION || true
+cat $SRCDIR/$(basename $0) > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+chown -R root:root $PKG/usr/doc/$PRGNAM-$VERSION
+find $PKG/usr/doc -type f -exec chmod 644 {} \;
 
+# Compress the man page(s):
+if [ -d $PKG/usr/man ]; then
+  find $PKG/usr/man -type f -name "*.?" -exec gzip -9f {} \;
+  for i in $(find $PKG/usr/man -type l -name "*.?") ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+fi
+
+# Strip binaries (if any):
+find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+# Add a package description:
 mkdir -p $PKG/install
-cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $SRCDIR/slack-desc > $PKG/install/slack-desc
 
+# Build the package:
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+makepkg --linkadd y --chown n $OUTPUT/${PRGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE:-txz} 2>&1 | tee $OUTPUT/makepkg-${PRGNAM}.log
+cd $OUTPUT
+md5sum ${PRGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE:-txz} > ${PRGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE:-txz}.md5
+cd -
+cat $PKG/install/slack-desc | grep "^${PRGNAM}" > $OUTPUT/${PRGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.txt
+
+# Restore the original umask:
+umask ${_UMASK_}
+
