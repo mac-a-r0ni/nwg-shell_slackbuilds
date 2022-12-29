@@ -84,7 +84,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw -gccgoflags=-linkmode=external" \
+GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw -ldflags=-linkmode=external" \
 go build -o bin/$PRGNAM *.go || exit 1
 
 install -D -t $PKG/usr/share/$PRGNAM/icons_light $TMP/$PRGNAM-$VERSION/icons_light/*
