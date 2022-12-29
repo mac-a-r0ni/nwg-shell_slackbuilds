@@ -1,0 +1,81 @@
+++========================================
+||
+||   Package:  ./python-dasbus-1.7-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 03:10 ./
+drwxr-xr-x root/root         0 2022-12-29 03:10 install/
+-rw-r--r-- root/root      1068 2022-12-29 03:10 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/doc/python-dasbus-1.7/
+-rw-r--r-- root/root     26526 2022-11-07 08:19 usr/doc/python-dasbus-1.7/LICENSE
+-rw-r--r-- root/root      6263 2022-11-07 08:19 usr/doc/python-dasbus-1.7/PKG-INFO
+-rw-r--r-- root/root      5680 2022-11-07 08:19 usr/doc/python-dasbus-1.7/README.md
+-rw-r--r-- root/root      2939 2022-12-29 03:10 usr/doc/python-dasbus-1.7/python-dasbus.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus-1.7-py3.9.egg-info/
+-rw-r--r-- root/root      6226 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus-1.7-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root      1658 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus-1.7-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus-1.7-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root         7 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus-1.7-py3.9.egg-info/top_level.txt
+-rw-r--r-- root/root         0 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/
+-rw-r--r-- root/root       144 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root     11344 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/connection.cpython-39.pyc
+-rw-r--r-- root/root       534 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/constants.cpython-39.pyc
+-rw-r--r-- root/root      8985 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/error.cpython-39.pyc
+-rw-r--r-- root/root      6260 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/identifier.cpython-39.pyc
+-rw-r--r-- root/root      1796 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/loop.cpython-39.pyc
+-rw-r--r-- root/root       905 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/namespace.cpython-39.pyc
+-rw-r--r-- root/root      1637 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/signal.cpython-39.pyc
+-rw-r--r-- root/root      7032 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/specification.cpython-39.pyc
+-rw-r--r-- root/root     12303 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/structure.cpython-39.pyc
+-rw-r--r-- root/root     10645 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/typing.cpython-39.pyc
+-rw-r--r-- root/root      6696 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/unix.cpython-39.pyc
+-rw-r--r-- root/root      5467 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/__pycache__/xml.cpython-39.pyc
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/client/
+-rw-r--r-- root/root         0 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/client/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/client/__pycache__/
+-rw-r--r-- root/root       151 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/client/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root     14018 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/client/__pycache__/handler.cpython-39.pyc
+-rw-r--r-- root/root      6918 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/client/__pycache__/observer.cpython-39.pyc
+-rw-r--r-- root/root      1435 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/client/__pycache__/property.cpython-39.pyc
+-rw-r--r-- root/root      6592 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/client/__pycache__/proxy.cpython-39.pyc
+-rw-r--r-- root/root     16624 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/client/handler.py
+-rw-r--r-- root/root      7259 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/client/observer.py
+-rw-r--r-- root/root      1977 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/client/property.py
+-rw-r--r-- root/root      7203 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/client/proxy.py
+-rw-r--r-- root/root     11614 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/connection.py
+-rw-r--r-- root/root      1376 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/constants.py
+-rw-r--r-- root/root      8797 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/error.py
+-rw-r--r-- root/root      6519 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/identifier.py
+-rw-r--r-- root/root      1951 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/loop.py
+-rw-r--r-- root/root      1472 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/namespace.py
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/
+-rw-r--r-- root/root         0 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/server/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/
+-rw-r--r-- root/root       151 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root      5929 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/container.cpython-39.pyc
+-rw-r--r-- root/root     17414 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/handler.cpython-39.pyc
+-rw-r--r-- root/root     17227 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/interface.cpython-39.pyc
+-rw-r--r-- root/root      5695 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/property.cpython-39.pyc
+-rw-r--r-- root/root      1148 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/publishable.cpython-39.pyc
+-rw-r--r-- root/root      4164 2022-12-29 03:10 usr/lib64/python3.9/site-packages/dasbus/server/__pycache__/template.cpython-39.pyc
+-rw-r--r-- root/root      6168 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/server/container.py
+-rw-r--r-- root/root     19575 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/server/handler.py
+-rw-r--r-- root/root     22216 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/server/interface.py
+-rw-r--r-- root/root      6145 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/server/property.py
+-rw-r--r-- root/root      1622 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/server/publishable.py
+-rw-r--r-- root/root      4256 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/server/template.py
+-rw-r--r-- root/root      2159 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/signal.py
+-rw-r--r-- root/root      9155 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/specification.py
+-rw-r--r-- root/root     12846 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/structure.py
+-rw-r--r-- root/root     12171 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/typing.py
+-rw-r--r-- root/root      8802 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/unix.py
+-rw-r--r-- root/root      5010 2022-11-07 08:19 usr/lib64/python3.9/site-packages/dasbus/xml.py
+
+

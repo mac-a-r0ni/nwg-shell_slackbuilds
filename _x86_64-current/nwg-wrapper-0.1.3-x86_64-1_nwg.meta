@@ -1,0 +1,18 @@
+PACKAGE NAME:  nwg-wrapper-0.1.3-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  20 K
+PACKAGE SIZE (uncompressed):  100 K
+PACKAGE DESCRIPTION:
+nwg-wrapper: nwg-wrapper (display text on desktop in wlroots compositors)
+nwg-wrapper:
+nwg-wrapper: This program is a GTK3-based wrapper to display a script output, or
+nwg-wrapper: a text file content on the desktop in sway or other wlroots-based
+nwg-wrapper: compositors. It uses the gtk-layer-shell library to place the window
+nwg-wrapper: on the bottom layer.
+nwg-wrapper:
+nwg-wrapper: Homepage: https://github.com/nwg-piotr/nwg-wrapper
+nwg-wrapper:
+nwg-wrapper:
+nwg-wrapper:
+

@@ -1,0 +1,18 @@
+PACKAGE NAME:  fcft-3.1.5-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  76 K
+PACKAGE SIZE (uncompressed):  200 K
+PACKAGE DESCRIPTION:
+fcft: fcft (font loading and glyph rasterization library)
+fcft:
+fcft: Fcft is a library for font loading and glyph rasterization using
+fcft: FontConfig, FreeType and pixman.
+fcft:
+fcft: Homepage: https://codeberg.org/dnkl/fcft
+fcft:
+fcft:
+fcft:
+fcft:
+fcft:
+

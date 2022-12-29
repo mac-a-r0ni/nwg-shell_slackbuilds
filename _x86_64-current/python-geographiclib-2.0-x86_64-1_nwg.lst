@@ -1,0 +1,50 @@
+++========================================
+||
+||   Package:  ./python-geographiclib-2.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 03:14 ./
+drwxr-xr-x root/root         0 2022-12-29 03:14 install/
+-rw-r--r-- root/root       986 2022-12-29 03:14 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/doc/python-geographiclib-2.0/
+-rw-r--r-- root/root      1089 2022-04-23 05:07 usr/doc/python-geographiclib-2.0/LICENSE
+-rw-r--r-- root/root       580 2022-04-22 08:16 usr/doc/python-geographiclib-2.0/README.md
+-rw-r--r-- root/root      2411 2022-12-29 03:14 usr/doc/python-geographiclib-2.0/python-geographiclib.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib-2.0-py3.9.egg-info/
+-rw-r--r-- root/root      1365 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib-2.0-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root       523 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib-2.0-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib-2.0-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root        14 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib-2.0-py3.9.egg-info/top_level.txt
+-rw-r--r-- root/root       294 2022-04-23 08:57 usr/lib64/python3.9/site-packages/geographiclib/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/
+-rw-r--r-- root/root       317 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root      1731 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/accumulator.cpython-39.pyc
+-rw-r--r-- root/root       453 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/constants.cpython-39.pyc
+-rw-r--r-- root/root     26617 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/geodesic.cpython-39.pyc
+-rw-r--r-- root/root       978 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/geodesiccapability.cpython-39.pyc
+-rw-r--r-- root/root     10117 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/geodesicline.cpython-39.pyc
+-rw-r--r-- root/root      4249 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/geomath.cpython-39.pyc
+-rw-r--r-- root/root      9362 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/__pycache__/polygonarea.cpython-39.pyc
+-rw-r--r-- root/root      3159 2021-07-14 10:21 usr/lib64/python3.9/site-packages/geographiclib/accumulator.py
+-rw-r--r-- root/root       779 2021-07-14 10:21 usr/lib64/python3.9/site-packages/geographiclib/constants.py
+-rw-r--r-- root/root     50369 2022-04-08 18:21 usr/lib64/python3.9/site-packages/geographiclib/geodesic.py
+-rw-r--r-- root/root      1398 2021-07-14 10:21 usr/lib64/python3.9/site-packages/geographiclib/geodesiccapability.py
+-rw-r--r-- root/root     18408 2022-04-08 18:21 usr/lib64/python3.9/site-packages/geographiclib/geodesicline.py
+-rw-r--r-- root/root      4592 2022-04-23 07:56 usr/lib64/python3.9/site-packages/geographiclib/geomath.py
+-rw-r--r-- root/root     12003 2022-04-08 18:21 usr/lib64/python3.9/site-packages/geographiclib/polygonarea.py
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/test/
+-rw-r--r-- root/root       269 2021-07-14 10:21 usr/lib64/python3.9/site-packages/geographiclib/test/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/test/__pycache__/
+-rw-r--r-- root/root       433 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/test/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root     29127 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/test/__pycache__/test_geodesic.cpython-39.pyc
+-rw-r--r-- root/root     10178 2022-12-29 03:14 usr/lib64/python3.9/site-packages/geographiclib/test/__pycache__/test_sign.cpython-39.pyc
+-rw-r--r-- root/root     40723 2022-03-30 08:44 usr/lib64/python3.9/site-packages/geographiclib/test/test_geodesic.py
+-rw-r--r-- root/root     13683 2022-03-19 13:12 usr/lib64/python3.9/site-packages/geographiclib/test/test_sign.py
+
+

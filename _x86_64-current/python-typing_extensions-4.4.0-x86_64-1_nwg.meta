@@ -1,0 +1,18 @@
+PACKAGE NAME:  python-typing_extensions-4.4.0-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  40 K
+PACKAGE SIZE (uncompressed):  270 K
+PACKAGE DESCRIPTION:
+python-typing_extensions: python-typing_extensions (Experimental type system PEPs for Python)
+python-typing_extensions:
+python-typing_extensions: The typing module was added to the standard library in Python 3.5 on
+python-typing_extensions: a provisional basis and will no longer be provisional in Python 3.7.
+python-typing_extensions: However, this means users of Python 3.5 - 3.6 who are unable to
+python-typing_extensions: upgrade will not be able to take advantage of new types added to the
+python-typing_extensions: typing module, such as typing.Text or typing.Coroutine.
+python-typing_extensions:
+python-typing_extensions: Homepage: https://github.com/python/typing_extensions
+python-typing_extensions:
+python-typing_extensions:
+

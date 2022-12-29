@@ -1,0 +1,74 @@
+++========================================
+||
+||   Package:  ./jq-1.6-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:12 ./
+drwxr-xr-x root/root         0 2022-12-29 04:12 install/
+-rw-r--r-- root/root       174 2022-12-29 04:12 install/doinst.sh
+-rw-r--r-- root/root       842 2022-12-29 04:12 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/bin/
+-rwxr-xr-x root/root    306504 2022-12-29 04:12 usr/bin/jq
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/doc/jq-1.6/
+-rw-r--r-- root/root      4180 2022-12-29 04:12 usr/doc/jq-1.6/AUTHORS
+-rw-r--r-- root/root      2940 2022-12-29 04:12 usr/doc/jq-1.6/COPYING
+-rw-r--r-- root/root     33283 2018-11-01 21:49 usr/doc/jq-1.6/ChangeLog
+-rw-r--r-- root/root       421 2018-11-01 21:49 usr/doc/jq-1.6/KEYS
+-rw-r--r-- root/root      2344 2018-11-01 21:49 usr/doc/jq-1.6/NEWS
+-rw-r--r-- root/root      3045 2022-12-29 04:12 usr/doc/jq-1.6/README
+-rw-r--r-- root/root      3045 2022-12-29 04:12 usr/doc/jq-1.6/README.md
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/
+-rw-r--r-- root/root       125 2018-11-01 21:49 usr/doc/jq-1.6/docs/Gemfile
+-rw-r--r-- root/root      1230 2018-11-01 21:49 usr/doc/jq-1.6/docs/Gemfile.lock
+-rw-r--r-- root/root       960 2018-11-01 21:49 usr/doc/jq-1.6/docs/README.md
+-rw-r--r-- root/root       731 2018-11-01 21:49 usr/doc/jq-1.6/docs/Rakefile
+-rw-r--r-- root/root      1263 2018-11-01 21:49 usr/doc/jq-1.6/docs/Rakefile.manual
+-rw-r--r-- root/root      1515 2018-11-01 21:49 usr/doc/jq-1.6/docs/Rakefile.website
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/content/
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/content/1.tutorial/
+-rw-r--r-- root/root     13857 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/1.tutorial/default.yml
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/content/2.download/
+-rw-r--r-- root/root      8191 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/2.download/default.yml
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/content/3.manual/
+-rw-r--r-- root/root    124370 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/3.manual/manual.yml
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/content/3.manual/v1.3/
+-rw-r--r-- root/root     47196 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/3.manual/v1.3/manual.yml
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/content/3.manual/v1.4/
+-rw-r--r-- root/root     60143 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/3.manual/v1.4/manual.yml
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/content/3.manual/v1.5/
+-rw-r--r-- root/root    108020 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/3.manual/v1.5/manual.yml
+drwxr-xr-x root/root         0 2018-11-02 10:42 usr/doc/jq-1.6/docs/content/3.manual/v1.6/
+-rw-r--r-- root/root    124340 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/3.manual/v1.6/manual.yml
+drwxr-xr-x root/root         0 2018-11-02 10:42 usr/doc/jq-1.6/docs/content/index/
+-rw-r--r-- root/root      2121 2018-11-01 21:49 usr/doc/jq-1.6/docs/content/index/index.yml
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/public/
+-rw-r--r-- root/root       735 2018-11-01 21:49 usr/doc/jq-1.6/docs/public/.htaccess
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/public/css/
+-rw-r--r-- root/root      3227 2018-11-01 21:49 usr/doc/jq-1.6/docs/public/css/base.scss
+-rw-r--r-- root/root      8195 2018-11-01 21:49 usr/doc/jq-1.6/docs/public/jq.png
+drwxr-xr-x root/root         0 2022-12-29 04:11 usr/doc/jq-1.6/docs/public/js/
+-rw-r--r-- root/root      1571 2018-11-01 21:49 usr/doc/jq-1.6/docs/public/js/manual-search.js
+-rw-r--r-- root/root        22 2018-11-01 21:49 usr/doc/jq-1.6/docs/public/robots.txt
+-rw-r--r-- root/root       289 2018-11-01 21:49 usr/doc/jq-1.6/docs/site.yml
+drwxr-xr-x root/root         0 2018-11-02 10:42 usr/doc/jq-1.6/docs/templates/
+-rw-r--r-- root/root       967 2018-11-01 21:49 usr/doc/jq-1.6/docs/templates/default.liquid
+-rw-r--r-- root/root      2478 2018-11-01 21:49 usr/doc/jq-1.6/docs/templates/index.liquid
+-rw-r--r-- root/root      3870 2018-11-01 21:49 usr/doc/jq-1.6/docs/templates/manual.liquid
+drwxr-xr-x root/root         0 2018-11-02 10:42 usr/doc/jq-1.6/docs/templates/shared/
+-rw-r--r-- root/root       901 2018-11-01 21:49 usr/doc/jq-1.6/docs/templates/shared/_footer.liquid
+-rw-r--r-- root/root      1032 2018-11-01 21:49 usr/doc/jq-1.6/docs/templates/shared/_head.liquid
+-rw-r--r-- root/root      1254 2018-11-01 21:49 usr/doc/jq-1.6/docs/templates/shared/_navbar.liquid
+-rw-r--r-- root/root      3530 2022-12-29 04:12 usr/doc/jq-1.6/jq.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/include/
+-rw-r--r-- root/root      2371 2022-12-29 04:12 usr/include/jq.h
+-rw-r--r-- root/root     10047 2022-12-29 04:12 usr/include/jv.h
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/lib64/
+-rw-r--r-- root/root    576602 2022-12-29 04:12 usr/lib64/libjq.a
+-rwxr-xr-x root/root    319648 2022-12-29 04:12 usr/lib64/libjq.so.1.0.4
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/man/
+drwxr-xr-x root/root         0 2022-12-29 04:12 usr/man/man1/
+-rw-r--r-- root/root     31196 2022-12-29 04:12 usr/man/man1/jq.1.gz
+
+

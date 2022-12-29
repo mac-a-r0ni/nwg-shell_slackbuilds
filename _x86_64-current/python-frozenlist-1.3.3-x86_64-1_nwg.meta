@@ -1,0 +1,18 @@
+PACKAGE NAME:  python-frozenlist-1.3.3-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  36 K
+PACKAGE SIZE (uncompressed):  140 K
+PACKAGE DESCRIPTION:
+python-frozenlist: python-frozenlist (list-like structure)
+python-frozenlist:
+python-frozenlist: FrozenList is a list-like structure which implements
+python-frozenlist: collections.abc.MutableSequence, and which can be made immutable.
+python-frozenlist:
+python-frozenlist: Homepage: https://github.com/aio-libs/frozenlist
+python-frozenlist:
+python-frozenlist:
+python-frozenlist:
+python-frozenlist:
+python-frozenlist:
+

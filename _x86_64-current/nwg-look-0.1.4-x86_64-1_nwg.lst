@@ -1,0 +1,25 @@
+++========================================
+||
+||   Package:  ./nwg-look-0.1.4-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 05:04 ./
+drwxr-xr-x root/root         0 2022-12-29 05:04 install/
+-rw-r--r-- root/root       908 2022-12-29 05:04 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/bin/
+-rwxr-xr-x root/root  21390816 2022-12-29 05:04 usr/bin/nwg-look
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/doc/nwg-look-0.1.4/
+-rw-r--r-- root/root      1069 2022-07-16 19:11 usr/doc/nwg-look-0.1.4/LICENSE
+-rw-r--r-- root/root      3574 2022-07-16 19:11 usr/doc/nwg-look-0.1.4/README.md
+-rw-r--r-- root/root      3753 2022-12-29 05:04 usr/doc/nwg-look-0.1.4/nwg-look.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/share/applications/
+-rw-r--r-- root/root       510 2022-12-29 05:04 usr/share/applications/nwg-look.desktop
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/share/nwg-look/
+-rw-r--r-- root/root      9322 2022-12-29 05:04 usr/share/nwg-look/main.glade
+drwxr-xr-x root/root         0 2022-12-29 05:04 usr/share/pixmaps/
+-rw-r--r-- root/root     10726 2022-12-29 05:04 usr/share/pixmaps/nwg-look.svg
+
+

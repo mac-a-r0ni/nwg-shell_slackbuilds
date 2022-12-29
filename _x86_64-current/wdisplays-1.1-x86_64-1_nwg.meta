@@ -1,0 +1,18 @@
+PACKAGE NAME:  wdisplays-1.1-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  56 K
+PACKAGE SIZE (uncompressed):  200 K
+PACKAGE DESCRIPTION:
+swayidle: swayidle (sway idle management daemon)
+swayidle:
+swayidle: This is sway's idle management daemon, swayidle. It is compatible
+swayidle: with any Wayland compositor which implements the ext-idle-notify
+swayidle: protocol or the KDE idle protocol. See the man page, swayidle(1), for
+swayidle: instructions on configuring swayidle.
+swayidle:
+swayidle: Home: https://swaywm.org/
+swayidle:
+swayidle:
+swayidle:
+

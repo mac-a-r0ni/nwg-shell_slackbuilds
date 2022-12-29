@@ -1,0 +1,36 @@
+++========================================
+||
+||   Package:  ./gtk-layer-shell-0.8.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 03:32 ./
+drwxr-xr-x root/root         0 2022-12-29 03:32 install/
+-rw-r--r-- root/root       248 2022-12-29 03:32 install/doinst.sh
+-rw-r--r-- root/root       970 2022-12-29 03:32 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/doc/gtk-layer-shell-0.8.0/
+-rw-r--r-- root/root      4437 2022-10-23 09:07 usr/doc/gtk-layer-shell-0.8.0/CHANGELOG.md
+-rw-r--r-- root/root     35149 2022-10-23 09:07 usr/doc/gtk-layer-shell-0.8.0/LICENSE_GPL.txt
+-rw-r--r-- root/root      7652 2022-10-23 09:07 usr/doc/gtk-layer-shell-0.8.0/LICENSE_LGPL.txt
+-rw-r--r-- root/root      1119 2022-10-23 09:07 usr/doc/gtk-layer-shell-0.8.0/LICENSE_MIT.txt
+-rw-r--r-- root/root      5458 2022-10-23 09:07 usr/doc/gtk-layer-shell-0.8.0/README.md
+-rw-r--r-- root/root      3417 2022-12-29 03:32 usr/doc/gtk-layer-shell-0.8.0/gtk-layer-shell.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/include/
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/include/gtk-layer-shell/
+-rw-r--r-- root/root     13148 2022-10-23 09:07 usr/include/gtk-layer-shell/gtk-layer-shell.h
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/lib64/girepository-1.0/
+-rw-r--r-- root/root      4372 2022-12-29 03:32 usr/lib64/girepository-1.0/GtkLayerShell-0.1.typelib
+-rwxr-xr-x root/root    232752 2022-12-29 03:32 usr/lib64/libgtk-layer-shell.so.0.8.0
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/lib64/pkgconfig/
+-rw-r--r-- root/root       345 2022-12-29 03:32 usr/lib64/pkgconfig/gtk-layer-shell-0.pc
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/share/gir-1.0/
+-rw-r--r-- root/root     31768 2022-12-29 03:32 usr/share/gir-1.0/GtkLayerShell-0.1.gir
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/share/vala/
+drwxr-xr-x root/root         0 2022-12-29 03:32 usr/share/vala/vapi/
+-rw-r--r-- root/root         9 2022-12-29 03:32 usr/share/vala/vapi/gtk-layer-shell-0.deps
+-rw-r--r-- root/root      4874 2022-12-29 03:32 usr/share/vala/vapi/gtk-layer-shell-0.vapi
+
+

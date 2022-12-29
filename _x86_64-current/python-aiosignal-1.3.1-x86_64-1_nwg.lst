@@ -1,0 +1,33 @@
+++========================================
+||
+||   Package:  ./python-aiosignal-1.3.1-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 02:16 ./
+drwxr-xr-x root/root         0 2022-12-29 02:16 install/
+-rw-r--r-- root/root       866 2022-12-29 02:16 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/doc/python-aiosignal-1.3.1/
+-rw-r--r-- root/root      1912 2022-11-08 11:03 usr/doc/python-aiosignal-1.3.1/CHANGES.rst
+-rw-r--r-- root/root        77 2022-11-08 11:03 usr/doc/python-aiosignal-1.3.1/CONTRIBUTORS.txt
+-rw-r--r-- root/root     11332 2022-11-08 11:03 usr/doc/python-aiosignal-1.3.1/LICENSE
+-rw-r--r-- root/root      2483 2022-11-08 11:03 usr/doc/python-aiosignal-1.3.1/README.rst
+-rw-r--r-- root/root      3145 2022-12-29 02:16 usr/doc/python-aiosignal-1.3.1/python-aiosignal.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal/
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal-1.3.1-py3.9.egg-info/
+-rw-r--r-- root/root      3972 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal-1.3.1-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root       453 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal-1.3.1-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal-1.3.1-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root        18 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal-1.3.1-py3.9.egg-info/requires.txt
+-rw-r--r-- root/root        10 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal-1.3.1-py3.9.egg-info/top_level.txt
+-rw-r--r-- root/root       867 2022-11-08 11:03 usr/lib64/python3.9/site-packages/aiosignal/__init__.py
+-rw-r--r-- root/root       311 2022-11-08 11:03 usr/lib64/python3.9/site-packages/aiosignal/__init__.pyi
+drwxr-xr-x root/root         0 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal/__pycache__/
+-rw-r--r-- root/root      1301 2022-12-29 02:16 usr/lib64/python3.9/site-packages/aiosignal/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root         0 2022-11-08 11:03 usr/lib64/python3.9/site-packages/aiosignal/py.typed
+
+

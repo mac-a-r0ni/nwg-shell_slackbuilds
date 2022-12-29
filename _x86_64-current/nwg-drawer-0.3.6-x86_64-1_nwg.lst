@@ -1,0 +1,31 @@
+++========================================
+||
+||   Package:  ./nwg-drawer-0.3.6-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 05:02 ./
+drwxr-xr-x root/root         0 2022-12-29 05:02 install/
+-rw-r--r-- root/root       885 2022-12-29 05:02 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 05:02 usr/
+drwxr-xr-x root/root         0 2022-12-29 05:02 usr/bin/
+-rwxr-xr-x root/root  21904608 2022-12-29 05:02 usr/bin/nwg-drawer
+drwxr-xr-x root/root         0 2022-12-29 05:02 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 05:02 usr/doc/nwg-drawer-0.3.6/
+-rw-r--r-- root/root      1069 2022-12-11 17:21 usr/doc/nwg-drawer-0.3.6/LICENSE
+-rw-r--r-- root/root      6389 2022-12-11 17:21 usr/doc/nwg-drawer-0.3.6/README.md
+-rw-r--r-- root/root      3801 2022-12-29 05:02 usr/doc/nwg-drawer-0.3.6/nwg-drawer.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 05:02 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 05:02 usr/share/nwg-drawer/
+drwxr-xr-x root/root         0 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/
+-rw-r--r-- root/root      7144 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/audio-video.directory
+-rw-r--r-- root/root      8745 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/development.directory
+-rw-r--r-- root/root      5996 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/game.directory
+-rw-r--r-- root/root      6633 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/graphics.directory
+-rw-r--r-- root/root      8229 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/internet-and-network.directory
+-rw-r--r-- root/root      6303 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/office.directory
+-rw-r--r-- root/root      9632 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/other.directory
+-rw-r--r-- root/root      9666 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/system-tools.directory
+-rw-r--r-- root/root      7322 2022-12-29 05:02 usr/share/nwg-drawer/desktop-directories/utility.directory
+-rw-r--r-- root/root       552 2022-12-29 05:02 usr/share/nwg-drawer/drawer.css
+
+

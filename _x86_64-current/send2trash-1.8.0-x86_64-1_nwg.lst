@@ -1,0 +1,59 @@
+++========================================
+||
+||   Package:  ./send2trash-1.8.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 03:51 ./
+drwxr-xr-x root/root         0 2022-12-29 03:51 install/
+-rw-r--r-- root/root       738 2022-12-29 03:51 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/bin/
+-rwxr-xr-x root/root       973 2022-12-29 03:51 usr/bin/send2trash
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/doc/send2trash-1.8.0/
+-rw-r--r-- root/root      2893 2021-08-08 22:51 usr/doc/send2trash-1.8.0/CHANGES.rst
+-rw-r--r-- root/root      1494 2021-08-08 22:51 usr/doc/send2trash-1.8.0/LICENSE
+-rw-r--r-- root/root      2283 2021-08-08 22:51 usr/doc/send2trash-1.8.0/README.rst
+-rw-r--r-- root/root      3182 2022-12-29 03:51 usr/doc/send2trash-1.8.0/send2trash.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/lib64/python3.9/site-packages/Send2Trash-1.8.0-py3.9.egg-info/
+-rw-r--r-- root/root      6440 2022-12-29 03:51 usr/lib64/python3.9/site-packages/Send2Trash-1.8.0-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root       623 2022-12-29 03:51 usr/lib64/python3.9/site-packages/Send2Trash-1.8.0-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2022-12-29 03:51 usr/lib64/python3.9/site-packages/Send2Trash-1.8.0-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root        56 2022-12-29 03:51 usr/lib64/python3.9/site-packages/Send2Trash-1.8.0-py3.9.egg-info/entry_points.txt
+-rw-r--r-- root/root       233 2022-12-29 03:51 usr/lib64/python3.9/site-packages/Send2Trash-1.8.0-py3.9.egg-info/requires.txt
+-rw-r--r-- root/root        11 2022-12-29 03:51 usr/lib64/python3.9/site-packages/Send2Trash-1.8.0-py3.9.egg-info/top_level.txt
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/
+-rw-r--r-- root/root      2682 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/IFileOperationProgressSink.py
+-rw-r--r-- root/root       741 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/__init__.py
+-rw-r--r-- root/root       949 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/__main__.py
+drwxr-xr-x root/root         0 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/
+-rw-r--r-- root/root      3760 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/IFileOperationProgressSink.cpython-39.pyc
+-rw-r--r-- root/root       434 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root       893 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/__main__.cpython-39.pyc
+-rw-r--r-- root/root       359 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/compat.cpython-39.pyc
+-rw-r--r-- root/root      1334 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/exceptions.cpython-39.pyc
+-rw-r--r-- root/root       688 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_gio.cpython-39.pyc
+-rw-r--r-- root/root       587 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_osx.cpython-39.pyc
+-rw-r--r-- root/root      1797 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_osx_ctypes.cpython-39.pyc
+-rw-r--r-- root/root       991 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_osx_pyobjc.cpython-39.pyc
+-rw-r--r-- root/root      4574 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_other.cpython-39.pyc
+-rw-r--r-- root/root       430 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_win.cpython-39.pyc
+-rw-r--r-- root/root      3329 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_win_legacy.cpython-39.pyc
+-rw-r--r-- root/root      1943 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/plat_win_modern.cpython-39.pyc
+-rw-r--r-- root/root       491 2022-12-29 03:51 usr/lib64/python3.9/site-packages/send2trash/__pycache__/util.cpython-39.pyc
+-rw-r--r-- root/root       602 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/compat.py
+-rw-r--r-- root/root       996 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/exceptions.py
+-rw-r--r-- root/root       884 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_gio.py
+-rw-r--r-- root/root       801 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_osx.py
+-rw-r--r-- root/root      1850 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_osx_ctypes.py
+-rw-r--r-- root/root      1016 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_osx_pyobjc.py
+-rw-r--r-- root/root      6684 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_other.py
+-rw-r--r-- root/root       761 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_win.py
+-rw-r--r-- root/root      5036 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_win_legacy.py
+-rw-r--r-- root/root      2729 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/plat_win_modern.py
+-rw-r--r-- root/root       530 2021-08-08 22:51 usr/lib64/python3.9/site-packages/send2trash/util.py
+
+

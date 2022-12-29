@@ -1,0 +1,18 @@
+PACKAGE NAME:  python-psutil-5.9.4-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  364 K
+PACKAGE SIZE (uncompressed):  2560 K
+PACKAGE DESCRIPTION:
+python-psutil: python-psutil (python interface for process and system info)
+python-psutil:
+python-psutil: psutil is a module providing an interface for retrieving information
+python-psutil: on all running processes and system utilization (CPU, memory, disks,
+python-psutil: network, users) in a portable way by using Python, implementing many
+python-psutil: functionalities offered by command line tools such as: ps, top, df,
+python-psutil: kill, free, lsof, netstat, ifconfig, nice, ionice, iostat, iotop,
+python-psutil: uptime, pidof, tty, who, taskset, and pmap
+python-psutil:
+python-psutil: Homepage: https://github.com/giampaolo/psutil
+python-psutil:
+

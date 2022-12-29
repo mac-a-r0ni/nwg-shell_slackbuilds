@@ -1,0 +1,18 @@
+PACKAGE NAME:  python-i3ipc-2.2.1-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  40 K
+PACKAGE SIZE (uncompressed):  230 K
+PACKAGE DESCRIPTION:
+python-i3ipc: python-i3ipc (library to control i3/sway window managers)
+python-i3ipc:
+python-i3ipc: python-3ipc is a Python library for controlling the window manager.
+python-i3ipc: This project is intended to be useful for general scripting, and for
+python-i3ipc: applications that interact with the window manager like status line
+python-i3ipc: generators, notification daemons, and window pagers.
+python-i3ipc:
+python-i3ipc: Homepage: https://github.com/altdesktop/i3ipc-python
+python-i3ipc:
+python-i3ipc:
+python-i3ipc:
+

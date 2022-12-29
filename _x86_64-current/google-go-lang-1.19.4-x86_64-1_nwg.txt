@@ -1,0 +1,11 @@
+google-go-lang: google-go-lang (Google's Go Language kit with gc tool chain)
+google-go-lang:
+google-go-lang: The Go programming language is an open source project to make
+google-go-lang: programmers more productive. Go is expressive, concise, clean, and
+google-go-lang: efficient. Its concurrency mechanisms make it easy to write programs
+google-go-lang: that get the most out of multicore and networked machines, while its
+google-go-lang: novel type system enables flexible and modular program construction.
+google-go-lang:
+google-go-lang:
+google-go-lang: See also: https://golang.org/
+google-go-lang:

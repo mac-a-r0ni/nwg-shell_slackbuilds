@@ -1,0 +1,11 @@
+nwg-panel: nwg-panel (gtk wayland based panel)
+nwg-panel:
+nwg-panel: Combining features of Waybar and tint2, nwg-panel has a total of
+nwg-panel: 12 modules for desktop settings configuration for the nwg-shell.
+nwg-panel:
+nwg-panel: Homepage: https://github.com/nwg-piotr/nwg-panel
+nwg-panel:
+nwg-panel:
+nwg-panel:
+nwg-panel:
+nwg-panel:

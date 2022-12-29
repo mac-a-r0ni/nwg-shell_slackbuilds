@@ -1,0 +1,21 @@
+++========================================
+||
+||   Package:  ./tllist-1.1.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 03:54 ./
+drwxr-xr-x root/root         0 2022-12-29 03:54 install/
+-rw-r--r-- root/root       725 2022-12-29 03:54 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 03:54 usr/
+drwxr-xr-x root/root         0 2022-12-29 03:54 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 03:54 usr/doc/tllist-1.1.0/
+-rw-r--r-- root/root      1070 2022-08-07 03:21 usr/doc/tllist-1.1.0/LICENSE
+-rw-r--r-- root/root      9729 2022-08-07 03:21 usr/doc/tllist-1.1.0/README.md
+-rw-r--r-- root/root      3289 2022-12-29 03:54 usr/doc/tllist-1.1.0/tllist.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 03:54 usr/include/
+-rw-r--r-- root/root     13141 2022-08-07 03:21 usr/include/tllist.h
+drwxr-xr-x root/root         0 2022-12-29 03:54 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 03:54 usr/lib64/pkgconfig/
+-rw-r--r-- root/root       166 2022-12-29 03:54 usr/lib64/pkgconfig/tllist.pc
+
+

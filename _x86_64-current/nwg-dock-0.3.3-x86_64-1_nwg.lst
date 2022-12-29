@@ -1,0 +1,48 @@
+++========================================
+||
+||   Package:  ./nwg-dock-0.3.3-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 05:00 ./
+drwxr-xr-x root/root         0 2022-12-29 05:00 install/
+-rw-r--r-- root/root       949 2022-12-29 05:00 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 05:00 usr/
+drwxr-xr-x root/root         0 2022-12-29 05:00 usr/bin/
+-rwxr-xr-x root/root  21846896 2022-12-29 05:00 usr/bin/nwg-dock
+drwxr-xr-x root/root         0 2022-12-29 05:00 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 05:00 usr/doc/nwg-dock-0.3.3/
+-rw-r--r-- root/root      1069 2022-11-22 19:41 usr/doc/nwg-dock-0.3.3/LICENSE
+-rw-r--r-- root/root      4746 2022-11-22 19:41 usr/doc/nwg-dock-0.3.3/README.md
+-rw-r--r-- root/root      3868 2022-12-29 05:00 usr/doc/nwg-dock-0.3.3/nwg-dock.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 05:00 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 05:00 usr/share/nwg-dock/
+-rw-r--r-- root/root        65 2022-12-29 05:00 usr/share/nwg-dock/hotspot.css
+drwxr-xr-x root/root         0 2022-12-29 05:00 usr/share/nwg-dock/images/
+-rw-r--r-- root/root      7718 2022-12-29 05:00 usr/share/nwg-dock/images/1.svg
+-rw-r--r-- root/root      8378 2022-12-29 05:00 usr/share/nwg-dock/images/10.svg
+-rw-r--r-- root/root      7995 2022-12-29 05:00 usr/share/nwg-dock/images/11.svg
+-rw-r--r-- root/root      8440 2022-12-29 05:00 usr/share/nwg-dock/images/12.svg
+-rw-r--r-- root/root      8682 2022-12-29 05:00 usr/share/nwg-dock/images/13.svg
+-rw-r--r-- root/root      8024 2022-12-29 05:00 usr/share/nwg-dock/images/14.svg
+-rw-r--r-- root/root      8425 2022-12-29 05:00 usr/share/nwg-dock/images/15.svg
+-rw-r--r-- root/root      8653 2022-12-29 05:00 usr/share/nwg-dock/images/16.svg
+-rw-r--r-- root/root      7955 2022-12-29 05:00 usr/share/nwg-dock/images/17.svg
+-rw-r--r-- root/root      8905 2022-12-29 05:00 usr/share/nwg-dock/images/18.svg
+-rw-r--r-- root/root      8653 2022-12-29 05:00 usr/share/nwg-dock/images/19.svg
+-rw-r--r-- root/root      8168 2022-12-29 05:00 usr/share/nwg-dock/images/2.svg
+-rw-r--r-- root/root      8827 2022-12-29 05:00 usr/share/nwg-dock/images/20.svg
+-rw-r--r-- root/root      8389 2022-12-29 05:00 usr/share/nwg-dock/images/3.svg
+-rw-r--r-- root/root      7749 2022-12-29 05:00 usr/share/nwg-dock/images/4.svg
+-rw-r--r-- root/root      8151 2022-12-29 05:00 usr/share/nwg-dock/images/5.svg
+-rw-r--r-- root/root      8377 2022-12-29 05:00 usr/share/nwg-dock/images/6.svg
+-rw-r--r-- root/root      7679 2022-12-29 05:00 usr/share/nwg-dock/images/7.svg
+-rw-r--r-- root/root      8633 2022-12-29 05:00 usr/share/nwg-dock/images/8.svg
+-rw-r--r-- root/root      8381 2022-12-29 05:00 usr/share/nwg-dock/images/9.svg
+-rw-r--r-- root/root      4169 2022-12-29 05:00 usr/share/nwg-dock/images/grid.svg
+-rw-r--r-- root/root      6932 2022-12-29 05:00 usr/share/nwg-dock/images/icon-missing.svg
+-rw-r--r-- root/root      1596 2022-12-29 05:00 usr/share/nwg-dock/images/task-empty.svg
+-rw-r--r-- root/root      1992 2022-12-29 05:00 usr/share/nwg-dock/images/task-multiple.svg
+-rw-r--r-- root/root      1790 2022-12-29 05:00 usr/share/nwg-dock/images/task-single.svg
+-rw-r--r-- root/root       649 2022-12-29 05:00 usr/share/nwg-dock/style.css
+
+

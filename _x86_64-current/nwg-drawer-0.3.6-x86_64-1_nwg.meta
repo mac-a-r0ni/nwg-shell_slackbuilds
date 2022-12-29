@@ -1,0 +1,18 @@
+PACKAGE NAME:  nwg-drawer-0.3.6-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  2888 K
+PACKAGE SIZE (uncompressed):  21490 K
+PACKAGE DESCRIPTION:
+nwg-bar: nwg-bar (wlroots golang command bar)
+nwg-bar:
+nwg-bar: The nwg-bar command creates a button bar on the basis of a JSON
+nwg-bar: template placed in the ~/.config/nwg-bar/ folder. By default the
+nwg-bar: command displays a horizontal bar in the center of the screen. Use
+nwg-bar: command line arguments to change the placement.
+nwg-bar:
+nwg-bar: Homepage: https://github.com/nwg-piotr/nwg-bar
+nwg-bar:
+nwg-bar:
+nwg-bar:
+

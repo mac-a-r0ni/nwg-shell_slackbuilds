@@ -1,0 +1,27 @@
+++========================================
+||
+||   Package:  ./xdg-desktop-portal-wlr-0.6.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 01:54 ./
+drwxr-xr-x root/root         0 2022-12-29 01:54 install/
+-rw-r--r-- root/root       129 2022-12-29 01:54 install/doinst.sh
+-rw-r--r-- root/root       920 2022-12-29 01:54 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/doc/xdg-desktop-portal-wlr-0.6.0/
+-rw-r--r-- root/root      1201 2022-06-09 05:25 usr/doc/xdg-desktop-portal-wlr-0.6.0/CONTRIBUTING.md
+-rw-r--r-- root/root      1065 2022-06-09 05:25 usr/doc/xdg-desktop-portal-wlr-0.6.0/LICENSE
+-rw-r--r-- root/root      2061 2022-06-09 05:25 usr/doc/xdg-desktop-portal-wlr-0.6.0/README.md
+-rw-r--r-- root/root      3482 2022-12-29 01:54 usr/doc/xdg-desktop-portal-wlr-0.6.0/xdg-desktop-portal-wlr.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/libexec/
+-rwxr-xr-x root/root     97736 2022-12-29 01:54 usr/libexec/xdg-desktop-portal-wlr
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/share/dbus-1/
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/share/dbus-1/services/
+-rw-r--r-- root/root       103 2022-12-29 01:54 usr/share/dbus-1/services/org.freedesktop.impl.portal.desktop.wlr.service
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/share/xdg-desktop-portal/
+drwxr-xr-x root/root         0 2022-12-29 01:54 usr/share/xdg-desktop-portal/portals/
+-rw-r--r-- root/root       188 2022-06-09 05:25 usr/share/xdg-desktop-portal/portals/wlr.portal
+
+

@@ -1,0 +1,18 @@
+PACKAGE NAME:  nwg-menu-0.1.1-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  2624 K
+PACKAGE SIZE (uncompressed):  20190 K
+PACKAGE DESCRIPTION:
+nwg-menu: nwg-menu (MenuStart for sway and other wlroots-based compositors)
+nwg-menu:
+nwg-menu: This code provides the MenuStart plugin to nwg-panel. It also may be
+nwg-menu: used standalone, however, with a little help from command line
+nwg-menu: arguments. This program is being developed with sway in mind. It
+nwg-menu: should work with other wlroots-based Wayland compositors, but for
+nwg-menu: now it's only been tested briefly on Wayfire.
+nwg-menu:
+nwg-menu: Homepage: https://github.com/nwg-piotr/nwg-menu
+nwg-menu:
+nwg-menu:
+

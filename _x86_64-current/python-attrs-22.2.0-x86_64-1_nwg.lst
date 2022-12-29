@@ -1,0 +1,81 @@
+++========================================
+||
+||   Package:  ./python-attrs-22.2.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 02:42 ./
+drwxr-xr-x root/root         0 2022-12-29 02:42 install/
+-rw-r--r-- root/root       889 2022-12-29 02:42 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/doc/python-attrs-22.2.0/
+-rw-r--r-- root/root     56547 2022-12-21 04:10 usr/doc/python-attrs-22.2.0/CHANGELOG.md
+-rw-r--r-- root/root      1109 2022-12-21 04:10 usr/doc/python-attrs-22.2.0/LICENSE
+-rw-r--r-- root/root      6892 2022-12-21 04:10 usr/doc/python-attrs-22.2.0/README.md
+-rw-r--r-- root/root      3124 2022-12-29 02:42 usr/doc/python-attrs-22.2.0/python-attrs.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/
+-rw-r--r-- root/root      1947 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/__init__.py
+-rw-r--r-- root/root     15831 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/__init__.pyi
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/
+-rw-r--r-- root/root      2002 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root      3733 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/_cmp.cpython-39.pyc
+-rw-r--r-- root/root      4094 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/_compat.cpython-39.pyc
+-rw-r--r-- root/root       962 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/_config.cpython-39.pyc
+-rw-r--r-- root/root     10193 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/_funcs.cpython-39.pyc
+-rw-r--r-- root/root     71812 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/_make.cpython-39.pyc
+-rw-r--r-- root/root      5067 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/_next_gen.cpython-39.pyc
+-rw-r--r-- root/root      2280 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/_version_info.cpython-39.pyc
+-rw-r--r-- root/root      3486 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/converters.cpython-39.pyc
+-rw-r--r-- root/root      3114 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/exceptions.cpython-39.pyc
+-rw-r--r-- root/root      1581 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/filters.cpython-39.pyc
+-rw-r--r-- root/root      1486 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/setters.cpython-39.pyc
+-rw-r--r-- root/root     20142 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attr/__pycache__/validators.cpython-39.pyc
+-rw-r--r-- root/root      4094 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_cmp.py
+-rw-r--r-- root/root       399 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_cmp.pyi
+-rw-r--r-- root/root      5435 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_compat.py
+-rw-r--r-- root/root       826 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_config.py
+-rw-r--r-- root/root     14545 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_funcs.py
+-rw-r--r-- root/root     96087 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_make.py
+-rw-r--r-- root/root      6059 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_next_gen.py
+-rw-r--r-- root/root       469 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_typing_compat.pyi
+-rw-r--r-- root/root      2121 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_version_info.py
+-rw-r--r-- root/root       209 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/_version_info.pyi
+-rw-r--r-- root/root      3602 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/converters.py
+-rw-r--r-- root/root       406 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/converters.pyi
+-rw-r--r-- root/root      1915 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/exceptions.py
+-rw-r--r-- root/root       539 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/exceptions.pyi
+-rw-r--r-- root/root      1038 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/filters.py
+-rw-r--r-- root/root       215 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/filters.pyi
+-rw-r--r-- root/root         0 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/py.typed
+-rw-r--r-- root/root      1400 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/setters.py
+-rw-r--r-- root/root       567 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/setters.pyi
+-rw-r--r-- root/root     20501 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/validators.py
+-rw-r--r-- root/root      2538 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attr/validators.pyi
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs-22.2.0-py3.9.egg-info/
+-rw-r--r-- root/root     11727 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs-22.2.0-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root      2601 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs-22.2.0-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs-22.2.0-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root         1 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs-22.2.0-py3.9.egg-info/not-zip-safe
+-rw-r--r-- root/root       783 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs-22.2.0-py3.9.egg-info/requires.txt
+-rw-r--r-- root/root        11 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs-22.2.0-py3.9.egg-info/top_level.txt
+-rw-r--r-- root/root      1149 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/__init__.py
+-rw-r--r-- root/root      2148 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/__init__.pyi
+drwxr-xr-x root/root         0 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/__pycache__/
+-rw-r--r-- root/root      1069 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root       177 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/__pycache__/converters.cpython-39.pyc
+-rw-r--r-- root/root       177 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/__pycache__/exceptions.cpython-39.pyc
+-rw-r--r-- root/root       171 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/__pycache__/filters.cpython-39.pyc
+-rw-r--r-- root/root       171 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/__pycache__/setters.cpython-39.pyc
+-rw-r--r-- root/root       177 2022-12-29 02:42 usr/lib64/python3.9/site-packages/attrs/__pycache__/validators.cpython-39.pyc
+-rw-r--r-- root/root        70 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/converters.py
+-rw-r--r-- root/root        70 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/exceptions.py
+-rw-r--r-- root/root        67 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/filters.py
+-rw-r--r-- root/root         0 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/py.typed
+-rw-r--r-- root/root        67 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/setters.py
+-rw-r--r-- root/root        70 2022-12-21 04:10 usr/lib64/python3.9/site-packages/attrs/validators.py
+
+

@@ -1,0 +1,70 @@
+++========================================
+||
+||   Package:  ./python-flit_core-3.8.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 03:12 ./
+drwxr-xr-x root/root         0 2022-12-29 03:12 install/
+-rw-r--r-- root/root       953 2022-12-29 03:12 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/doc/python-flit_core-3.8.0/
+-rw-r--r-- root/root      1525 2022-11-05 08:52 usr/doc/python-flit_core-3.8.0/LICENSE
+-rw-r--r-- root/root      3359 2022-12-29 03:12 usr/doc/python-flit_core-3.8.0/python-flit_core.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core-3.8.0.dist-info/
+-rw-r--r-- root/root      1525 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core-3.8.0.dist-info/LICENSE
+-rw-r--r-- root/root       401 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core-3.8.0.dist-info/METADATA
+-rw-r--r-- root/root     10718 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core-3.8.0.dist-info/RECORD
+-rw-r--r-- root/root        81 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core-3.8.0.dist-info/WHEEL
+-rw-r--r-- root/root       224 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/
+-rw-r--r-- root/root       379 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/__init__.cpython-39.opt-1.pyc
+-rw-r--r-- root/root       379 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root      2742 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/buildapi.cpython-39.opt-1.pyc
+-rw-r--r-- root/root      2742 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/buildapi.cpython-39.pyc
+-rw-r--r-- root/root     12645 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/common.cpython-39.opt-1.pyc
+-rw-r--r-- root/root     12810 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/common.cpython-39.pyc
+-rw-r--r-- root/root     16420 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/config.cpython-39.opt-1.pyc
+-rw-r--r-- root/root     16420 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/config.cpython-39.pyc
+-rw-r--r-- root/root      7223 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/sdist.cpython-39.opt-1.pyc
+-rw-r--r-- root/root      7223 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/sdist.cpython-39.pyc
+-rw-r--r-- root/root      3258 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/versionno.cpython-39.opt-1.pyc
+-rw-r--r-- root/root      3258 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/versionno.cpython-39.pyc
+-rw-r--r-- root/root      8159 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/wheel.cpython-39.opt-1.pyc
+-rw-r--r-- root/root      8159 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/__pycache__/wheel.cpython-39.pyc
+-rw-r--r-- root/root      3282 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/buildapi.py
+-rw-r--r-- root/root     14520 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/common.py
+-rw-r--r-- root/root     23247 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/config.py
+-rw-r--r-- root/root      7045 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/sdist.py
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/
+-rw-r--r-- root/root       791 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/README
+-rw-r--r-- root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/__pycache__/
+-rw-r--r-- root/root       154 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/__pycache__/__init__.cpython-39.opt-1.pyc
+-rw-r--r-- root/root       154 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/__pycache__/__init__.cpython-39.pyc
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli-1.2.3.dist-info/
+-rw-r--r-- root/root      1072 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli-1.2.3.dist-info/LICENSE
+-rw-r--r-- root/root      9089 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli-1.2.3.dist-info/METADATA
+-rw-r--r-- root/root       294 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/
+-rw-r--r-- root/root       359 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/__init__.cpython-39.opt-1.pyc
+-rw-r--r-- root/root       359 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root     15637 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/_parser.cpython-39.opt-1.pyc
+-rw-r--r-- root/root     15637 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/_parser.cpython-39.pyc
+-rw-r--r-- root/root      2770 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/_re.cpython-39.opt-1.pyc
+-rw-r--r-- root/root      2770 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/_re.cpython-39.pyc
+-rw-r--r-- root/root       296 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/_types.cpython-39.opt-1.pyc
+-rw-r--r-- root/root       296 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/__pycache__/_types.cpython-39.pyc
+-rw-r--r-- root/root     21649 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/_parser.py
+-rw-r--r-- root/root      2813 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/_re.py
+-rw-r--r-- root/root       126 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/_types.py
+-rw-r--r-- root/root        26 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/vendor/tomli/py.typed
+-rw-r--r-- root/root      4781 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/versionno.py
+-rw-r--r-- root/root      9269 2022-12-29 03:12 usr/lib64/python3.9/site-packages/flit_core/wheel.py
+
+

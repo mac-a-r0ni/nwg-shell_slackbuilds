@@ -1,0 +1,59 @@
+++========================================
+||
+||   Package:  ./python-i3ipc-2.2.1-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 02:27 ./
+drwxr-xr-x root/root         0 2022-12-29 02:27 install/
+-rw-r--r-- root/root      1016 2022-12-29 02:27 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/doc/python-i3ipc-2.2.1/
+-rw-r--r-- root/root      6394 2020-04-05 13:18 usr/doc/python-i3ipc-2.2.1/CHANGELOG.md
+-rw-r--r-- root/root      1482 2019-05-13 20:59 usr/doc/python-i3ipc-2.2.1/LICENSE
+-rw-r--r-- root/root      5662 2020-04-05 13:24 usr/doc/python-i3ipc-2.2.1/PKG-INFO
+-rw-r--r-- root/root      4013 2019-08-26 09:44 usr/doc/python-i3ipc-2.2.1/README.rst
+-rw-r--r-- root/root      2405 2022-12-29 02:27 usr/doc/python-i3ipc-2.2.1/python-i3ipc.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc-2.2.1-py3.9.egg-info/
+-rw-r--r-- root/root      4669 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc-2.2.1-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root      2219 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc-2.2.1-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc-2.2.1-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root        12 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc-2.2.1-py3.9.egg-info/requires.txt
+-rw-r--r-- root/root         6 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc-2.2.1-py3.9.egg-info/top_level.txt
+-rw-r--r-- root/root       600 2019-08-29 09:16 usr/lib64/python3.9/site-packages/i3ipc/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/
+-rw-r--r-- root/root       948 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root       485 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/__version__.cpython-39.pyc
+-rw-r--r-- root/root     14957 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/con.cpython-39.pyc
+-rw-r--r-- root/root     15507 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/connection.cpython-39.pyc
+-rw-r--r-- root/root     10825 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/events.cpython-39.pyc
+-rw-r--r-- root/root      2907 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/model.cpython-39.pyc
+-rw-r--r-- root/root     12515 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/__pycache__/replies.cpython-39.pyc
+-rw-r--r-- root/root       312 2020-04-05 13:18 usr/lib64/python3.9/site-packages/i3ipc/__version__.py
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/_private/
+-rw-r--r-- root/root       111 2020-03-07 15:33 usr/lib64/python3.9/site-packages/i3ipc/_private/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/_private/__pycache__/
+-rw-r--r-- root/root       311 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/_private/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root      1363 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-39.pyc
+-rw-r--r-- root/root      1269 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/_private/__pycache__/sync.cpython-39.pyc
+-rw-r--r-- root/root      2371 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/_private/__pycache__/types.cpython-39.pyc
+-rw-r--r-- root/root       985 2019-09-01 21:27 usr/lib64/python3.9/site-packages/i3ipc/_private/pubsub.py
+-rw-r--r-- root/root      1168 2020-03-07 15:40 usr/lib64/python3.9/site-packages/i3ipc/_private/sync.py
+-rw-r--r-- root/root      2149 2020-03-07 15:54 usr/lib64/python3.9/site-packages/i3ipc/_private/types.py
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/aio/
+-rw-r--r-- root/root        40 2019-08-19 21:40 usr/lib64/python3.9/site-packages/i3ipc/aio/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/aio/__pycache__/
+-rw-r--r-- root/root       206 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/aio/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root     20763 2022-12-29 02:27 usr/lib64/python3.9/site-packages/i3ipc/aio/__pycache__/connection.cpython-39.pyc
+-rw-r--r-- root/root     21940 2020-03-07 15:53 usr/lib64/python3.9/site-packages/i3ipc/aio/connection.py
+-rw-r--r-- root/root     13978 2020-03-22 10:26 usr/lib64/python3.9/site-packages/i3ipc/con.py
+-rw-r--r-- root/root     17491 2020-04-02 18:01 usr/lib64/python3.9/site-packages/i3ipc/connection.py
+-rw-r--r-- root/root      9417 2020-03-07 15:32 usr/lib64/python3.9/site-packages/i3ipc/events.py
+-rw-r--r-- root/root      2125 2020-03-21 22:59 usr/lib64/python3.9/site-packages/i3ipc/model.py
+-rw-r--r-- root/root     11490 2020-03-21 20:46 usr/lib64/python3.9/site-packages/i3ipc/replies.py
+
+

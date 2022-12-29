@@ -1,0 +1,25 @@
+++========================================
+||
+||   Package:  ./grim-1.4.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:08 ./
+drwxr-xr-x root/root         0 2022-12-29 04:08 install/
+-rw-r--r-- root/root       704 2022-12-29 04:08 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/bin/
+-rwxr-xr-x root/root     39968 2022-12-29 04:08 usr/bin/grim
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/doc/grim-1.4.0/
+-rw-r--r-- root/root      1065 2022-02-08 18:20 usr/doc/grim-1.4.0/LICENSE
+-rw-r--r-- root/root      1633 2022-02-08 18:20 usr/doc/grim-1.4.0/README.md
+-rw-r--r-- root/root      3677 2022-12-29 04:08 usr/doc/grim-1.4.0/grim.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/man/
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/man/man1/
+-rw-r--r-- root/root      1188 2022-12-29 04:08 usr/man/man1/grim.1.gz
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/share/bash-completion/
+drwxr-xr-x root/root         0 2022-12-29 04:08 usr/share/bash-completion/completions/
+-rw-r--r-- root/root       610 2022-02-08 18:20 usr/share/bash-completion/completions/grim.bash
+
+

@@ -1,0 +1,11 @@
+python-attrs: python-attrs (Classes Without Boilerplate)
+python-attrs:
+python-attrs: attrs is the Python package that will bring back the joy of writing
+python-attrs: classes by relieving you from the drudgery of implementing object
+python-attrs: protocols (aka dunder methods).
+python-attrs:
+python-attrs: Homepage: https://www.attrs.org/
+python-attrs:
+python-attrs:
+python-attrs:
+python-attrs:

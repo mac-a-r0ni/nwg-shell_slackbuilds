@@ -1,0 +1,18 @@
+PACKAGE NAME:  brightnessctl-0.5.1-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  12 K
+PACKAGE SIZE (uncompressed):  50 K
+PACKAGE DESCRIPTION:
+brightnessctl: brightnessctl (cli device brightness control)
+brightnessctl:
+brightnessctl: This program allows you read and control device brightness. Devices,
+brightnessctl: by default, include backlight and LEDs (searched for in corresponding
+brightnessctl: classes). If omitted, the first found device is selected.
+brightnessctl:
+brightnessctl: Homepage: https://github.com/Hummer12007/brightnessctl
+brightnessctl:
+brightnessctl:
+brightnessctl:
+brightnessctl:
+

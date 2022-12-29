@@ -1,0 +1,11 @@
+nwg-shell: nwg-shell (base shell and utils for sway-based shell)
+nwg-shell:
+nwg-shell: Base package of utils and configurations for nwg-shell.
+nwg-shell:
+nwg-shell: Homepage: https://github.com/nwg-piotr/nwg-shell
+nwg-shell:
+nwg-shell:
+nwg-shell:
+nwg-shell:
+nwg-shell:
+nwg-shell:

@@ -1,0 +1,37 @@
+++========================================
+||
+||   Package:  ./wl-clipboard-2.1.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:20 ./
+drwxr-xr-x root/root         0 2022-12-29 04:20 install/
+-rw-r--r-- root/root       926 2022-12-29 04:20 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/bin/
+-rwxr-xr-x root/root     44408 2022-12-29 04:20 usr/bin/wl-copy
+-rwxr-xr-x root/root     44376 2022-12-29 04:20 usr/bin/wl-paste
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/doc/wl-clipboard-2.1.0/
+-rw-r--r-- root/root     35148 2022-03-19 08:12 usr/doc/wl-clipboard-2.1.0/COPYING
+-rw-r--r-- root/root      5775 2022-03-19 08:12 usr/doc/wl-clipboard-2.1.0/README.md
+-rw-r--r-- root/root      3396 2022-12-29 04:20 usr/doc/wl-clipboard-2.1.0/wl-clipboard.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/man/
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/man/man1/
+-rw-r--r-- root/root      2434 2022-03-19 08:12 usr/man/man1/wl-clipboard.1.gz
+-rw-r--r-- root/root        53 2022-03-19 08:12 usr/man/man1/wl-copy.1.gz
+-rw-r--r-- root/root        54 2022-03-19 08:12 usr/man/man1/wl-paste.1.gz
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/share/bash-completion/
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/share/bash-completion/completions/
+-rw-r--r-- root/root      1672 2022-03-19 08:12 usr/share/bash-completion/completions/wl-copy
+-rw-r--r-- root/root      2551 2022-03-19 08:12 usr/share/bash-completion/completions/wl-paste
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/share/fish/
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/share/fish/vendor_completions.d/
+-rw-r--r-- root/root      1017 2022-03-19 08:12 usr/share/fish/vendor_completions.d/wl-copy.fish
+-rw-r--r-- root/root      2275 2022-03-19 08:12 usr/share/fish/vendor_completions.d/wl-paste.fish
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/share/zsh/
+drwxr-xr-x root/root         0 2022-12-29 04:20 usr/share/zsh/site-functions/
+-rw-r--r-- root/root      1427 2022-03-19 08:12 usr/share/zsh/site-functions/_wl-copy
+-rw-r--r-- root/root      1244 2022-03-19 08:12 usr/share/zsh/site-functions/_wl-paste
+
+

@@ -1,0 +1,50 @@
+++========================================
+||
+||   Package:  ./nwg-displays-0.1.4-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:59 ./
+drwxr-xr-x root/root         0 2022-12-29 04:59 install/
+-rw-r--r-- root/root       129 2022-12-29 04:59 install/doinst.sh
+-rw-r--r-- root/root       825 2022-12-29 04:59 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/bin/
+-rwxr-xr-x root/root       975 2022-12-29 04:59 usr/bin/nwg-displays
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/doc/nwg-displays-0.1.4/
+-rw-r--r-- root/root      1069 2022-08-31 20:45 usr/doc/nwg-displays-0.1.4/LICENSE
+-rw-r--r-- root/root      2619 2022-08-31 20:45 usr/doc/nwg-displays-0.1.4/README.md
+-rw-r--r-- root/root      3517 2022-12-29 04:59 usr/doc/nwg-displays-0.1.4/nwg-displays.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/lib64/
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays-0.1.4-py3.9.egg-info/
+-rw-r--r-- root/root       272 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays-0.1.4-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root       370 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays-0.1.4-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays-0.1.4-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root        52 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays-0.1.4-py3.9.egg-info/entry_points.txt
+-rw-r--r-- root/root        13 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays-0.1.4-py3.9.egg-info/top_level.txt
+-rw-r--r-- root/root       205 2022-08-31 20:45 usr/lib64/python3.9/site-packages/nwg_displays/__about__.py
+-rw-r--r-- root/root         0 2022-08-31 20:45 usr/lib64/python3.9/site-packages/nwg_displays/__init__.py
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/
+-rw-r--r-- root/root       366 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/__about__.cpython-39.opt-1.pyc
+-rw-r--r-- root/root       366 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/__about__.cpython-39.pyc
+-rw-r--r-- root/root       150 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/__init__.cpython-39.opt-1.pyc
+-rw-r--r-- root/root       150 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root     18059 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/main.cpython-39.opt-1.pyc
+-rw-r--r-- root/root     18059 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/main.cpython-39.pyc
+-rw-r--r-- root/root      7276 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/tools.cpython-39.opt-1.pyc
+-rw-r--r-- root/root      7276 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/__pycache__/tools.cpython-39.pyc
+-rw-r--r-- root/root     27509 2022-08-31 20:45 usr/lib64/python3.9/site-packages/nwg_displays/main.py
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/lib64/python3.9/site-packages/nwg_displays/resources/
+-rw-r--r-- root/root     28177 2022-08-31 20:45 usr/lib64/python3.9/site-packages/nwg_displays/resources/main.glade
+-rw-r--r-- root/root       919 2022-08-31 20:45 usr/lib64/python3.9/site-packages/nwg_displays/resources/style.css
+-rw-r--r-- root/root      8310 2022-08-31 20:45 usr/lib64/python3.9/site-packages/nwg_displays/tools.py
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/share/applications/
+-rw-r--r-- root/root       368 2022-12-29 04:59 usr/share/applications/nwg-displays.desktop
+drwxr-xr-x root/root         0 2022-12-29 04:59 usr/share/pixmaps/
+-rw-r--r-- root/root      3317 2022-12-29 04:59 usr/share/pixmaps/nwg-displays.svg
+
+

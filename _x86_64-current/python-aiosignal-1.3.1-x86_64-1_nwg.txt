@@ -1,0 +1,11 @@
+python-aiosignal: python-aiosignal (manage callbacks in asyncio projects)
+python-aiosignal:
+python-aiosignal: aiosignal is a project for managing callbacks in asyncio projects.
+python-aiosignal:
+python-aiosignal: Homepage: https://github.com/aio-libs/aiosignal
+python-aiosignal:
+python-aiosignal:
+python-aiosignal:
+python-aiosignal:
+python-aiosignal:
+python-aiosignal:

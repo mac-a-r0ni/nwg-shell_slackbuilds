@@ -1,0 +1,21 @@
+++========================================
+||
+||   Package:  ./wlsunset-0.2.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:22 ./
+drwxr-xr-x root/root         0 2022-12-29 04:22 install/
+-rw-r--r-- root/root       781 2022-12-29 04:22 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:22 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:22 usr/bin/
+-rwxr-xr-x root/root     31296 2022-12-29 04:22 usr/bin/wlsunset
+drwxr-xr-x root/root         0 2022-12-29 04:22 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:22 usr/doc/wlsunset-0.2.0/
+-rw-r--r-- root/root      1054 2021-04-25 16:56 usr/doc/wlsunset-0.2.0/LICENSE
+-rw-r--r-- root/root       596 2021-04-25 16:56 usr/doc/wlsunset-0.2.0/README.md
+-rw-r--r-- root/root      3391 2022-12-29 04:22 usr/doc/wlsunset-0.2.0/wlsunset.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:22 usr/man/
+drwxr-xr-x root/root         0 2022-12-29 04:22 usr/man/man1/
+-rw-r--r-- root/root       785 2022-12-29 04:22 usr/man/man1/wlsunset.1.gz
+
+

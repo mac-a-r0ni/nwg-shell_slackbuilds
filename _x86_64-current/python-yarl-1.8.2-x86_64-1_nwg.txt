@@ -1,0 +1,11 @@
+python-yarl: python-yarl (Yet another URL library)
+python-yarl:
+python-yarl: Homepage: https://github.com/aio-libs/yarl/
+python-yarl:
+python-yarl:
+python-yarl:
+python-yarl:
+python-yarl:
+python-yarl:
+python-yarl:
+python-yarl:

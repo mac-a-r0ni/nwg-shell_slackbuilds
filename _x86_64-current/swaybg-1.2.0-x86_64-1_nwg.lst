@@ -1,0 +1,21 @@
+++========================================
+||
+||   Package:  ./swaybg-1.2.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 02:06 ./
+drwxr-xr-x root/root         0 2022-12-29 02:06 install/
+-rw-r--r-- root/root       709 2022-12-29 02:06 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 02:06 usr/
+drwxr-xr-x root/root         0 2022-12-29 02:06 usr/bin/
+-rwxr-xr-x root/root     36216 2022-12-29 02:06 usr/bin/swaybg
+drwxr-xr-x root/root         0 2022-12-29 02:06 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 02:06 usr/doc/swaybg-1.2.0/
+-rw-r--r-- root/root      1061 2022-12-04 11:40 usr/doc/swaybg-1.2.0/LICENSE
+-rw-r--r-- root/root      1162 2022-12-04 11:40 usr/doc/swaybg-1.2.0/README.md
+-rw-r--r-- root/root      3489 2022-12-29 02:06 usr/doc/swaybg-1.2.0/swaybg.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 02:06 usr/man/
+drwxr-xr-x root/root         0 2022-12-29 02:06 usr/man/man1/
+-rw-r--r-- root/root       780 2022-12-29 02:06 usr/man/man1/swaybg.1.gz
+
+

@@ -1,0 +1,11 @@
+scdoc: scdoc (small man page generator)
+scdoc:
+scdoc: Simple man page generator for POSIX systems written in C99.
+scdoc:
+scdoc:
+scdoc:
+scdoc:
+scdoc:
+scdoc:
+scdoc:
+scdoc:

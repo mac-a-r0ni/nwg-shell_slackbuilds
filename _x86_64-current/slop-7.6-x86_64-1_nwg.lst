@@ -1,0 +1,27 @@
+++========================================
+||
+||   Package:  ./slop-7.6-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 03:48 ./
+drwxr-xr-x root/root         0 2022-12-29 03:48 install/
+-rw-r--r-- root/root        92 2022-12-29 03:48 install/doinst.sh
+-rw-r--r-- root/root       726 2022-12-29 03:48 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/bin/
+-rwxr-xr-x root/root    991576 2022-12-29 03:48 usr/bin/slop
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/doc/slop-7.6/
+-rw-r--r-- root/root     35147 2021-09-12 01:57 usr/doc/slop-7.6/COPYING
+-rw-r--r-- root/root      6969 2021-09-12 01:57 usr/doc/slop-7.6/README.md
+-rw-r--r-- root/root       719 2021-09-12 01:57 usr/doc/slop-7.6/license.txt
+-rw-r--r-- root/root      3344 2022-12-29 03:48 usr/doc/slop-7.6/slop.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/include/
+-rw-r--r-- root/root      2433 2021-09-12 01:57 usr/include/slop.hpp
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/lib64/
+-rwxr-xr-x root/root    241040 2022-12-29 03:48 usr/lib64/libslopy.so.7.6
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/man/
+drwxr-xr-x root/root         0 2022-12-29 03:48 usr/man/man1/
+-rw-r--r-- root/root      1682 2021-09-12 01:57 usr/man/man1/slop.1.gz
+
+

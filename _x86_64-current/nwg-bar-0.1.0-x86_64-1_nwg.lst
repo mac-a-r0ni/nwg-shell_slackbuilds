@@ -1,0 +1,27 @@
+++========================================
+||
+||   Package:  ./nwg-bar-0.1.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:58 ./
+drwxr-xr-x root/root         0 2022-12-29 04:58 install/
+-rw-r--r-- root/root       910 2022-12-29 04:58 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:58 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:58 usr/bin/
+-rwxr-xr-x root/root  20478792 2022-12-29 04:58 usr/bin/nwg-bar
+drwxr-xr-x root/root         0 2022-12-29 04:58 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:58 usr/doc/nwg-bar-0.1.0/
+-rw-r--r-- root/root      1069 2022-04-13 06:05 usr/doc/nwg-bar-0.1.0/LICENSE
+-rw-r--r-- root/root      3198 2022-04-13 06:05 usr/doc/nwg-bar-0.1.0/README.md
+-rw-r--r-- root/root      3654 2022-12-29 04:58 usr/doc/nwg-bar-0.1.0/nwg-bar.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:58 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 04:58 usr/share/nwg-bar/
+-rw-r--r-- root/root       504 2022-12-29 04:58 usr/share/nwg-bar/bar.json
+drwxr-xr-x root/root         0 2022-12-29 04:58 usr/share/nwg-bar/images/
+-rw-r--r-- root/root      2388 2022-12-29 04:58 usr/share/nwg-bar/images/system-lock-screen.svg
+-rw-r--r-- root/root      1900 2022-12-29 04:58 usr/share/nwg-bar/images/system-log-out.svg
+-rw-r--r-- root/root      2777 2022-12-29 04:58 usr/share/nwg-bar/images/system-reboot.svg
+-rw-r--r-- root/root      1885 2022-12-29 04:58 usr/share/nwg-bar/images/system-shutdown.svg
+-rw-r--r-- root/root       584 2022-12-29 04:58 usr/share/nwg-bar/style.css
+
+

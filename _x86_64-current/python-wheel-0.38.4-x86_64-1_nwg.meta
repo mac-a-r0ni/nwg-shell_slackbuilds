@@ -1,0 +1,18 @@
+PACKAGE NAME:  python-wheel-0.38.4-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  56 K
+PACKAGE SIZE (uncompressed):  220 K
+PACKAGE DESCRIPTION:
+python-wheel: python-wheel (A built-package format for Python)
+python-wheel:
+python-wheel: A wheel is a ZIP-format archive with a specially formatted filename
+python-wheel: and the .whl extension. It is designed to contain all the files for
+python-wheel: a PEP 376 compatible install in a way that is very close to the
+python-wheel: on-disk format.
+python-wheel:
+python-wheel: Homepage: https://bitbucket.org/pypa/wheel/
+python-wheel:
+python-wheel:
+python-wheel:
+

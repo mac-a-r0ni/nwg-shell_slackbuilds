@@ -1,0 +1,46 @@
+++========================================
+||
+||   Package:  ./gopsuinfo-0.1.2-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:07 ./
+drwxr-xr-x root/root         0 2022-12-29 04:07 install/
+-rw-r--r-- root/root       863 2022-12-29 04:07 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/bin/
+-rwxr-xr-x root/root   1582128 2022-12-29 04:07 usr/bin/gopsuinfo
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/doc/gopsuinfo-0.1.2/
+-rw-r--r-- root/root      2830 2022-08-30 19:07 usr/doc/gopsuinfo-0.1.2/LICENSE
+-rw-r--r-- root/root      2442 2022-08-30 19:07 usr/doc/gopsuinfo-0.1.2/README.md
+-rw-r--r-- root/root      3601 2022-12-29 04:07 usr/doc/gopsuinfo-0.1.2/gopsuinfo.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/share/
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/share/gopsuinfo/
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/
+-rwxr-xr-x root/root      2664 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/cpu.svg
+-rwxr-xr-x root/root      5528 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/fan.svg
+-rwxr-xr-x root/root      4434 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/hdd.svg
+-rwxr-xr-x root/root      2708 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/mem.svg
+-rwxr-xr-x root/root      8668 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/net.svg
+-rwxr-xr-x root/root      4162 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/swap.svg
+-rwxr-xr-x root/root      5357 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/temp.svg
+-rwxr-xr-x root/root      3919 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/up.svg
+-rwxr-xr-x root/root      5123 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/xfer-b.svg
+-rwxr-xr-x root/root      5132 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/xfer-d.svg
+-rwxr-xr-x root/root      5132 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/xfer-u.svg
+-rwxr-xr-x root/root      5139 2022-12-29 04:07 usr/share/gopsuinfo/icons_dark/xfer.svg
+drwxr-xr-x root/root         0 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/
+-rwxr-xr-x root/root      2664 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/cpu.svg
+-rwxr-xr-x root/root      5528 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/fan.svg
+-rwxr-xr-x root/root      4434 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/hdd.svg
+-rwxr-xr-x root/root      2708 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/mem.svg
+-rwxr-xr-x root/root      8668 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/net.svg
+-rwxr-xr-x root/root      4162 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/swap.svg
+-rwxr-xr-x root/root      5357 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/temp.svg
+-rwxr-xr-x root/root      3919 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/up.svg
+-rwxr-xr-x root/root      5123 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/xfer-b.svg
+-rwxr-xr-x root/root      5132 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/xfer-d.svg
+-rwxr-xr-x root/root      5132 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/xfer-u.svg
+-rwxr-xr-x root/root      5138 2022-12-29 04:07 usr/share/gopsuinfo/icons_light/xfer.svg
+
+

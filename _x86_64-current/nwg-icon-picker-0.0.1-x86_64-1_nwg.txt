@@ -1,0 +1,11 @@
+nwg-icon-picker: nwg-icon-picker (file picking dialog for nwg-shell)
+nwg-icon-picker:
+nwg-icon-picker: This program is intended to work as the icon picker for nwg-panel,
+nwg-icon-picker: but it may be used standalone. It displays a window to choose an icon
+nwg-icon-picker: with a textual search entry, and returns the icon name.
+nwg-icon-picker:
+nwg-icon-picker: Homepage: https://github.com/nwg-piotr/nwg-icon-picker
+nwg-icon-picker:
+nwg-icon-picker:
+nwg-icon-picker:
+nwg-icon-picker:

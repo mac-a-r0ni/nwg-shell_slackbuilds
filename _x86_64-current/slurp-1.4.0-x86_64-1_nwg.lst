@@ -1,0 +1,21 @@
+++========================================
+||
+||   Package:  ./slurp-1.4.0-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2022-12-29 04:15 ./
+drwxr-xr-x root/root         0 2022-12-29 04:15 install/
+-rw-r--r-- root/root       739 2022-12-29 04:15 install/slack-desc
+drwxr-xr-x root/root         0 2022-12-29 04:15 usr/
+drwxr-xr-x root/root         0 2022-12-29 04:15 usr/bin/
+-rwxr-xr-x root/root     39992 2022-12-29 04:15 usr/bin/slurp
+drwxr-xr-x root/root         0 2022-12-29 04:15 usr/doc/
+drwxr-xr-x root/root         0 2022-12-29 04:15 usr/doc/slurp-1.4.0/
+-rw-r--r-- root/root      1065 2022-12-05 07:02 usr/doc/slurp-1.4.0/LICENSE
+-rw-r--r-- root/root       955 2022-12-05 07:02 usr/doc/slurp-1.4.0/README.md
+-rw-r--r-- root/root      3396 2022-12-29 04:15 usr/doc/slurp-1.4.0/slurp.SlackBuild
+drwxr-xr-x root/root         0 2022-12-29 04:15 usr/man/
+drwxr-xr-x root/root         0 2022-12-29 04:15 usr/man/man1/
+-rw-r--r-- root/root      1821 2022-12-29 04:15 usr/man/man1/slurp.1.gz
+
+

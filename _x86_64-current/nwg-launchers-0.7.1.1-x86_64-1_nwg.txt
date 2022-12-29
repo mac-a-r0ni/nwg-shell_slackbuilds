@@ -1,0 +1,11 @@
+nwg-launchers: nwg-launchers (GTK3 launchers for sway)
+nwg-launchers:
+nwg-launchers: GTK-based launchers: application grid, button bar, dmenu for sway
+nwg-launchers: and other window managers.
+nwg-launchers:
+nwg-launchers: Homepage: https://github.com/nwg-piotr/nwg-launchers
+nwg-launchers:
+nwg-launchers:
+nwg-launchers:
+nwg-launchers:
+nwg-launchers:

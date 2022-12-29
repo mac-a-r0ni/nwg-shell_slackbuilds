@@ -1,0 +1,11 @@
+python-pep517: python-pep517 (API to call PEP 517 hooks)
+python-pep517:
+python-pep517: This package contains wrappers around the hooks specified by PEP 517
+python-pep517: and PEP 660. It provides:
+python-pep517:
+python-pep517: - A mechanism to call the hooks in a subprocess, so they are isolated
+python-pep517:   from the current process.
+python-pep517: - Fallbacks for the optional hooks, so that frontends can call
+python-pep517:   the hooks without checking which are defined.
+python-pep517:
+python-pep517:

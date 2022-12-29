@@ -1,0 +1,18 @@
+PACKAGE NAME:  wl-clipboard-2.1.0-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  36 K
+PACKAGE SIZE (uncompressed):  170 K
+PACKAGE DESCRIPTION:
+wl-clipboard: wl-clipboard (Wayland clipboard utilities)
+wl-clipboard:
+wl-clipboard: wl-clipboard implements two command-line Wayland clipboard
+wl-clipboard: utilities, wl-copy and wl-paste, that let you easily copy data
+wl-clipboard: between the clipboard and Unix pipes, sockets, files and so on.
+wl-clipboard:
+wl-clipboard: Homepage: https://github.com/bugaevc/wl-clipboard
+wl-clipboard:
+wl-clipboard:
+wl-clipboard:
+wl-clipboard:
+

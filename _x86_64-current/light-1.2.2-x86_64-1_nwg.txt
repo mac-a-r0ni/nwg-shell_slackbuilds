@@ -1,0 +1,11 @@
+light: light (GNU/Linux application to control backlights)
+light:
+light: Light is a program to control backlight controllers under GNU/Linux,
+light: it is the successor of lightscript, which was a bash script with the
+light: same purpose, and tries to maintain the same functionality.
+light:
+light:
+light:
+light:
+light:
+light:

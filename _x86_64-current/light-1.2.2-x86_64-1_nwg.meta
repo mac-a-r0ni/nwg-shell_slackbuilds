@@ -1,0 +1,18 @@
+PACKAGE NAME:  light-1.2.2-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  32 K
+PACKAGE SIZE (uncompressed):  110 K
+PACKAGE DESCRIPTION:
+light: light (GNU/Linux application to control backlights)
+light:
+light: Light is a program to control backlight controllers under GNU/Linux,
+light: it is the successor of lightscript, which was a bash script with the
+light: same purpose, and tries to maintain the same functionality.
+light:
+light:
+light:
+light:
+light:
+light:
+
