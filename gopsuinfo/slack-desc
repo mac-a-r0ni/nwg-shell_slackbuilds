@@ -6,14 +6,14 @@
 # customary to leave one space after the ':'.
 
          |-----handy-ruler------------------------------------------------------|
-gospuinfo: gospuinfo (command to display customizable system info)
-gospuinfo:
-gospuinfo: This project is a Go version of the psuinfo python script, written
-gospuinfo: for educational purposes, and also for better performance. The code
-gospuinfo: only implements partial psuinfo features.
-gospuinfo:
-gospuinfo: Homepage: https://github.com/nwg-piotr/gospuinfo
-gospuinfo:
-gospuinfo:
-gospuinfo:
-gospuinfo:
+gopsuinfo: gopsuinfo (command to display customizable system info)
+gopsuinfo:
+gopsuinfo: This project is a Go version of the psuinfo python script, written
+gopsuinfo: for educational purposes, and also for better performance. The code
+gopsuinfo: only implements partial psuinfo features.
+gopsuinfo:
+gopsuinfo: Homepage: https://github.com/nwg-piotr/gopsuinfo
+gopsuinfo:
+gopsuinfo:
+gopsuinfo:
+gopsuinfo:
