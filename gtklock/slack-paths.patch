@@ -1,0 +1,35 @@
+--- a/makefile
++++ b/makefile
+@@ -8,10 +8,10 @@
+ MINOR_VERSION := 0
+ MICRO_VERSION := 0
+ 
+-PREFIX = /usr/local
++PREFIX = /usr
+ INSTALL = install
+ 
+-LIBS := pam wayland-client gtk+-wayland-3.0 gtk-layer-shell-0 gmodule-export-2.0
++LIBS := lpam wayland-client gtk+-wayland-3.0 gtk-layer-shell-0 gmodule-export-2.0
+ CFLAGS += -std=c11 -Iinclude -DPREFIX=$(PREFIX) $(shell pkg-config --cflags $(LIBS))
+ CFLAGS += -DMAJOR_VERSION=$(MAJOR_VERSION) -DMINOR_VERSION=$(MINOR_VERSION) -DMICRO_VERSION=$(MICRO_VERSION)
+ LDLIBS += -Wl,--export-dynamic $(shell pkg-config --libs $(LIBS))
+@@ -39,15 +39,15 @@
+ install-data:
+ 	$(INSTALL) -d $(DESTDIR)/etc/pam.d
+ 	$(INSTALL) -m644 pam/$(NAME) $(DESTDIR)/etc/pam.d/$(NAME)
+-	$(INSTALL) -d $(DESTDIR)$(PREFIX)/share/man/man1
+-	$(INSTALL) -m644 $(NAME).1 $(DESTDIR)$(PREFIX)/share/man/man1/$(NAME).1
++	$(INSTALL) -d $(DESTDIR)$(PREFIX)/man/man1
++	$(INSTALL) -m644 $(NAME).1 $(DESTDIR)$(PREFIX)/man/man1/$(NAME).1
+ 
+ install: install-bin install-data
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(PREFIX)/bin/$(NAME)
+ 	rm -f $(DESTDIR)/etc/pam.d/$(NAME)
+-	rm -r $(DESTDIR)$(PREFIX)/share/man/man1/$(NAME).1
++	rm -r $(DESTDIR)$(PREFIX)/man/man1/$(NAME).1
+ 
+ $(NAME): $(OBJ)
+ 	$(LINK.c) $^ $(LDLIBS) -o $@
+
