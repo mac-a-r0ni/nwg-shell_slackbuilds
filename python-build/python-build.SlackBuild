@@ -28,7 +28,7 @@ SRCNAM=build
 PRGNAM=python-build
 VERSION=${VERSION:-0.9.0}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_gcs}
+TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
 
@@ -45,7 +45,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/gcs}
+TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
