@@ -35,8 +35,8 @@ set $left j
 set $right semicolon
 
 ###############     Autostart      ##################
-# don't work on slackware, the dbus command below should suffice
-# exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# commenting out this systemd specific command, we have a dbus session already, don't need a new one.
+## exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
     dbus-update-activation-environment --session DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec /usr/libexec/polkit-gnome-authentication-agent-1
