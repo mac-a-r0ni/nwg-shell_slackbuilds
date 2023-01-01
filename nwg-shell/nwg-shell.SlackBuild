@@ -94,7 +94,7 @@ cp scripts/screenshot $PKG/usr/bin
 rm $PKG/usr/bin/nwg-shell-check-updates
 # replace nwg-shell shipping sway config with one that works for slackware.
 cd ..
-cat $CWD/config $PKG/usr/lib64/python3.9/site-packages/nwg-shell/skel/config/sway/config
+cp -a $CWD/config $PKG/usr/lib64/python3.9/site-packages/nwg-shell/skel/config/sway/config
 cd $PRGNAM-$VERSION
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
