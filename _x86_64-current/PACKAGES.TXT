@@ -1,4 +1,4 @@
-PACKAGES.TXT;  Thu Dec 29 11:36:39 UTC 2022
+PACKAGES.TXT;  Mon Jan  2 04:35:34 UTC 2023
 
 PACKAGE NAME:  SwayNotificationCenter-0.7.3-x86_64-1_nwg.txz
 PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
@@ -305,7 +305,7 @@ maim:
 maim:
 maim: https://github.com/naelstrof/maim
 
-PACKAGE NAME:  nwg-bar-0.1.0-x86_64-1_nwg.txz
+PACKAGE NAME:  nwg-bar-0.1.0-x86_64-2_nwg.txz
 PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
 PACKAGE LOCATION:  .
 PACKAGE SIZE (compressed):  2580 K
@@ -467,7 +467,7 @@ nwg-panel:
 nwg-panel:
 nwg-panel:
 
-PACKAGE NAME:  nwg-shell-0.3.9-x86_64-1_nwg.txz
+PACKAGE NAME:  nwg-shell-0.3.9-x86_64-2_nwg.txz
 PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
 PACKAGE LOCATION:  .
 PACKAGE SIZE (compressed):  276 K
@@ -809,6 +809,24 @@ python-multidict:
 python-multidict:
 python-multidict:
 
+PACKAGE NAME:  python-netifaces-0.11.0-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  16 K
+PACKAGE SIZE (uncompressed):  70 K
+PACKAGE DESCRIPTION:
+python-netifaces: python-netifaces (portable network interface information)
+python-netifaces:
+python-netifaces: Homepage: https://github.com/al45tair/netifaces
+python-netifaces:
+python-netifaces:
+python-netifaces:
+python-netifaces:
+python-netifaces:
+python-netifaces:
+python-netifaces:
+python-netifaces:
+
 PACKAGE NAME:  python-pep517-0.12.0-x86_64-1_nwg.txz
 PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
 PACKAGE LOCATION:  .
@@ -844,6 +862,24 @@ python-psutil: uptime, pidof, tty, who, taskset, and pmap
 python-psutil:
 python-psutil: Homepage: https://github.com/giampaolo/psutil
 python-psutil:
+
+PACKAGE NAME:  python-requests-2.28.1-x86_64-1_nwg.txz
+PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/
+PACKAGE LOCATION:  .
+PACKAGE SIZE (compressed):  100 K
+PACKAGE SIZE (uncompressed):  440 K
+PACKAGE DESCRIPTION:
+python-requests: python-requests (simple, yet elegant, HTTP library.)
+python-requests:
+python-requests: Requests allows you to send HTTP/1.1 requests extremely easily.
+python-requests: There’s no need to manually add query strings to your URLs, or to
+python-requests: form-encode your PUT & POST data — but nowadays, just use the json
+python-requests: method!
+python-requests:
+python-requests: Homepage: https://requests.readthedocs.io/
+python-requests:
+python-requests:
+python-requests:
 
 PACKAGE NAME:  python-typing_extensions-4.4.0-x86_64-1_nwg.txz
 PACKAGE MIRROR:  https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/

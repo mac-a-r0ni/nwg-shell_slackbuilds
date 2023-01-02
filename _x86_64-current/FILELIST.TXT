@@ -1,4 +1,4 @@
-Thu Dec 29 11:36:39 UTC 2022
+Mon Jan  2 04:35:34 UTC 2023
 
 Here is the file list for https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/ ,
 maintained by Jay Lanagan <1995739+mac-a-r0ni@users.noreply.github.com> .
@@ -6,13 +6,17 @@ If you are using a mirror site and find missing or extra files
 in the subdirectories, please have the archive administrator
 refresh the mirror.
 
-drwxr-xr-x 2 1000 100    32768 2022-12-29 06:37 .
--rw-r--r-- 1 1000 100        4 2022-12-29 06:35 ./ChangeLog.txt
--rw-r--r-- 1 1000 100      346 2022-12-29 06:37 ./FILELIST.TXT
+drwxr-xr-x 2 1000 100    36864 2023-01-01 23:35 .
+-rw-r--r-- 1 1000 100    30144 2023-01-01 07:03 ./CHECKSUMS.md5
+-rw-r--r-- 1 1000 100      833 2023-01-01 07:03 ./CHECKSUMS.md5.asc
+-rw-r--r-- 1 1000 100    10921 2023-01-01 07:03 ./CHECKSUMS.md5.gz
+-rw-r--r-- 1 1000 100      833 2023-01-01 07:03 ./CHECKSUMS.md5.gz.asc
+-rw-r--r-- 1 1000 100      414 2023-01-01 23:35 ./ChangeLog.txt
+-rw-r--r-- 1 1000 100      346 2023-01-01 23:35 ./FILELIST.TXT
 -r--r--r-- 1 1000 100     3444 2022-10-02 08:43 ./GPG-KEY
--rw-r--r-- 1 1000 100   477245 2022-12-29 06:37 ./MANIFEST.bz2
--rw-r--r-- 1 1000 100    43945 2022-12-29 06:37 ./PACKAGES.TXT
--rw-r--r-- 1 1000 100     8971 2022-12-29 06:37 ./PACKAGES.TXT.gz
+-rw-r--r-- 1 1000 100   478040 2023-01-01 23:35 ./MANIFEST.bz2
+-rw-r--r-- 1 1000 100    45248 2023-01-01 23:35 ./PACKAGES.TXT
+-rw-r--r-- 1 1000 100     9242 2023-01-01 23:35 ./PACKAGES.TXT.gz
 -rw-r--r-- 1 1000 100     3413 2022-12-29 06:36 ./SwayNotificationCenter-0.7.3-x86_64-1_nwg.lst
 -rw-r--r-- 1 1000 100      672 2022-12-29 06:36 ./SwayNotificationCenter-0.7.3-x86_64-1_nwg.meta
 -rw-r--r-- 1 1000 100      412 2022-12-29 06:36 ./SwayNotificationCenter-0.7.3-x86_64-1_nwg.txt
@@ -115,12 +119,12 @@ drwxr-xr-x 2 1000 100    32768 2022-12-29 06:37 .
 -rw-r--r-- 1 1000 100   216736 2022-12-29 03:50 ./maim-5.7.4-x86_64-1_nwg.txz
 -rw-r--r-- 1 1000 100      833 2022-12-29 06:36 ./maim-5.7.4-x86_64-1_nwg.txz.asc
 -rw-r--r-- 1 1000 100       62 2022-12-29 06:36 ./maim-5.7.4-x86_64-1_nwg.txz.md5
--rw-r--r-- 1 1000 100     1589 2022-12-29 06:36 ./nwg-bar-0.1.0-x86_64-1_nwg.lst
--rw-r--r-- 1 1000 100      700 2022-12-29 06:36 ./nwg-bar-0.1.0-x86_64-1_nwg.meta
--rw-r--r-- 1 1000 100      452 2022-12-29 06:36 ./nwg-bar-0.1.0-x86_64-1_nwg.txt
--rw-r--r-- 1 1000 100  2639956 2022-12-29 04:58 ./nwg-bar-0.1.0-x86_64-1_nwg.txz
--rw-r--r-- 1 1000 100      833 2022-12-29 06:36 ./nwg-bar-0.1.0-x86_64-1_nwg.txz.asc
--rw-r--r-- 1 1000 100       65 2022-12-29 06:36 ./nwg-bar-0.1.0-x86_64-1_nwg.txz.md5
+-rw-r--r-- 1 1000 100     1589 2023-01-01 23:35 ./nwg-bar-0.1.0-x86_64-2_nwg.lst
+-rw-r--r-- 1 1000 100      700 2023-01-01 23:35 ./nwg-bar-0.1.0-x86_64-2_nwg.meta
+-rw-r--r-- 1 1000 100      452 2023-01-01 23:35 ./nwg-bar-0.1.0-x86_64-2_nwg.txt
+-rw-r--r-- 1 1000 100  2639960 2023-01-01 22:36 ./nwg-bar-0.1.0-x86_64-2_nwg.txz
+-rw-r--r-- 1 1000 100      833 2023-01-01 23:35 ./nwg-bar-0.1.0-x86_64-2_nwg.txz.asc
+-rw-r--r-- 1 1000 100       65 2023-01-01 23:35 ./nwg-bar-0.1.0-x86_64-2_nwg.txz.md5
 -rw-r--r-- 1 1000 100     4344 2022-12-29 06:36 ./nwg-displays-0.1.4-x86_64-1_nwg.lst
 -rw-r--r-- 1 1000 100      611 2022-12-29 06:36 ./nwg-displays-0.1.4-x86_64-1_nwg.meta
 -rw-r--r-- 1 1000 100      362 2022-12-29 06:36 ./nwg-displays-0.1.4-x86_64-1_nwg.txt
@@ -169,12 +173,12 @@ drwxr-xr-x 2 1000 100    32768 2022-12-29 06:37 .
 -rw-r--r-- 1 1000 100   188132 2022-12-29 05:21 ./nwg-panel-0.7.15-x86_64-1_nwg.txz
 -rw-r--r-- 1 1000 100      833 2022-12-29 06:36 ./nwg-panel-0.7.15-x86_64-1_nwg.txz.asc
 -rw-r--r-- 1 1000 100       68 2022-12-29 06:36 ./nwg-panel-0.7.15-x86_64-1_nwg.txz.md5
--rw-r--r-- 1 1000 100    11046 2022-12-29 06:36 ./nwg-shell-0.3.9-x86_64-1_nwg.lst
--rw-r--r-- 1 1000 100      527 2022-12-29 06:36 ./nwg-shell-0.3.9-x86_64-1_nwg.meta
--rw-r--r-- 1 1000 100      280 2022-12-29 06:36 ./nwg-shell-0.3.9-x86_64-1_nwg.txt
--rw-r--r-- 1 1000 100   279256 2022-12-29 05:21 ./nwg-shell-0.3.9-x86_64-1_nwg.txz
--rw-r--r-- 1 1000 100      833 2022-12-29 06:36 ./nwg-shell-0.3.9-x86_64-1_nwg.txz.asc
--rw-r--r-- 1 1000 100       67 2022-12-29 06:36 ./nwg-shell-0.3.9-x86_64-1_nwg.txz.md5
+-rw-r--r-- 1 1000 100    10966 2023-01-01 07:03 ./nwg-shell-0.3.9-x86_64-2_nwg.lst
+-rw-r--r-- 1 1000 100      527 2023-01-01 07:03 ./nwg-shell-0.3.9-x86_64-2_nwg.meta
+-rw-r--r-- 1 1000 100      280 2023-01-01 07:03 ./nwg-shell-0.3.9-x86_64-2_nwg.txt
+-rw-r--r-- 1 1000 100   279312 2023-01-01 06:56 ./nwg-shell-0.3.9-x86_64-2_nwg.txz
+-rw-r--r-- 1 1000 100      833 2023-01-01 07:03 ./nwg-shell-0.3.9-x86_64-2_nwg.txz.asc
+-rw-r--r-- 1 1000 100       67 2023-01-01 07:03 ./nwg-shell-0.3.9-x86_64-2_nwg.txz.md5
 -rw-r--r-- 1 1000 100     9917 2022-12-29 06:36 ./nwg-shell-config-0.4.10-x86_64-1_nwg.lst
 -rw-r--r-- 1 1000 100      746 2022-12-29 06:36 ./nwg-shell-config-0.4.10-x86_64-1_nwg.meta
 -rw-r--r-- 1 1000 100      492 2022-12-29 06:36 ./nwg-shell-config-0.4.10-x86_64-1_nwg.txt
@@ -283,6 +287,12 @@ drwxr-xr-x 2 1000 100    32768 2022-12-29 06:37 .
 -rw-r--r-- 1 1000 100    33568 2022-12-29 02:51 ./python-multidict-6.0.4-x86_64-1_nwg.txz
 -rw-r--r-- 1 1000 100      833 2022-12-29 06:36 ./python-multidict-6.0.4-x86_64-1_nwg.txz.asc
 -rw-r--r-- 1 1000 100       74 2022-12-29 06:36 ./python-multidict-6.0.4-x86_64-1_nwg.txz.md5
+-rw-r--r-- 1 1000 100     1978 2023-01-01 23:35 ./python-netifaces-0.11.0-x86_64-1_nwg.lst
+-rw-r--r-- 1 1000 100      557 2023-01-01 23:35 ./python-netifaces-0.11.0-x86_64-1_nwg.meta
+-rw-r--r-- 1 1000 100      304 2023-01-01 23:35 ./python-netifaces-0.11.0-x86_64-1_nwg.txt
+-rw-r--r-- 1 1000 100    12824 2023-01-01 23:25 ./python-netifaces-0.11.0-x86_64-1_nwg.txz
+-rw-r--r-- 1 1000 100      833 2023-01-01 23:35 ./python-netifaces-0.11.0-x86_64-1_nwg.txz.asc
+-rw-r--r-- 1 1000 100       75 2023-01-01 23:35 ./python-netifaces-0.11.0-x86_64-1_nwg.txz.md5
 -rw-r--r-- 1 1000 100     4738 2022-12-29 06:36 ./python-pep517-0.12.0-x86_64-1_nwg.lst
 -rw-r--r-- 1 1000 100      762 2022-12-29 06:36 ./python-pep517-0.12.0-x86_64-1_nwg.meta
 -rw-r--r-- 1 1000 100      511 2022-12-29 06:36 ./python-pep517-0.12.0-x86_64-1_nwg.txt
@@ -295,6 +305,12 @@ drwxr-xr-x 2 1000 100    32768 2022-12-29 06:37 .
 -rw-r--r-- 1 1000 100   369288 2022-12-29 03:16 ./python-psutil-5.9.4-x86_64-1_nwg.txz
 -rw-r--r-- 1 1000 100      833 2022-12-29 06:36 ./python-psutil-5.9.4-x86_64-1_nwg.txz.asc
 -rw-r--r-- 1 1000 100       71 2022-12-29 06:36 ./python-psutil-5.9.4-x86_64-1_nwg.txz.md5
+-rw-r--r-- 1 1000 100     6465 2023-01-01 23:35 ./python-requests-2.28.1-x86_64-1_nwg.lst
+-rw-r--r-- 1 1000 100      746 2023-01-01 23:35 ./python-requests-2.28.1-x86_64-1_nwg.meta
+-rw-r--r-- 1 1000 100      492 2023-01-01 23:35 ./python-requests-2.28.1-x86_64-1_nwg.txt
+-rw-r--r-- 1 1000 100    99956 2023-01-01 23:12 ./python-requests-2.28.1-x86_64-1_nwg.txz
+-rw-r--r-- 1 1000 100      833 2023-01-01 23:35 ./python-requests-2.28.1-x86_64-1_nwg.txz.asc
+-rw-r--r-- 1 1000 100       74 2023-01-01 23:35 ./python-requests-2.28.1-x86_64-1_nwg.txz.md5
 -rw-r--r-- 1 1000 100     2127 2022-12-29 06:36 ./python-typing_extensions-4.4.0-x86_64-1_nwg.lst
 -rw-r--r-- 1 1000 100      996 2022-12-29 06:36 ./python-typing_extensions-4.4.0-x86_64-1_nwg.meta
 -rw-r--r-- 1 1000 100      735 2022-12-29 06:36 ./python-typing_extensions-4.4.0-x86_64-1_nwg.txt

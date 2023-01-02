@@ -1,0 +1,67 @@
+++========================================
+||
+||   Package:  ./python-requests-2.28.1-x86_64-1_nwg.txz
+||
+++========================================
+drwxr-xr-x root/root         0 2023-01-01 23:12 ./
+drwxr-xr-x root/root         0 2023-01-01 23:12 install/
+-rw-r--r-- root/root       955 2023-01-01 23:12 install/slack-desc
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/doc/
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/doc/python-requests-2.28.1/
+-rw-r--r-- root/root     55192 2022-06-29 11:09 usr/doc/python-requests-2.28.1/HISTORY.md
+-rw-r--r-- root/root     10142 2022-06-29 11:09 usr/doc/python-requests-2.28.1/LICENSE
+-rw-r--r-- root/root        38 2022-06-29 11:09 usr/doc/python-requests-2.28.1/NOTICE
+-rw-r--r-- root/root      4362 2022-06-29 11:13 usr/doc/python-requests-2.28.1/PKG-INFO
+-rw-r--r-- root/root      2922 2022-06-29 11:09 usr/doc/python-requests-2.28.1/README.md
+-rw-r--r-- root/root      2758 2023-01-01 23:12 usr/doc/python-requests-2.28.1/python-requests.SlackBuild
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/lib64/
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/lib64/python3.9/
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/lib64/python3.9/site-packages/
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests-2.28.1-py3.9.egg-info/
+-rw-r--r-- root/root      4342 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests-2.28.1-py3.9.egg-info/PKG-INFO
+-rw-r--r-- root/root       962 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests-2.28.1-py3.9.egg-info/SOURCES.txt
+-rw-r--r-- root/root         1 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests-2.28.1-py3.9.egg-info/dependency_links.txt
+-rw-r--r-- root/root         1 2022-06-29 11:13 usr/lib64/python3.9/site-packages/requests-2.28.1-py3.9.egg-info/not-zip-safe
+-rw-r--r-- root/root       163 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests-2.28.1-py3.9.egg-info/requires.txt
+-rw-r--r-- root/root         9 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests-2.28.1-py3.9.egg-info/top_level.txt
+-rw-r--r-- root/root      4972 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/__init__.py
+drwxr-xr-x root/root         0 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/
+-rw-r--r-- root/root      3831 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/__init__.cpython-39.pyc
+-rw-r--r-- root/root       509 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/__version__.cpython-39.pyc
+-rw-r--r-- root/root      1518 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/_internal_utils.cpython-39.pyc
+-rw-r--r-- root/root     16840 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/adapters.cpython-39.pyc
+-rw-r--r-- root/root      6673 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/api.cpython-39.pyc
+-rw-r--r-- root/root      8310 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/auth.cpython-39.pyc
+-rw-r--r-- root/root       575 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/certs.cpython-39.pyc
+-rw-r--r-- root/root      1474 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/compat.cpython-39.pyc
+-rw-r--r-- root/root     18772 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/cookies.cpython-39.pyc
+-rw-r--r-- root/root      6073 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/exceptions.cpython-39.pyc
+-rw-r--r-- root/root      2787 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/help.cpython-39.pyc
+-rw-r--r-- root/root       944 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/hooks.cpython-39.pyc
+-rw-r--r-- root/root     24191 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/models.cpython-39.pyc
+-rw-r--r-- root/root       665 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/packages.cpython-39.pyc
+-rw-r--r-- root/root     19585 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/sessions.cpython-39.pyc
+-rw-r--r-- root/root      4189 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/status_codes.cpython-39.pyc
+-rw-r--r-- root/root      4401 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/structures.cpython-39.pyc
+-rw-r--r-- root/root     24173 2023-01-01 23:12 usr/lib64/python3.9/site-packages/requests/__pycache__/utils.cpython-39.pyc
+-rw-r--r-- root/root       440 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/__version__.py
+-rw-r--r-- root/root      1397 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/_internal_utils.py
+-rw-r--r-- root/root     21287 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/adapters.py
+-rw-r--r-- root/root      6377 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/api.py
+-rw-r--r-- root/root     10187 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/auth.py
+-rw-r--r-- root/root       429 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/certs.py
+-rw-r--r-- root/root      1451 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/compat.py
+-rw-r--r-- root/root     18560 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/cookies.py
+-rw-r--r-- root/root      3811 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/exceptions.py
+-rw-r--r-- root/root      3875 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/help.py
+-rw-r--r-- root/root       733 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/hooks.py
+-rw-r--r-- root/root     35222 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/models.py
+-rw-r--r-- root/root       957 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/packages.py
+-rw-r--r-- root/root     30180 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/sessions.py
+-rw-r--r-- root/root      4235 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/status_codes.py
+-rw-r--r-- root/root      2912 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/structures.py
+-rw-r--r-- root/root     33228 2022-06-29 11:09 usr/lib64/python3.9/site-packages/requests/utils.py
+
+

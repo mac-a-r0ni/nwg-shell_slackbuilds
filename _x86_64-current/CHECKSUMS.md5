@@ -10,12 +10,12 @@ tail +13 CHECKSUMS.md5 | md5sum --check | less
 /pub/gnu, or at any GNU mirror site.
 
 MD5 message digest                Filename
-71c39ce4806c2a15aa5a7779a00c38d8  ./ChangeLog.txt
-1405bd4be7404edcf09d2d88c53afdeb  ./FILELIST.TXT
+0a0e79dee559d278691c5a8ecab0f025  ./ChangeLog.txt
+ad9b6f99b5bedf90d7a552cdb8105a35  ./FILELIST.TXT
 3183877a4be466f68e03df585c4ab3b2  ./GPG-KEY
-60f457b6027a9dd0054f92be6a64e8b8  ./MANIFEST.bz2
-a4e21e646ed038081c56a506bd3c7758  ./PACKAGES.TXT
-627c4e05ea7c348bb0f2be4a683194af  ./PACKAGES.TXT.gz
+62894137b7ed67e0a9c4bb63c2fdc227  ./MANIFEST.bz2
+449a81f151a50facba6162335811e13f  ./PACKAGES.TXT
+620cb4ab22fad68351d5b0467cb1453b  ./PACKAGES.TXT.gz
 0a7e6acf7339e05d9382bf6b6e6d18b0  ./SwayNotificationCenter-0.7.3-x86_64-1_nwg.lst
 7cd591b7d0994b3459e0589c04213ded  ./SwayNotificationCenter-0.7.3-x86_64-1_nwg.meta
 2fbbfceec68854053d45319fb2b8c073  ./SwayNotificationCenter-0.7.3-x86_64-1_nwg.txt
@@ -118,12 +118,12 @@ c24f3de3a169a3c1be8a0bf7b812e430  ./maim-5.7.4-x86_64-1_nwg.txt
 ed6e8b9870f351beeb798f8fa612a35f  ./maim-5.7.4-x86_64-1_nwg.txz
 28cc2b47f0f69267f50329e693cc7171  ./maim-5.7.4-x86_64-1_nwg.txz.asc
 9568f1a1ee6c196744512adc7a112424  ./maim-5.7.4-x86_64-1_nwg.txz.md5
-884f4b5f369a48e0d4510b5633032e28  ./nwg-bar-0.1.0-x86_64-1_nwg.lst
-85ed6ac87e388d22d1a9ed5589e52d0b  ./nwg-bar-0.1.0-x86_64-1_nwg.meta
-27aa6c319c69a6ba4311180b104349a2  ./nwg-bar-0.1.0-x86_64-1_nwg.txt
-0eb3df255428c796e20f903aecf570e7  ./nwg-bar-0.1.0-x86_64-1_nwg.txz
-69a871787ce22690150ddf02f1e5d0de  ./nwg-bar-0.1.0-x86_64-1_nwg.txz.asc
-09a3bb34eaa345010a1b485949d633d3  ./nwg-bar-0.1.0-x86_64-1_nwg.txz.md5
+ad646d2b70193100fe239e95c97a6a76  ./nwg-bar-0.1.0-x86_64-2_nwg.lst
+a9300de2f8b90a6bfa595e6b69b27cef  ./nwg-bar-0.1.0-x86_64-2_nwg.meta
+27aa6c319c69a6ba4311180b104349a2  ./nwg-bar-0.1.0-x86_64-2_nwg.txt
+6732b985fc79744a4f42310394ab992e  ./nwg-bar-0.1.0-x86_64-2_nwg.txz
+b384aea68ac5db82d013fe6361d44468  ./nwg-bar-0.1.0-x86_64-2_nwg.txz.asc
+91622d93a23f2d5225124b8db0b82ab6  ./nwg-bar-0.1.0-x86_64-2_nwg.txz.md5
 f7a7a8a5a11026e9d2b3619228147c30  ./nwg-displays-0.1.4-x86_64-1_nwg.lst
 ea7e8c28f0d467f8fac10ca14d8e04b7  ./nwg-displays-0.1.4-x86_64-1_nwg.meta
 2312a8e85b6f884b6cf6733dd97eee60  ./nwg-displays-0.1.4-x86_64-1_nwg.txt
@@ -172,12 +172,12 @@ b528c977b4eb008f5d84654d0d152999  ./nwg-panel-0.7.15-x86_64-1_nwg.txt
 e30053bd16fa7d18b9645a03d5d808cb  ./nwg-panel-0.7.15-x86_64-1_nwg.txz
 5fb19eee17c13b862f4e4d8b97daea25  ./nwg-panel-0.7.15-x86_64-1_nwg.txz.asc
 4d809c2d5399ba43dd0ee9327b3c9ab7  ./nwg-panel-0.7.15-x86_64-1_nwg.txz.md5
-9f571cd7ac5939d5e5d52e17e7de9287  ./nwg-shell-0.3.9-x86_64-1_nwg.lst
-b965733b91957d0087fe512d33c3d5d1  ./nwg-shell-0.3.9-x86_64-1_nwg.meta
-767da21d198f09def550495c9d7ff382  ./nwg-shell-0.3.9-x86_64-1_nwg.txt
-7a3981891aed0dfe427f8a551ab8e3d7  ./nwg-shell-0.3.9-x86_64-1_nwg.txz
-e199b1ad42b0235588b0e26167d613b3  ./nwg-shell-0.3.9-x86_64-1_nwg.txz.asc
-b88c0890de1f71e986384f275197205c  ./nwg-shell-0.3.9-x86_64-1_nwg.txz.md5
+08759e238c358a4050e59b705f3beab4  ./nwg-shell-0.3.9-x86_64-2_nwg.lst
+5becbbdd8508147ba8b8beed42e53387  ./nwg-shell-0.3.9-x86_64-2_nwg.meta
+767da21d198f09def550495c9d7ff382  ./nwg-shell-0.3.9-x86_64-2_nwg.txt
+47507b998263f148d2594dbd226e3d90  ./nwg-shell-0.3.9-x86_64-2_nwg.txz
+98ebbe62a96e76c70b3a61d4b2c9a383  ./nwg-shell-0.3.9-x86_64-2_nwg.txz.asc
+a25d2bb8998966b0b0aa38c93962da3b  ./nwg-shell-0.3.9-x86_64-2_nwg.txz.md5
 3251343468d4479ae96ab1647fb29dd7  ./nwg-shell-config-0.4.10-x86_64-1_nwg.lst
 b054a5dc287e4caa12750e871e9de84c  ./nwg-shell-config-0.4.10-x86_64-1_nwg.meta
 27b9cf44837bd65918596cf8fb8a30a5  ./nwg-shell-config-0.4.10-x86_64-1_nwg.txt
@@ -286,6 +286,12 @@ d6ab350081d66695306c3fecba1ac05b  ./python-installer-0.5.1-x86_64-1_nwg.txz.asc
 1db7ce13b67587fb393f5bf528eed507  ./python-multidict-6.0.4-x86_64-1_nwg.txz
 373a2ceb6c03e81edffc02bdeaeffaef  ./python-multidict-6.0.4-x86_64-1_nwg.txz.asc
 e1b42c16dcebfa0ffdf346bde3bb801b  ./python-multidict-6.0.4-x86_64-1_nwg.txz.md5
+a127ab0ea012c64aef0df6ee7751f8ea  ./python-netifaces-0.11.0-x86_64-1_nwg.lst
+298a7895929b279b3cbefa22faf5afd5  ./python-netifaces-0.11.0-x86_64-1_nwg.meta
+477ab9300085832aff9c8e0fbd5280a4  ./python-netifaces-0.11.0-x86_64-1_nwg.txt
+028aa31a5bdcc29411107dd1c4b04235  ./python-netifaces-0.11.0-x86_64-1_nwg.txz
+70f26e97db8d87b0654b8ce33b52e886  ./python-netifaces-0.11.0-x86_64-1_nwg.txz.asc
+6b1d78d8c1daa49c93be42301bb76cba  ./python-netifaces-0.11.0-x86_64-1_nwg.txz.md5
 64374779142d2fa91282a89a1a3d54d2  ./python-pep517-0.12.0-x86_64-1_nwg.lst
 a3f298cacc7b8c93bebbac62290b1c56  ./python-pep517-0.12.0-x86_64-1_nwg.meta
 d131072716bb9b1c747ac9ba223b922e  ./python-pep517-0.12.0-x86_64-1_nwg.txt
@@ -298,6 +304,12 @@ ae33bba36c5dbab5413675e5e9a75354  ./python-psutil-5.9.4-x86_64-1_nwg.meta
 2b664e88f87887fcc62566b00366cb33  ./python-psutil-5.9.4-x86_64-1_nwg.txz
 2291d8eb59b087499c06abc21087fcaa  ./python-psutil-5.9.4-x86_64-1_nwg.txz.asc
 241afb521c65b4c459dbb899c45d1bfb  ./python-psutil-5.9.4-x86_64-1_nwg.txz.md5
+01ade75283f1e190fd9d58f83b07c92c  ./python-requests-2.28.1-x86_64-1_nwg.lst
+5acfe3f776698c73e274b1e79340e992  ./python-requests-2.28.1-x86_64-1_nwg.meta
+bf29f4f532dc4c7ee6d29756b22edf52  ./python-requests-2.28.1-x86_64-1_nwg.txt
+2168078d30d5823144e402878a4b9fa6  ./python-requests-2.28.1-x86_64-1_nwg.txz
+4e5531e29d9fa79fe327e63f00ee6185  ./python-requests-2.28.1-x86_64-1_nwg.txz.asc
+f4c022067bcbaf40c8d839d7d05a7ef7  ./python-requests-2.28.1-x86_64-1_nwg.txz.md5
 61ca2e80e1630bd2e3d1ee6c8e0db017  ./python-typing_extensions-4.4.0-x86_64-1_nwg.lst
 fb6ef0cd75b8bd5968890f6527fd779f  ./python-typing_extensions-4.4.0-x86_64-1_nwg.meta
 064d8b5fe09ef44e61e40e8ee7d43409  ./python-typing_extensions-4.4.0-x86_64-1_nwg.txt

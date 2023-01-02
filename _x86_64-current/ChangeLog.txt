@@ -1,1 +1,12 @@
-EOF
+Mon Jan 2 04:34:13 UTC 2023
+nwg-bar-0.1.0-x86_64-2_nwg.txz:  Rebuilt.
+  Patched menu for reboot/shutdown
+  functions.
+python-netifaces-0.11.0-x6_64-1_nwg.txz:  Added.
+python-requests-2.28.1-x6_64-1_nwg.txz:  Added.
++-------------------------+
+Sun Jan 1 11:59:57 UTC 2023
+nwg-shell-0.3.9-x86_64-2_nwg.txz:  Rebuilt.
+  Remove Arch specific updaters and fixes
+  for the sway/config paths.
++-------------------------+
