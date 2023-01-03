@@ -1,7 +1,7 @@
 
-This repo contains SlackBuilds (tested on -current) for nwg-shell:
-[https://nwg-piotr.github.io/nwg-shell/](https://nwg-piotr.github.io/nwg-shell/) - web
-[https://github.com/nwg-piotr/nwg-shell](https://github.com/nwg-piotr/nwg-shell) - git
+This repo contains SlackBuilds (tested on -current) for nwg-shell:  
+[https://nwg-piotr.github.io/nwg-shell/](https://nwg-piotr.github.io/nwg-shell/) - web  
+[https://github.com/nwg-piotr/nwg-shell](https://github.com/nwg-piotr/nwg-shell) - git  
 
 This is currently IN DEVELOPMENT and I consider it to be ALPHA stage and may very well be broken
 or not work at all. (It does work).
