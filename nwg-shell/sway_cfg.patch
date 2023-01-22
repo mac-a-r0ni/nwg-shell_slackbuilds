@@ -1,0 +1,16 @@
+--- a/nwg_shell/skel/config/sway/config
++++ b/nwg_shell/skel/config/sway/config
+@@ -36,10 +36,9 @@
+ 
+ ###############     Autostart      ##################
+ 
+-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+ exec hash dbus-update-activation-environment 2>/dev/null && \
+-    dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
++    dbus-update-activation-environment --session DISPLAY WAYLAND_DISPLAY SWAYSOCK
++exec /usr/libexec/polkit-gnome-authentication-agent-1
+ exec ~/.azotebg
+ 
+ ### Turn off screen on lid closed
+
