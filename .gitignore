@@ -32,5 +32,4 @@ nwg-shell/preset-0.patch
 nwg-shell/preset-1.patch
 nwg-shell/preset-2.patch
 nwg-shell/preset-3.patch
-nwg-shell/sway-cfg.patch
-*.gz
+
