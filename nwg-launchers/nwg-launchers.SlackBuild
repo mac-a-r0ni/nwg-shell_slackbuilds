@@ -86,8 +86,8 @@ find -L . \
 
 mkdir -p build
 cd build
-CFLAGS="$SLKCFLAGS" \
-  CXXFLAGS="$SLKCFLAGS" \
+ CFLAGS="$SLKCFLAGS" \
+ CXXFLAGS="$SLKCFLAGS" \
   meson setup .. \
     --buildtype=release \
     --infodir=/usr/info \
