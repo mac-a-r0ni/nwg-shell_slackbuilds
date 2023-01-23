@@ -61,7 +61,7 @@ elif [ "$ARCH" = "i686" ]; then
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
   SLKCFLAGS="-O2"
-  GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw -gccgoflags=-linkmode=external"
+  GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
   LIBDIRSUFFIX="64"
 elif [ "$ARCH" = "aarch64" ]; then
   SLKCFLAGS="-O2"
