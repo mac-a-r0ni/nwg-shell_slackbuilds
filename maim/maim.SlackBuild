@@ -23,6 +23,8 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://github.com/naelstrof/maim/archive/v5.7.4/maim-5.7.4.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=maim
