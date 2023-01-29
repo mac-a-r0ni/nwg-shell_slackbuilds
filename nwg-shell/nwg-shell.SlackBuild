@@ -22,10 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://github.com/nwg-piotr/nwg-shell/releases/download/v0.4.1/nwg-shell-v0.4.1.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell
-VERSION=${VERSION:-0.4.0}
+VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -94,8 +96,6 @@ chmod 644 nwg-shell.jpg
 chmod 755 scripts/*
 cp nwg-shell.jpg $PKG/usr/share/backgrounds
 cp scripts/* $PKG/usr/bin
-# skipping the arch-based pacman & aur updators as they are useless to us. Anyone want to make something for slackpkg?
-#rm $PKG/usr/bin/nwg-shell-check-updates
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
