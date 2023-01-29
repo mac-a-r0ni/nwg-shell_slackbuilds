@@ -3,8 +3,7 @@
 # Copyright 2012  Patrick J. Volkerding, Sebeka, Minnesota, USA
 # All rights reserved.
 #
-# Copyright 2013 Chess Griffin <chess.griffin@gmail.com> Raleigh, NC
-# Copyright 2013-2019 Willy Sudiarto Raharjo <willysr@slackware-id.org>
+# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Based on the xfce-build-all.sh script by Patrick J. Volkerding
@@ -31,62 +30,91 @@
 INST=1
 
 # This is where all the compilation and final results will be placed
-TMP=${TMP:-/tmp/csb}
+TMP=${TMP:-/tmp/nwg}
 OUTPUT=${OUTPUT:-/tmp}
 
 # This is the original directory where you started this script
-CSBROOT=$(pwd)
+NWGROOT=$(pwd)
 
 # Check for duplicate sources (default: OFF)
 CHECKDUPLICATE=0
 
 # Loop for all packages
 for dir in \
-  xdotool \
-  gsound \
-  libcroco \
-  pytz \
-  libtimezonemap \
-  tinycss \
-  setproctitle \
-  ptyprocess \
-  cjs \
-  python-pam \
-  cinnamon-desktop \
-  pangox-compat \
-  libgnomekbd \
-  xapp \
-  cinnamon-session \
-  libgusb \
-  colord \
-  cinnamon-settings-daemon \
-  gnome-menus \
-  cinnamon-menus \
-  cinnamon-control-center \
-  zenity \
-  cogl \
-  clutter \
-  clutter-gtk \
-  muffin \
-  caribou \
-  pexpect \
-  metacity \
-  polib \
-  cinnamon-translations \
-  nemo \
-  python3-xapp \
-  psutil \
-  cinnamon-screensaver \
-  mint-y-icons \
-  mint-themes \
-  cinnamon \
-  pia-manager \
+  google-go-lang \
+  xdg-desktop-portal-wlr \
+  papirus-icon-theme \
+  scdoc \
+  seatd \
+  wlroots \
+  swaybg \
+  sway \
+  python-wheel \
+  python-installer \
+  python-pep517 \
+  python-aiohttp \
+  python-aiosignal \
+  python-async-timeout \
+  python-attrs \
+  python-multidict \
+  python-yarl \
+  python-autotiling \
+  python-frozenlist \
+  python-xlib \
+  python-i3ipc \
+  python-build \
+  python-dasbus \
+  python-flit_core \
+  python-geographiclib \
+  python-geopy \
+  python-psutil \
+  python-typing_extensions \
+  python-netifaces \
+  libhandy \
+  gtk-layer-shell \
+  SwayNotificationCenter \
+  light \
+  brightnessctl \
+  imlib2 \
+  feh \
+  glm \
+  slop \
+  maim \
+  send2trash \
+  wlr-randr \
+  azote \
+  tllist \
+  fcft \
+  foot \
+  gopsuinfo \
+  grim \
+  jq \
+  lxappearance \
+  slurp \
+  swayidle \
+  swaylock \
+  wdisplays \
+  wl-clipboard \
+  wlsunset \
+  nwg-icon-picker \
+  nwg-bar \
+  nwg-displays \
+  nwg-dock \
+  nwg-drawer \
+  nwg-launchers \
+  nwg-look \
+  nwg-menu \
+  nwg-panel \
+  nwg-shell \
+  nwg-shell-config \
+  nwg-shell-wallpapers \
+  nwg-wrapper \
   ; do
   # Get the package name
   package=$(echo $dir | cut -f2- -d /)
 
   # Change to package directory
-  cd $CSBROOT/$dir || exit 1
+  cd $NWGROOT/$dir || exit 1
 
   # Get the version
   version=$(cat ${package}.SlackBuild | grep "VERSION:" | head -n1 | cut -d "-" -f2 | rev | cut -c 2- | rev)
@@ -96,10 +124,10 @@ for dir in \
 
   if [ $CHECKDUPLICATE -eq 1 ]; then
     # Check for duplicate sources
-    sourcefile="$(ls -l $CSBROOT/$dir/${package}-*.tar.?z* | wc -l)"
+    sourcefile="$(ls -l $NWGROOT/$dir/${package}-*.tar.?z* | wc -l)"
     if [ $sourcefile -gt 1 ]; then
       echo "You have following duplicate sources:"
-      ls $CSBROOT/$dir/${package}-*.tar.?z* | cut -d " " -f1
+      ls $NWGROOT/$dir/${package}-*.tar.?z* | cut -d " " -f1
       echo "Please delete sources other than ${package}-$version to avoid problems"
       exit 1
     fi
@@ -108,7 +136,7 @@ for dir in \
   # The real build starts here
   TMP=$TMP OUTPUT=$OUTPUT sh ${package}.SlackBuild || exit 1
   if [ "$INST" = "1" ]; then
-    PACKAGE=`ls $OUTPUT/${package}-${version}-*-${build}*csb.txz`
+    PACKAGE=`ls $OUTPUT/${package}-${version}-*-${build}*_nwg.txz`
     if [ -f "$PACKAGE" ]; then
       upgradepkg --install-new --reinstall "$PACKAGE"
     else
@@ -118,5 +146,5 @@ for dir in \
   fi
 
   # back to original directory
-  cd $CSBROOT
+  cd $NWGROOT
 done
