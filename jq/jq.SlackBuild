@@ -22,6 +22,8 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -chttps://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=jq
