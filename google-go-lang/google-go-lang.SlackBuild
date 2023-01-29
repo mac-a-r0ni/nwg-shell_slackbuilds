@@ -24,27 +24,30 @@
 #   SUCH DAMAGE.
 # -----------------------------------------------------------------------------
 #
-# Slackware SlackBuild script 
+# Slackware SlackBuild script
 # ===========================
 # By:          Eric Hameleers <alien@slackware.com>
 # For:         google-go-lang
 # Descr:       Google's Go Language kit with gc tool chain
 # URL:         http://golang.org
-# Build needs: 
-# Needs:       
-# Changelog:   
+# Build needs:
+# Needs:
+# Changelog:
 # 1.17.5-1:    04/jan/2022 by Eric Hameleers <alien@slackware.com>
 #              * Initial build.
 # 1.19.2-1:    12/oct/2022 by Eric Hameleers <alien@slackware.com>
 #              * Update.
 # 1.19.4-1:    07/dec/2022 by Eric Hameleers <alien@slackware.com>
 #              * Update.
-# 
+#
 # Run 'sh google-go-lang.SlackBuild' to build a Slackware package.
 # The package (.t?z) and .txt file as well as build logs are created in /tmp .
 # Install the package using 'installpkg' or 'upgradepkg --install-new'.
 #
 # -----------------------------------------------------------------------------
+
+wget -c https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz
+wget -c https://go.dev/dl/go1.19.4.src.tar.gz
 
 PRGNAM=google-go-lang
 SRCNAM=go
