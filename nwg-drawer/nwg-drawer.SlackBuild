@@ -22,6 +22,8 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://github.com/nwg-piotr/nwg-drawer/archive/refs/tags/v0.3.8.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-drawer
@@ -60,11 +62,11 @@ elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
-  SLKCFLAGS="-O2 -fPIC"
+  SLKCFLAGS="-O2"
   GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
   LIBDIRSUFFIX="64"
 elif [ "$ARCH" = "aarch64" ]; then
-  SLKCFLAGS="-O2 -fPIC"
+  SLKCFLAGS="-O2"
   GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw -gccgoflags=-linkmode=external"
   LIBDIRSUFFIX="64"
 else
@@ -87,6 +89,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+#SLKCFLAGS=$SLKCFLAGS \
 #GOFLAGS=$GOFLAGS \
 go build -o bin/"$PRGNAM" *.go || exit 1
 
