@@ -89,7 +89,7 @@ find -L . \
 
 CGO_CFLAGS="$SLKCFLAGS" \
 CGO_CXXFLAGS="$SLKCFLAGS" \
-go $JOBS build -o bin/"$PRGNAM" *.go || exit 1
+go build -o bin/"$PRGNAM" *.go || exit 1
 
 install -d $PKG/usr/share/$PRGNAM/desktop-directories
 install -Dm644 -t $PKG/usr/share/$PRGNAM/desktop-directories/ $TMP/$PRGNAM-$VERSION/desktop-directories/*
