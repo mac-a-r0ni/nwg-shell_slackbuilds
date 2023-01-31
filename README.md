@@ -28,8 +28,9 @@ repo to your slackpkg+ config in order to have slackpkg manage the packages and 
 
 ## Notes
 
-* The Go code is not optimized, as the flags fail for me locally, which is why they are commented out.  
+* The Go code is using the standard Slackware optimizations.  
 * The shutdown/restart menu options currently don't work  
 * gtklock is unsupported, use the alternative swaylock.  
-* nwg-dock appears broken, reports no errors, doesn't work  
-* nwg-drawer has graphic issues above icons
+* nwg-drawer has graphic issues above icons with some themes.  
+* Scripts currently need online access to build, offline support "coming soon" (tm).  
+
