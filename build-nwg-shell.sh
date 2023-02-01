@@ -42,9 +42,9 @@ CHECKDUPLICATE=0
 # Loop for all packages
 for dir in \
   google-go-lang \
+  scdoc \
   xdg-desktop-portal-wlr \
   papirus-icon-theme \
-  scdoc \
   seatd \
   wlroots \
   swaybg \
@@ -136,7 +136,7 @@ for dir in \
   # The real build starts here
   TMP=$TMP OUTPUT=$OUTPUT sh ${package}.SlackBuild || exit 1
   if [ "$INST" = "1" ]; then
-    PACKAGE=`ls $OUTPUT/${package}-${version}-*-${build}*_nwg.txz`
+    PACKAGE=`ls $OUTPUT/${package}-${version}-*-${build}*nwg.txz`
     if [ -f "$PACKAGE" ]; then
       upgradepkg --install-new --reinstall "$PACKAGE"
     else
