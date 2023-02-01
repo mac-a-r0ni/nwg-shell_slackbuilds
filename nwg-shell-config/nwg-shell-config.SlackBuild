@@ -91,6 +91,7 @@ mkdir -p $PKG/usr/share/applications $PKG/usr/share/pixmaps
 chmod 644 *.desktop *.svg
 cp nwg-shell-config.desktop $PKG/usr/share/applications
 cp *.svg $PKG/usr/share/pixmaps
+cp nwg-system-update $PKG/usr/bin
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
