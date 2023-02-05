@@ -22,10 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.15.1/wlroots-0.15.1.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=wlroots
-VERSION=${VERSION:-0.16.0}
+VERSION=${VERSION:-0.15.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -81,6 +83,7 @@ find -L . \
 
 mkdir build
 cd build
+# removed vulkan from -Drenderers on 15.0
   CFLAGS="$SLKCFLAGS" \
   CXXFLAGS="$SLKCFLAGS" \
   meson setup .. \
@@ -94,7 +97,7 @@ cd build
     -Dstrip=true \
     -Dxcb-errors=disabled \
     -Dexamples=false \
-    -Drenderers=gles2,vulkan \
+    -Drenderers=gles2 \
     -Dxwayland=enabled \
     -Dbackends=drm,libinput,x11
 

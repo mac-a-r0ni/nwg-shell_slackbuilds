@@ -39,43 +39,44 @@ NWGROOT=$(pwd)
 # Check for duplicate sources (default: OFF)
 CHECKDUPLICATE=0
 
+#  google-go-lang \
+#  papirus-icon-theme \
+#  scdoc \
+#  xdg-desktop-portal-wlr \
+#  seatd \
+#  wlroots \
+#  swaybg \
+#  sway \
+#  python-wheel \
+#  python-installer \
+#  python-pep517 \
+#  python-aiohttp \
+#  python-aiosignal \
+#  python-async-timeout \
+#  python-attrs \
+#  python-multidict \
+#  python-yarl \
+#  python-autotiling \
+#  python-frozenlist \
+#  python-xlib \
+#  python-i3ipc \
+#  python-build \
+#  python-dasbus \
+#  python-flit_core \
+#  python-geographiclib \
+#  python-geopy \
+#  python-psutil \
+#  python-typing_extensions \
+#  python-netifaces \
+#  libhandy \
+#  gtk-layer-shell \
+#  SwayNotificationCenter \
+#  light \
+#  brightnessctl \
+#  imlib2 \
+
 # Loop for all packages
 for dir in \
-  google-go-lang \
-  scdoc \
-  xdg-desktop-portal-wlr \
-  papirus-icon-theme \
-  seatd \
-  wlroots \
-  swaybg \
-  sway \
-  python-wheel \
-  python-installer \
-  python-pep517 \
-  python-aiohttp \
-  python-aiosignal \
-  python-async-timeout \
-  python-attrs \
-  python-multidict \
-  python-yarl \
-  python-autotiling \
-  python-frozenlist \
-  python-xlib \
-  python-i3ipc \
-  python-build \
-  python-dasbus \
-  python-flit_core \
-  python-geographiclib \
-  python-geopy \
-  python-psutil \
-  python-typing_extensions \
-  python-netifaces \
-  libhandy \
-  gtk-layer-shell \
-  SwayNotificationCenter \
-  light \
-  brightnessctl \
-  imlib2 \
   feh \
   glm \
   slop \

@@ -1,7 +1,7 @@
 PRGNAM="slop"
 VERSION="7.6"
 HOMEPAGE="https://github.com/naelstrof/slop"
-DOWNLOAD="https://github.com/naelstrof/slop/archive/v7.6/slop-7.6.tar.gz"
+DOWNLOAD="https://github.com/naelstrof/slop/archive/v7.5/slop-7.5.tar.gz"
 MD5SUM="381851df1007fc60cc473b3c8c6a81a9"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
