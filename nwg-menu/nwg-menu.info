@@ -1,0 +1,12 @@
+PRGNAM="nwg-menu"
+VERSION="0.1.1"
+HOMEPAGE="https://github.com/nwg-piotr/nwg-menu/"
+DOWNLOAD="https://github.com/nwg-piotr/nwg-menu/archive/refs/tags/v0.1.1.tar.gz \
+          https://slackware.lngn.net/pub/source/nwg-shell/nwg-menu/vendor.tar.xz"
+MD5SUM="5becee147d292835aa588b54f47925a5 \
+        4590467a80acd030727b80337fc17981"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES=""
+MAINTAINER="Jay Lanagan"
+EMAIL="j@lngn.net"

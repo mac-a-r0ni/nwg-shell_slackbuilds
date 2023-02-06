@@ -22,14 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-menu/archive/refs/tags/v0.1.1.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-menu
 VERSION=${VERSION:-0.1.1}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_nwg}
+TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-txz}
 
 # Automatically determine the architecture we're building on:
@@ -50,7 +48,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/nwg}
+TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
@@ -77,8 +75,9 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
+tar xvf $CWD/$PRGNAM-$VERSION.tar.?z || tar xvf $CWD/v$VERSION.tar.?z
 cd $PRGNAM-$VERSION
+tar xvf $CWD/vendor.tar.xz
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -88,7 +87,7 @@ find -L . \
 
 CGO_CFLAGS="$SLKCFLAGS" \
 CGO_CXXFLAGS="$SLKCFLAGS" \
-go build -o bin/"$PRGNAM" *.go || exit 1
+go build -mod vendor -o bin/"$PRGNAM" *.go || exit 1
 
 install -d $PKG/usr/share/$PRGNAM/desktop-directories
 install -Dm644 -t $PKG/usr/share/$PRGNAM/desktop-directories/ $TMP/$PRGNAM-$VERSION/desktop-directories/*
