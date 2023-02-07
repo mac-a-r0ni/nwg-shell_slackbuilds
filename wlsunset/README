@@ -1,3 +1,6 @@
-swayidle
+wlsunset (gamma adjustments for wayland)
 
-is a ssession timeout daemon manager for sway.
+Day/night gamma adjustments for Wayland compositors supporting
+wlr-gamma-control-unstable-v1 & xdg-output-unstable-v1.
+
+Homepage: https://git.sr.ht/~kennylevinsen/wlsunset
