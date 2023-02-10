@@ -5,3 +5,5 @@ macOS. Works great with grim, slurp and sway. But can easily work
 with other screen copy tools that can output a final image to stdout.
 
 Homepage: https://github.com/jtheoof/swappy
+
+Optional dependancy 'scdoc' for manpage.
