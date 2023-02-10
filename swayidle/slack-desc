@@ -13,7 +13,7 @@ swayidle: with any Wayland compositor which implements the ext-idle-notify
 swayidle: protocol or the KDE idle protocol. See the man page, swayidle(1), for
 swayidle: instructions on configuring swayidle.
 swayidle:
-swayidle: Home: https://swaywm.org/
+swayidle: Homepage: https://swaywm.org/
 swayidle:
 swayidle:
 swayidle:
