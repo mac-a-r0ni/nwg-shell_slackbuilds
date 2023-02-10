@@ -6,13 +6,13 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
                       |-----handy-ruler------------------------------------------------------|
-SwayNotificationCenter: SwayNotificationCenter
+SwayNotificationCenter: SwayNotificationCenter (display notifications in sway)
 SwayNotificationCenter:
 SwayNotificationCenter: A simple notification daemon with a GTK gui for notifications and
 SwayNotificationCenter: the control center.
 SwayNotificationCenter:
-SwayNotificationCenter:
-SwayNotificationCenter:
-SwayNotificationCenter:
 SwayNotificationCenter: Homepage: https://github.com/ErikReider/SwayNotificationCenter
+SwayNotificationCenter:
+SwayNotificationCenter:
+SwayNotificationCenter:
 SwayNotificationCenter:
