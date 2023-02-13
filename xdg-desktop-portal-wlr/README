@@ -2,8 +2,6 @@ xdg-desktop-portal-wlr (portal backend for wlroots)
 
 xdg-desktop-portal backend for wlroots.
 
-Homepage: https://github.com/emersion/xdg-desktop-portal-wlr
-
 Optional dependancy of 'scdoc' to build manpage.
 
 Useful for sway, nwg-shell, flatpaks, etc..

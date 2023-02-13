@@ -3,6 +3,4 @@ SwayNotificationCenter (display notifications in sway)
 A simple notification daemon with a GTK gui for notifications and
 the control center.
 
-Homepage: https://github.com/ErikReider/SwayNotificationCenter
-
 Also works with: bash-completion, fish, zsh, (and bash).
