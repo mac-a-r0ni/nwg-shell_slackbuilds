@@ -28,7 +28,7 @@ PRGNAM=nwg-displays
 VERSION=${VERSION:-0.1.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
-PKGTYPE=${PKGTYPE:-txz}
+PKGTYPE=${PKGTYPE:-tgz}
 
 # Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
