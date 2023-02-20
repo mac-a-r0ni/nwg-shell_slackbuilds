@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Slackware build script for python-dasbus
+# Slackware build script for python3-dasbus
 
 # Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
@@ -25,7 +25,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=dasbus
-PRGNAM=python-dasbus
+PRGNAM=python3-dasbus
 VERSION=${VERSION:-1.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
