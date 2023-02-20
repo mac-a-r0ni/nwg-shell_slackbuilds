@@ -1,4 +1,4 @@
-PRGNAM="python-dasbus"
+PRGNAM="python3-dasbus"
 VERSION="1.7"
 HOMEPAGE="https://github.com/rhinstaller/dasbus"
 DOWNLOAD="https://files.pythonhosted.org/packages/37/79/9c5984d723ffbe2e839ee649690f3e1fa6544ab6a17a5150e5ac14a47072/dasbus-1.7.tar.gz"
