@@ -29,7 +29,7 @@ PRGNAM=python3-dasbus
 VERSION=${VERSION:-1.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
-PKGTYPE=${PKGTYPE:-txz}
+PKGTYPE=${PKGTYPE:-tgz}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in

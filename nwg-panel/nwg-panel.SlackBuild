@@ -87,7 +87,7 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 python3 setup.py install --optimize=1 --root=$PKG
-chmod 644 nwg-panel.svg nwg-shell.svg nwg-panel-config.desktop
+chmod 644 *.svg *.desktop
 mkdir -p /$PKG/usr/share/{pixmaps,applications}
 cp nwg-panel.svg $PKG/usr/share/pixmaps
 cp nwg-shell.svg $PKG/usr/share/pixmaps
