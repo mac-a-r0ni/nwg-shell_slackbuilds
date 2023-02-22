@@ -2,5 +2,3 @@ wlsunset (gamma adjustments for wayland)
 
 Day/night gamma adjustments for Wayland compositors supporting
 wlr-gamma-control-unstable-v1 & xdg-output-unstable-v1.
-
-Homepage: https://git.sr.ht/~kennylevinsen/wlsunset
