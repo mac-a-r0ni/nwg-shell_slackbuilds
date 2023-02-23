@@ -1,0 +1,7 @@
+nwg-shell (base shell and utils for Sway-based shell)
+
+Base package of utils and configurations for nwg-shell.
+
+This package acts as a meta-package to pull in all
+the dependencies for building the entire nwg-shell
+project.
