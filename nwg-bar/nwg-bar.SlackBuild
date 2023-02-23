@@ -80,6 +80,7 @@ rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/v$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 patch -Np1 -i $CWD/nwg-bar-shutdown.patch || exit 1
+tar xvf $CWD/vendor.tar.xz
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -89,7 +90,7 @@ find -L . \
 
 CGO_CFLAGS="$SLKCFLAGS" \
 CGO_CXXFLAGS="$SLKCFLAGS" \
-go build -o bin/$PRGNAM *.go
+go build -mod vendor -o bin/$PRGNAM *.go
 
 install -d $PKG/usr/share/$PRGNAM/images
 install -Dm644 -t $PKG/usr/share/$PRGNAM/images/ $TMP/$PRGNAM-$VERSION/images/*
