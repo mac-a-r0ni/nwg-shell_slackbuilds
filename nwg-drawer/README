@@ -5,3 +5,6 @@ nwg-launchers). It's being developed with sway in mind, but should
 also work with other wlroots-based Wayland compositors. X11 is not
 officially supported, but you should be able to use the drawer on
 some floating window managers (tested on Openbox).
+
+Optional dependencies: "alacritty" to open .desktop files with
+'Terminal=true' set within, and "Thunar" to open files/folders.
