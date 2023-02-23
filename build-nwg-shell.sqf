@@ -32,13 +32,14 @@ python3-xlib
 
 i3ipc
 # submit
-python-dasbus
+python3-dasbus
 geographiclib-python
 geopy
 python3-psutil
 python3-netifaces
 libhandy
 gtk-layer-shell
+nlohmann_json
 # submit
 SwayNotificationCenter
 light
