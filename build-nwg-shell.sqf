@@ -27,7 +27,7 @@ typing_extensions
 async-timeout
 python3-aiohttp
 # i need to submit this
-python-autotiling
+python3-autotiling
 python3-xlib
 
 i3ipc
@@ -44,7 +44,7 @@ nlohmann_json
 SwayNotificationCenter
 light
 # submit or skip?
-brightnessctl
+# brightnessctl
 imlib2
 feh
 glm
