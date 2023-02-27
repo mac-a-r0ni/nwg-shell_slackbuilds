@@ -90,6 +90,10 @@ cp *.svg $PKG/usr/share/pixmaps
 # this is for Arch, don't ship (prefer sbopkg/sboui to update systems)
 # cp nwg-system-update $PKG/usr/bin
 
+# manually remove installed Arch specific updater bins
+# if these aren't removed, a non-working applet will appear in WM
+rm $PKG/usr/bin/{nwg-shell-updater,nwg-update-indicator}
+
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
