@@ -2,16 +2,26 @@
 # If using this script with sbopkg, do NOT also use the build-nwg-shell.sh you will
 # make a mess, and I'm not fixing it.
 
+# Basic dependencies for building the shell
+
 google-go-lang
 papirus-icon-theme
 scdoc
 xdg-desktop-portal-wlr
+libhandy
+gtk-layer-shell
+SwayNotificationCenter
+nlohmann_json
+light
 seatd
 wlroots
 swaybg
 sway
-# you will find no consistency with naming of python packages on SBo
-# which stresses me out considerably
+
+# Python3 dependencies
+# you will find no consistency with naming of python
+# packages on SBo which stresses me out considerably
+#
 
 wheel
 python3-installer
@@ -23,28 +33,22 @@ frozenlist
 aiosignal
 python3-build
 python3-flit_core
-typing_extensions
+typing-extensions
 async-timeout
 python3-aiohttp
-# i need to submit this
 python3-autotiling
 python3-xlib
-
 i3ipc
-# submit
 python3-dasbus
 geographiclib-python
 geopy
 python3-psutil
 python3-netifaces
-libhandy
-gtk-layer-shell
-nlohmann_json
-# submit
-SwayNotificationCenter
-light
-# submit or skip?
-# brightnessctl
+
+#
+# Build the rest of nwg-shell & dependencies
+#
+
 imlib2
 feh
 glm
@@ -56,17 +60,14 @@ azote
 tllist
 fcft
 foot
-# submit
 gopsuinfo
 grim
 jq
 lxappearance
-# submit
 slurp
-# submit
 swayidle
-# submit
 swaylock
+scour
 # submit
 wdisplays
 wl-clipboard
