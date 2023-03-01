@@ -7,9 +7,8 @@ Scripts for Slackware 15.0 have been submitted to [SBo](slackbulds.org), over ha
 packages are maintained by other people, but they all adhere to their guidelines for packaging.
 The SBo branch of this repo has a sqf file for use with [sbopkg](https://sbopkg.org/) which
 will pull-in all the dependencies and make/install nwg-shell on your system. If you are on
-the stable 15.0 release, it is recommended to use SBo to install. If you're on -current,
-you should clone the main branch of this repo and run the `build-nwg-shell.sh` to make/install
-on -current.
+the stable 15.0 release, it is recommended to use SBo (and sbopkg) to install. If you're on -current,
+you should clone the main branch of this repo and run the `build-nwg-shell.sh` to make/install.
 
 This is currently IN DEVELOPMENT and I consider it to be BETA stage and may very well be broken
 or not work at all. (It does work).
