@@ -77,8 +77,8 @@ tar xvf $CWD/$PRGNAM-v$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 chown -R root:root .
 
-# remove systemd command & fix paths
-patch -Np1 -i $CWD/sway_cfg.patch || exit 1
+# patches removing refs to systemctl & replaced w/ loginctl & disable updater
+patch -Np1 -i $CWD/slackware.patch || exit 1
 
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
