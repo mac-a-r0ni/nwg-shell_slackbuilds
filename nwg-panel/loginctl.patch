@@ -1,21 +1,8 @@
 --- a/nwg_panel/config/config
 +++ b/nwg_panel/config/config
-@@ -63,12 +63,24 @@
-             "cmd": "swaymsg exit"
+@@ -64,11 +64,11 @@
            },
            {
-+            "name": "Suspend",
-+            "cmd": "loginctl suspend"
-+          },
-+          {
-+            "name": "Hybernate",
-+            "cmd": "loginctl hybernate"
-+          },
-+          {
-+            "name": "Hybrid-Sleep",
-+            "cmd": "loginctl hybrid-sleep"
-+          },
-+          {
              "name": "Reboot",
 -            "cmd": "systemctl reboot"
 +            "cmd": "loginctl reboot"

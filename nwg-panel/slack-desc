@@ -6,7 +6,7 @@
 # customary to leave one space after the ':'.
 
          |-----handy-ruler------------------------------------------------------|
-nwg-panel: nwg-panel (gtk wayland based panel)
+nwg-panel: nwg-panel (GTK Wayland-based panel)
 nwg-panel:
 nwg-panel: Combining features of Waybar and tint2, nwg-panel has a total of
 nwg-panel: 12 modules for desktop settings configuration for the nwg-shell.
