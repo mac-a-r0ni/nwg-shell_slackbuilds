@@ -21,11 +21,13 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://files.pythonhosted.org/packages/c2/fd/1ff4da09ca29d8933fda3f3514980357e25419ce5e0f689041edb8f17dab/aiohttp-3.8.4.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=aiohttp
 PRGNAM=python-aiohttp
-VERSION=${VERSION:-3.8.3}
+VERSION=${VERSION:-3.8.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
