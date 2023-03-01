@@ -6,14 +6,14 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
                   |-----handy-ruler------------------------------------------------------|
-python-autotiling: python-autotiling (i3/sway window tiling switches)
-python-autotiling:
-python-autotiling: This script uses the i3ipc-python library to switch the layout
-python-autotiling: splith/splitv depending on the currently focused window dimensions.
-python-autotiling: It works on both sway and i3 window managers.
-python-autotiling:
-python-autotiling: Homepage: https://github.com/nwg-piotr/autotiling
-python-autotiling:
-python-autotiling:
-python-autotiling:
-python-autotiling:
+python3-autotiling: python3-autotiling (i3/sway window tiling switches)
+python3-autotiling:
+python3-autotiling: This script uses the i3ipc-python library to switch the layout
+python3-autotiling: splith/splitv depending on the currently focused window dimensions.
+python3-autotiling: It works on both sway and i3 window managers.
+python3-autotiling:
+python3-autotiling: Homepage: https://github.com/nwg-piotr/autotiling
+python3-autotiling:
+python3-autotiling:
+python3-autotiling:
+python3-autotiling:

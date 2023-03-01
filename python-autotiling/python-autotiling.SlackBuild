@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-# Slackware build script for autotiling
+# Slackware build script for python-autotiling
 
 # Copyright 2022 Jay Lanagan (j@lngn.net),Detroit, MI, USA.
 # All rights reserved.
@@ -22,11 +22,16 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PKGNAM=python-autotiling
+wget -c https://files.pythonhosted.org/packages/2d/1c/4950554c12351751d48e87e095f5fc7464220dedb45201c086c025639b5c/autotiling-1.8.tar.gz
+
+cd $(dirname $0) ; CWD=$(pwd)
+
+PRGNAM=python-autotiling
 SRCNAM=autotiling
 VERSION=${VERSION:-1.8}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
+PKGTYPE=${PKGTYPE:-txz}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -36,9 +41,16 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-CWD=$(pwd)
+# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
+# the name of the created package would be, and then exit. This information
+# could be useful to other scripts.
+if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
+  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
+  exit 0
+fi
+
 TMP=${TMP:-/tmp/nwg}
-PKG=$TMP/package-$PKGNAM
+PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 set -e
@@ -61,13 +73,13 @@ python3 setup.py install --root=$PKG
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a LICENSE README.md \
- $PKG/usr/doc/$PKGNAM-$VERSION
-cat $CWD/$(basename $0) > $PKG/usr/doc/$PKGNAM-$VERSION/$(basename $0)
+ $PKG/usr/doc/$PRGNAM-$VERSION
+cat $CWD/$(basename $0) > $PKG/usr/doc/$PRGNAM-$VERSION/$(basename $0)
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
