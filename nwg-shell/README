@@ -22,7 +22,9 @@ By default nwg-shell uses:
 -mousepad (text editor)
 -thunar (file explorer)
 
-Ensure you have a full Slackware install (or everything
-but /kde).
+Ensure you have a full Slackware install
+(or everything but /kde). Default apps are
+from XFCE, so ensure you've installed the
+package series.
 
 All defaults are user configurable within the WM.
