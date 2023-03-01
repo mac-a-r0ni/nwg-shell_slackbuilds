@@ -44,3 +44,6 @@ nwg-shell-config/v0.4.14.tar.gz
 nwg-shell-wallpapers/v1.1.tar.gz
 python3-dasbus/dasbus-1.7.tar.gz
 gtklock/v2.0.1.tar.gz
+gtklock/gtklock-userinfo-module-2.0.0.tar.gz
+gtklock/gtklock-powerbar-module-2.0.1.tar.gz
+gtklock/gtklock-playerctl-module-2.0.1.tar.gz
