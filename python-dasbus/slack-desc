@@ -5,15 +5,15 @@
 # You must make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':' except on otherwise blank lines.
 
-             |-----handy-ruler------------------------------------------------------|
-python-dasbus: python-dasbus (python3 DBus library based on glib)
-python-dasbus:
-python-dasbus: Dasbus is a DBus library written in Python 3, based on GLib and
-python-dasbus: inspired by pydbus. The code used to be part of the Anaconda
-python-dasbus: Installer project. It was based on the pydbus library, but we
-python-dasbus: replaced it with our own solution because its upstream development
-python-dasbus: stalled. The dasbus library is a result of this effort.
-python-dasbus:
-python-dasbus: Homepage: https://github.com/rhinstaller/dasbus
-python-dasbus:
-python-dasbus:
+              |-----handy-ruler------------------------------------------------------|
+python3-dasbus: python3-dasbus (python3 DBus library based on glib)
+python3-dasbus:
+python3-dasbus: Dasbus is a DBus library written in Python 3, based on GLib and
+python3-dasbus: inspired by pydbus. The code used to be part of the Anaconda
+python3-dasbus: Installer project. It was based on the pydbus library, but we
+python3-dasbus: replaced it with our own solution because its upstream development
+python3-dasbus: stalled. The dasbus library is a result of this effort.
+python3-dasbus:
+python3-dasbus: Homepage: https://github.com/rhinstaller/dasbus
+python3-dasbus:
+python3-dasbus:
