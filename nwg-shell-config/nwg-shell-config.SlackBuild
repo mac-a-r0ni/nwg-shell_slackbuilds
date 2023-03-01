@@ -87,8 +87,6 @@ mkdir -p $PKG/usr/share/applications $PKG/usr/share/pixmaps
 chmod 644 *.desktop *.svg
 cp nwg-shell-config.desktop $PKG/usr/share/applications
 cp *.svg $PKG/usr/share/pixmaps
-# this is for Arch, don't ship (prefer sbopkg/sboui to update systems)
-# cp nwg-system-update $PKG/usr/bin
 
 # manually remove installed Arch specific updater bins
 # if these aren't removed, a non-working applet will appear in WM
