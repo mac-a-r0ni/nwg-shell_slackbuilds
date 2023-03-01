@@ -91,7 +91,11 @@ mkdir -p $PKG/usr/share/backgrounds $PKG/usr/bin
 chmod 644 nwg-shell.jpg
 chmod 755 scripts/*
 cp nwg-shell.jpg $PKG/usr/share/backgrounds
-cp scripts/* $PKG/usr/bin
+cp scripts/screenshot $PKG/usr/bin
+
+# Remove Arch updaters from our Slackware package, users are recommended
+# to use sbopkg, sboui, or their favorite SBo updater to get package updates.
+rm $PKG/usr/bin/nwg-shell-check-updates
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
