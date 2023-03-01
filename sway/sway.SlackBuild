@@ -23,6 +23,8 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://github.com/swaywm/sway/releases/download/1.8.1/sway-1.8.1.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sway
@@ -82,10 +84,10 @@ find -L . \
 #sed -i 's/0.60.0/0.59.4/g' meson.build
 sed -i "s/'libsystemd', 'libelogind'/'libelogind'/g" meson.build
 
-mkdir build
-cd build
-  CFLAGS="$SLKCFLAGS" \
-  CXXFLAGS="$SLKCFLAGS" \
+mkdir meson-build
+cd meson-build
+ CFLAGS="$SLKCFLAGS" \
+ CXXFLAGS="$SLKCFLAGS" \
   meson setup .. \
     --buildtype=release \
     --infodir=/usr/info \
