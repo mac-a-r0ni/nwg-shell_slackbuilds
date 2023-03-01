@@ -2,7 +2,7 @@
 
 # Slackware build script for nwg-icon-picker
 
-# Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -30,15 +30,12 @@ PRGNAM=nwg-icon-picker
 VERSION=${VERSION:-0.0.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
-JOBS=${JOBS:-"-j$(expr $(nproc) + 1)"}
 PKGTYPE=${PKGTYPE:-txz}
 
-# Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
-    # Unless $ARCH is already set, use uname -m for all other archs:
        *) ARCH=$( uname -m ) ;;
   esac
 fi
@@ -78,7 +75,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/v$VERSION.tar.?z
+tar xvf $CWD/v$VERSION.tar.?z || tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
