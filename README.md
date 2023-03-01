@@ -32,8 +32,10 @@ as-is, but I cannot make any guarantees. My advice is to build/install fresh pac
 I have put up a repo for testing based on -current, these builds will likely not run on Slackware
 15.0. When I feel it's officially stable enough, I'll make packages for the stable branch. Add the
 repo to your slackpkg+ config in order to have slackpkg manage the packages and updates for you.
-[https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/](https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/)
-[https://slackware.lngn.net/pub/aarch64/slackware64-current/nwg-shell/](https://slackware.lngn.net/pub/aarch64/slackware64-current/nwg-shell/)
+Packages for x86_64: 
+[https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/](https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/) 
+Packages for aarch64: 
+[https://slackware.lngn.net/pub/aarch64/slackware64-current/nwg-shell/](https://slackware.lngn.net/pub/aarch64/slackware64-current/nwg-shell/) 
 I will build a 15.0 repo soon (as well as update -current repos). 
 ## Notes
 
