@@ -2,7 +2,7 @@
 
 # Slackware build script for nwg-shell
 
-# Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,22 +22,20 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-shell/releases/download/v0.4.1/nwg-shell-v0.4.1.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-shell/releases/download/v0.4.2/nwg-shell-v0.4.2.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell
-VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
+VERSION=${VERSION:-0.4.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-# Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
-    # Unless $ARCH is already set, use uname -m for all other archs:
        *) ARCH=$( uname -m ) ;;
   esac
 fi
@@ -81,8 +79,8 @@ tar xvf $CWD/$PRGNAM-v$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 chown -R root:root .
 
-# remove systemd things and fix paths
-patch -Np1 -i $CWD/sway_cfg.patch || exit 1
+# patches removing refs to systemctl & replaced w/ loginctl & disable updater
+patch -Np1 -i $CWD/slackware.patch || exit 1
 
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -95,7 +93,11 @@ mkdir -p $PKG/usr/share/backgrounds $PKG/usr/bin
 chmod 644 nwg-shell.jpg
 chmod 755 scripts/*
 cp nwg-shell.jpg $PKG/usr/share/backgrounds
-cp scripts/* $PKG/usr/bin
+cp scripts/screenshot $PKG/usr/bin
+
+# Remove Arch updaters from our Slackware package, users are recommended
+# to use sbopkg, sboui, or their favorite SBo updater to get package updates.
+rm $PKG/usr/bin/nwg-shell-check-updates
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
