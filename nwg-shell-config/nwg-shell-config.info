@@ -5,6 +5,6 @@ DOWNLOAD="https://github.com/nwg-piotr/nwg-shell-config/archive/refs/tags/v0.4.1
 MD5SUM="0fdf98655c6848813e49f4ed74f5fc08"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES="nwg-shell"
+REQUIRES="wheel"
 MAINTAINER="Jay Lanagan"
 EMAIL="j@lngn.net"
