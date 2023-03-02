@@ -82,7 +82,7 @@ cd $PKG
 
 # To create a new doinst.sh, comment the next line, uncomment the lines below
 # it and @THEMES@ above, grab the new one from the package and gzip it.
-#find . -type l -delete
+find . -type l -delete
 
 # 20200407 bkw: makepkg's symlink search and doinst.sh creation doesn't
 # scale well. This makes the build complete much faster, and create an
