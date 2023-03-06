@@ -70,7 +70,6 @@ for dir in \
   python-psutil \
   python-typing_extensions \
   python-netifaces \
-  libhandy \
   gtk-layer-shell \
   SwayNotificationCenter \
   light \
