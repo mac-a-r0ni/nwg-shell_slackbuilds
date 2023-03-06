@@ -3,7 +3,7 @@ This repo contains SlackBuilds (tested on -current) for nwg-shell:
 [https://nwg-piotr.github.io/nwg-shell/](https://nwg-piotr.github.io/nwg-shell/) - web  
 [https://github.com/nwg-piotr/nwg-shell](https://github.com/nwg-piotr/nwg-shell) - git  
 
-Scripts for Slackware 15.0 have been submitted to [SBo](slackbulds.org), over half of the
+Scripts for Slackware 15.0 have been submitted to [SBo](https://slackbulds.org), over half of the
 packages are maintained by other people, but they all adhere to their guidelines for packaging.
 The SBo branch of this repo has a sqf file for use with [sbopkg](https://sbopkg.org/) which
 will pull-in all the dependencies and make/install nwg-shell on your system. If you are on
