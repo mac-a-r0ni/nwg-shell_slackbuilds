@@ -11,7 +11,7 @@ nwg-dock:
 nwg-dock: Fully configurable (w/ command line arguments and css) dock, written
 nwg-dock: in Go, aimed exclusively at sway Wayland compositor. It features
 nwg-dock: pinned buttons, task buttons, the workspace switcher and the launcher
-nwg-dock: button. The latter by default starts nwg-drawer or nwggrid 
+nwg-dock: button. The latter by default starts nwg-drawer or nwggrid
 nwg-dock: (application grid) - if found.
 nwg-dock:
 nwg-dock: Homepage: https://github.com/nwg-piotr/nwg-dock
