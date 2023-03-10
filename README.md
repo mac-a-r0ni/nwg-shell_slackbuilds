@@ -35,7 +35,7 @@ repo to your slackpkg+ config in order to have slackpkg manage the packages and 
 Packages for x86_64:  
 [https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/](https://slackware.lngn.net/pub/x86_64/slackware64-current/nwg-shell/)  
 Packages for aarch64:  
-[https://slackware.lngn.net/pub/aarch64/slackware64-current/nwg-shell/](https://slackware.lngn.net/pub/aarch64/slackware64-current/nwg-shell/)  
+[https://slackware.lngn.net/pub/aarch64/slackwareaarch64-current/nwg-shell/](https://slackware.lngn.net/pub/aarch64/slackwareaarch64-current/nwg-shell/)  
 
 I will build a 15.0 repo soon (as well as update -current repos).  
 ## Notes
