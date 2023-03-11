@@ -90,6 +90,11 @@ chmod 644 *.desktop *.svg
 cp nwg-shell-config.desktop $PKG/usr/share/applications
 cp *.svg $PKG/usr/share/pixmaps
 
+# Include Slackware logo on System Info screen
+# https://commons.wikimedia.org/wiki/File:Slackware_logo.svg
+# Licensed under the GPL by Bob Moser
+cp $CWD/Slackware_logo.svg $PKG/usr/share/pixmaps/slackware.svg
+
 # manually remove installed Arch specific updater bins
 # if these aren't removed, a non-working applet will appear in WM
 rm $PKG/usr/bin/{nwg-shell-updater,nwg-update-indicator}
