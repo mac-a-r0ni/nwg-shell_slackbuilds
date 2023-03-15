@@ -26,12 +26,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-wget -c https://storage.googleapis.com/golang/go1.19.5.src.tar.gz
+wget -c https://go.dev/dl/go1.20.2.src.tar.gz
+#wget -c https://storage.googleapis.com/golang/go1.19.5.src.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=google-go-lang
-VERSION=${VERSION:-1.19.5}
+VERSION=${VERSION:-1.20.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
