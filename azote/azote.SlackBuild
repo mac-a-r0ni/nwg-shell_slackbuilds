@@ -22,7 +22,7 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/azote/archive/v1.10.1/azote-1.10.1.tar.gz
+wget -c https://github.com/nwg-piotr/azote/archive/v1.11.0/azote-1.11.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
