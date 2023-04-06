@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Slackware build script for gtklock-playerctl-module
+# Slackware build script for gtklock-userinfo-module
 
 # Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/jovanlanik/gtklock-playerctl-module/archive/refs/tags/v2.0.1.tar.gz
+wget -c https://github.com/jovanlanik/gtklock-userinfo-module/archive/refs/tags/v2.0.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=gtklock-playerctl-module
-VERSION=${VERSION:-2.0.1}
+PRGNAM=gtklock-userinfo-module
+VERSION=${VERSION:-2.0.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
