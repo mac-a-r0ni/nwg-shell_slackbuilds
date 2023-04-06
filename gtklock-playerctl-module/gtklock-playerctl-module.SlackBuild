@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Slackware build script for gtklock
+# Slackware build script for gtklock-playerctl-module
 
 # Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
@@ -22,11 +22,11 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/jovanlanik/gtklock/archive/refs/tags/v2.0.1.tar.gz
+#wget -c https://github.com/jovanlanik/gtklock/archive/refs/tags/v2.0.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=gtklock
+PRGNAM=gtklock-playerctl-module
 VERSION=${VERSION:-2.0.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
@@ -77,7 +77,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/v$VERSION.tar.?z
+tar xvf $CWD/$PRGNAM-$VERSION.tar.?z || tar xvf $CWD/v$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 patch -Np1 -i $CWD/makefile.patch || exit 1
 chown -R root:root .
@@ -87,31 +87,13 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# the makefile really don't like slackware's dir structure and I honestly
-# have no idea if there's a real way to fix this besides editing the source
-# for gtklock itself. No makefile option would work for me *shrug*
-ln -s /lib64/pkgconfig/pam.pc /usr/lib64/pkgconfig/pam.pc
-ln -s /usr/include/glib-2.0/* $TMP/$PRGNAM-$VERSION/include
-ln -s /usr/include/gtk-3.0/* $TMP/$PRGNAM-$VERSION/include
-ln -s /usr/include/pango-1.0/pango $TMP/$PRGNAM-$VERSION/include/pango
-ln -s /usr/include/harfbuzz/* $TMP/$PRGNAM-$VERSION/include/
-ln -s /usr/include/cairo/* $TMP/$PRGNAM-$VERSION/include/
-ln -s /usr/include/gdk-pixbuf-2.0/gdk-pixbuf $TMP/$PRGNAM-$VERSION/include/gdk-pixbuf
-ln -s /usr/include/atk-1.0/atk $TMP/$PRGNAM-$VERSION/include/atk
-
 make || exit 1
 make install DESTDIR=$PKG || exit 1
-
-# remove the symlink we made so we don't leave a mess
-rm /usr/lib64/pkgconfig/pam.pc
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 rm -rf $PKG/usr/lib${LIBDIRSUFFIX}/*.la
-
-find $PKG/usr/man -type f -exec gzip -9 {} \;
-for i in $(find $PKG/usr/man -type l); do ln -s $(readlink $i).gz $i.gz; rm $i; done
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a LICENSE README.md  \
