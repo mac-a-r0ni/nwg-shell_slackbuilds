@@ -1,0 +1,3 @@
+add gtklock to sbo
+once added, add the module packages
+then update the nwg-shell package to add the deps for gtklock & mods
