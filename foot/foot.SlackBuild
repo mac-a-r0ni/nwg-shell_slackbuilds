@@ -98,7 +98,7 @@ cd build
     -Dime=true \
     -Dtests=false \
     -Dgrapheme-clustering=enabled \
-    -Dterminfo=enabled \
+    -Dterminfo=enabled
 
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
