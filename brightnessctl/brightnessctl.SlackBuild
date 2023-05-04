@@ -82,10 +82,11 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-make || exit 1
-make install DESTDIR=$PKG || exit 1
+# Fix man dir install location
+sed -i -e 's,share/man,man,g' Makefile
 
-#chmod 4755 $PKG/usr/bin/brightnessctl
+make
+make install DESTDIR=$PKG
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
