@@ -79,7 +79,7 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$VERSION.tar.?z
 cd $PRGNAM-$VERSION
-patch -Np1 < $CWD/man-dir-fix.patch || exit 1
+#patch -Np1 < $CWD/man-dir-fix.patch || exit 1
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -87,8 +87,12 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-make || exit 1
-make install DESTDIR=$PKG || exit 1
+# Fix man dir location upon install
+  sed -i -e 's,share/man,man,g' \
+  Makefile
+
+make
+make install DESTDIR=$PKG
 
 chmod 4755 $PKG/usr/bin/brightnessctl
 
