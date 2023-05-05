@@ -1,0 +1,119 @@
+Using Github With WGet/Curl-FriendLY Download URLs
+==================================================
+
+To make Github URLs wget/curl-friendly it's necessary to modify the
+source links found on the tags or releases page.  Example of a tar.gz
+source tarball URL:
+
+  https://github.com/haiwen/seadrive-fuse/archive/refs/tags/v2.0.16.tar.gz
+
+This would be a wget/curl-friendly alternative:
+
+  https://github.com/haiwen/seadrive-fuse/archive/v2.0.16/seadrive-fuse-2.0.16.tar.gz
+
+So given PRGNAM=seadrive-fuse and VERSION=2.0.16, this is a template:
+
+  https://github.com/<repo>/$PRGNAM/archive/(v)$VERSION/$PRGNAM-$VERSION.tar.gz
+
+This works for most Github URLs.  Sometimes `v' needs to be added, other
+times not - it depends on the tag.
+
+One way to edit URLs already in an .info file is to source the .info and
+then use `sed'.  The following format should be good for a single
+download, but you may need to experiment with the regexp a bit:
+
+ . *.info
+ sed -E "s,(https://github.com/[^/]+/$PRGNAM/archive/)(refs/tags/)?(v?$VERSION)(.tar..z),\1v$VERSION/$PRGNAM-$VERSION\4," -i $PRGNAM.info
+
+Test without `-i' first and the .info file will be printed to stdout.
+If it looks good add the `-i'.  Source the file again to test:
+
+ . *.info
+ wget $DOWNLOAD
+
+(or $DOWNLOAD_x86_64.)
+
+If it downloads OK, does the directory name correspond with
+$PRGNAM-$VERSION?:
+
+ tar tf <archive> | head
+
+Which in this case should be seadrive-fuse-2.0.16.
+
+That is OK for a single download, but with multiple downloads try:
+
+  wget ${DOWNLOAD[@]}
+
+in bash, or for zsh:
+
+  wget ${=DOWNLOAD[@]}
+
+When using wget or curl without content-disposition (see below), the
+file will download as (v)$VERSION.tar.gz, which will be a problem if you
+need to find the source later, and may also cause problems for SBo
+frontends like sbopkg, where numbered sources may overwrite each other
+in the cache directory, causing md5sum errors, and requiring extra time
+spent re-downloading and testing.
+
+Sometimes it isn't possible to use the above method.  Other software
+repositories like `codeberg' come to mind.  In these cases the solution
+is to modify the `tar' line in the SlackBuild:
+
+  tar xvf $CWD/$PRGNAM-$VERSION.tar.gz || tar xvf $CWD/(v)$VERSION.tar.gz
+
+If the first `tar' fails, the second will be used.  (Let me know if you
+have found a method to fix codeberg or similar URLs and I'll include it
+- Dave).
+
+GITHUB COMMIT TARBALLS
+======================
+
+A release tarball is automatically made when the developers add a tag to
+a Github repo.  However, it's still possible to fetch a commit tarball
+from a repo with no releases.  (Don't be tempted to use
+`Master.zip/tar.gz' as it is changeable and doesn't have a fixed
+matchable checksum.)
+
+First find the commit hash that you need by following the links on the
+repo main page and use that after /archive/ in the URL:
+
+  https://github.com/repo/$PRGNAM/archive/<first 7 chars of hash>/$PRGNAM-<long commit hash>.tar.gz
+
+Example:
+
+  https://github.com/WayfireWM/wf-touch/archive/8974eb0/wf-touch-8974eb0f6a65464b63dd03b842795cb441fb6403.tar.gz
+
+Test with `tar tf <archive> | head' to check the directory name
+matches $PRGNAM-<commit hash>.  `COMMIT' or a similarly named variable
+can be used in the SlackBuild to make life easier.  Adapt the
+`rm -rf $PRGNAM-$VERSION' and `cd $PRGNAM-$VERSION' lines in the
+SlackBuild to suit the directory name.
+
+It's useful to make VERSION a mix of the date of the commit and the
+short 7 character hash, e.g. something like YYYYMMDD_hash.  That way
+people can tell the specific commit and the date it was made.  Example:
+
+  VERSION=${VERSION:-20220422_8974eb0}
+  COMMIT=8974eb0f6a65464b63dd03b842795cb441fb6403
+  ...
+  cd $TMP
+  rm -rf $PRGNAM-$COMMIT
+  tar xvf $CWD/$PRGNAM-$COMMIT.tar.gz
+  cd $PRGNAM-$COMMIT
+  ...
+
+CONTENT-DISPOSITION
+===================
+
+The Content-Disposition HTTP header contains the destination name for a
+file when it is fetched.  This tends to work better in web browsers than
+downloaders like wget or curl, where it is marked as experimental and
+can interfere with other flags.  Web browsers may make parallel
+connections to servers and fetch the headers as part of their normal
+operation, while wget and curl are usually single threaded and would
+need to make an extra trip to fetch them*.  It's best to assume that
+Content-Disposition is not being used.
+
+* IIUC anyway - Dave.
+
+Last update: 2022-05-04 05:48:48 +0100
