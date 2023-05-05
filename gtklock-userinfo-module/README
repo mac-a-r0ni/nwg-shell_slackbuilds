@@ -9,4 +9,3 @@ This modules user defined display is configured by the 'mugshot'
 application. Change any personal information or icon file within 
 'mugshot' first in order for the gtklock module to show that info
 on the lockscreen.
- 
