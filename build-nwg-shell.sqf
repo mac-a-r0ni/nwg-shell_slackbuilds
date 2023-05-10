@@ -12,7 +12,9 @@ libhandy
 gtk-layer-shell
 SwayNotificationCenter
 nlohmann_json
+brightnessctl
 light
+gtklock
 seatd
 wlroots
 swaybg
@@ -23,7 +25,7 @@ sway
 # packages on SBo which stresses me out considerably
 #
 
-wheel
+python3-wheel
 python3-installer
 python3-pep517
 python3-attrs
@@ -67,11 +69,12 @@ lxappearance
 slurp
 swayidle
 swaylock
+gtklock-playerctl-module
+gtklock-powerbar-module
+gtklock-userinfo-module
 scour
-# submit
 wdisplays
 wl-clipboard
-# submit ALL
 wlsunset
 nwg-icon-picker
 nwg-bar
