@@ -5,15 +5,15 @@
 # You must make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':' except on otherwise blank lines.
 
-               |-----handy-ruler------------------------------------------------------|
-python3-pexpect: python3-pexpect (Python 3 module for spawning child applications)
-python3-pexpect:
-python3-pexpect: Pexpect is a Python module for spawning child applications,
-python3-pexpect: controlling them, and responding to expected patterns in their
-python3-pexpect: output.  Pexpect can be used for automating interactive
-python3-pexpect: applications such as ssh, ftp, passwd, telnet, etc.
-python3-pexpect: Pexpect is pure Python.
-python3-pexpect:
-python3-pexpect:
-python3-pexpect:
-python3-pexpect:
+              |-----handy-ruler------------------------------------------------------|
+python-pexpect: python-pexpect (Python 3 module for spawning child applications)
+python-pexpect:
+python-pexpect: Pexpect is a Python module for spawning child applications,
+python-pexpect: controlling them, and responding to expected patterns in their
+python-pexpect: output.  Pexpect can be used for automating interactive
+python-pexpect: applications such as ssh, ftp, passwd, telnet, etc.
+python-pexpect: Pexpect is pure Python.
+python-pexpect:
+python-pexpect:
+python-pexpect:
+python-pexpect:
