@@ -22,7 +22,7 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/wmww/gtk-layer-shell/archive/refs/tags/v0.8.0/gtk-layer-shell-0.8.1.tar.gz
+wget -c https://github.com/wmww/gtk-layer-shell/archive/refs/tags/v0.8.1/gtk-layer-shell-0.8.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
