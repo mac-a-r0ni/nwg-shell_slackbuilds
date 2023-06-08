@@ -25,7 +25,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell-config
-VERSION=${VERSION:-0.5.0}
+VERSION=${VERSION:-0.5.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -99,7 +99,7 @@ cp $CWD/Slackware_logo.svg $PKG/usr/share/pixmaps/Slackware.svg
 
 # manually remove installed Arch specific updater bins
 # if these aren't removed, a non-working applet will appear in WM
-rm $PKG/usr/bin/{nwg-shell-updater,nwg-update-indicator,nwg-system-update}
+rm $PKG/usr/bin/{nwg-shell-updater,nwg-update-indicator}
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
