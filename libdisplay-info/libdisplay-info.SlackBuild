@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for nwg-shell-config
+# Slackware build script for libdisplay-info
 
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.6/nwg-shell-config-0.5.6.tar.gz
+wget -c https://gitlab.freedesktop.org/emersion/libdisplay-info/-/releases/0.1.1/downloads/libdisplay-info-0.1.1.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=nwg-shell-config
-VERSION=${VERSION:-0.5.6}
+PRGNAM=libdisplay-info
+VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -75,47 +75,58 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.?z || tar xvf $CWD/v$VERSION.tar.?z
+tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
 cd $PRGNAM-$VERSION
 chown -R root:root .
-
-# patches removing refs to systemctl & replaced w/ loginctl
-patch -Np1 -i $CWD/loginctl.patch || exit 1
-
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
   -o -perm 511 \) -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-python3 setup.py install --optimize=1 --root=$PKG
-mkdir -p $PKG/usr/share/applications $PKG/usr/share/pixmaps
-chmod 644 *.desktop *.svg
-cp nwg-shell-config.desktop $PKG/usr/share/applications
-cp *.svg $PKG/usr/share/pixmaps
+mkdir -p meson-build
+cd meson-build
+ CFLAGS="$SLKCFLAGS" \
+ CXXFLAGS="$SLKCFLAGS" \
+  meson setup .. \
+    --buildtype=release \
+    --infodir=/usr/info \
+    --libdir=/usr/lib${LIBDIRSUFFIX} \
+    --localstatedir=/var \
+    --mandir=/usr/man \
+    --prefix=/usr \
+    --sysconfdir=/etc
 
-# Include Slackware logo on System Info screen
-# https://commons.wikimedia.org/wiki/File:Slackware_logo.svg
-# Licensed under the GPL by Bob Moser
-cp $CWD/Slackware_logo.svg $PKG/usr/share/pixmaps/Slackware.svg
-
-# manually remove installed Arch specific updater bins
-# if these aren't removed, a non-working applet will appear in WM
-rm $PKG/usr/bin/{nwg-shell-updater,nwg-update-indicator}
+"${NINJA:=ninja}"
+  DESTDIR=$PKG $NINJA install
+cd ..
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-rm -rf $PKG/usr/lib${LIBDIRSUFFIX}/*.la
+# Compress and link manpages, if any:
+if [ -d $PKG/usr/man ]; then
+  ( cd $PKG/usr/man
+    for manpagedir in $(find . -type d -name "man*") ; do
+      ( cd $manpagedir
+        for eachpage in $( find . -type l -maxdepth 1) ; do
+          ln -s $( readlink $eachpage ).gz $eachpage.gz
+          rm $eachpage
+        done
+        gzip -9 *.*
+      )
+    done
+  )
+fi
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a LICENSE README.md  \
+cp -a LICENSE README.md \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
+#cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

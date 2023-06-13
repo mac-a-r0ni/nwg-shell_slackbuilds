@@ -22,12 +22,14 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.16.2/downloads/wlroots-0.16.2.tar.gz
+wget -c https://github.com/hyprwm/Hyprland/releases/download/v0.26.0/source-v0.26.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
+SRCNAM=source
 PRGNAM=wlroots
-VERSION=${VERSION:-0.16.2}
+VERSION=${VERSION:-0.17.0-dev}
+HYPVER=${HYPVER:-0.26.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -71,9 +73,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+rm -rf hyprland-source
+tar xvf $CWD/$SRCNAM-v$HYPVER.tar.?z
+cd hyprland-source/subprojects/wlroots
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -81,8 +83,8 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-mkdir build
-cd build
+mkdir meson-build
+cd meson-build
   CFLAGS="$SLKCFLAGS" \
   CXXFLAGS="$SLKCFLAGS" \
   meson setup .. \
@@ -96,7 +98,7 @@ cd build
     -Dstrip=true \
     -Dxcb-errors=disabled \
     -Dexamples=false \
-    -Drenderers=gles2,vulkan \
+    -Drenderers=auto \
     -Dxwayland=enabled \
     -Dbackends=drm,libinput,x11
 

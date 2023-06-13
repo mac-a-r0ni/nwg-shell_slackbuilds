@@ -1,0 +1,13 @@
+xdg-desktop-portal-hyprland (XDG backend for hyprland)
+
+Due to reasons explained in hyprland-protocols, we have a separate
+desktop portal impl for Hyprland. Although -wlr does work with
+Hyprland, -hyprland offers more features.
+
+This relies on 'qt6' and 'qt6-wayland' (NOT currently packaged) for
+screensharing to work. Please be advised unless you have qt6 installed
+there may be missing features in Hyprland as a result.
+
+I am not currently packaging qt6 yet, I must research and test it
+before I'll bother shipping the feature, for now we'll ship without it
+and I'll consider it for the future.

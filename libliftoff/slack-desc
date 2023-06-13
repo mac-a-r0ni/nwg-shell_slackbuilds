@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+          |-----handy-ruler------------------------------------------------------|
+libliftoff: libliftoff (Lightweight KMS plane library)
+libliftoff:
+libliftoff: libliftoff eases the use of KMS planes from userspace without
+libliftoff: standing in your way. Users create "virtual planes" called layers,
+libliftoff: set KMS properties on them, and libliftoff will pick hardware planes
+libliftoff: for these layers if possible.
+libliftoff:
+libliftoff: Homepage: https://gitlab.freedesktop.org/emersion/libliftoff
+libliftoff:
+libliftoff:
+libliftoff:
