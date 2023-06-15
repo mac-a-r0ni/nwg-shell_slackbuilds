@@ -85,6 +85,32 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+cd subprojects/wlroots
+patch -p1 <$CWD/wlroots-meson-build.patch
+mkdir -p meson-build
+cd meson-build
+ CFLAGS="$SLKCFLAGS" \
+ CXXFLAGS="$SLKCFLAGS" \
+  meson setup .. \
+    --buildtype=release \
+    --infodir=/usr/info \
+    --libdir=/usr/lib${LIBDIRSUFFIX} \
+    --localstatedir=/var \
+    --mandir=/usr/man \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    -Dstrip=true \
+    -Dxcb-errors=disabled \
+    -Dexamples=false \
+    -Drenderers=auto \
+    -Dxwayland=enabled \
+    -Dbackends=drm,libinput,x11
+
+"${NINJA:=ninja}"
+  DESTDIR=$PKG $NINJA install
+
+cd $TMP/$PRGNAM-$PKGNAM
+
 mkdir -p meson-build
 cd meson-build
  CFLAGS="$SLKCFLAGS" \
@@ -106,9 +132,10 @@ cd ..
 
 # remove bundled wlroots-dev package as we ship it seperately (built from the same source)
 # so we don't cause issues with existing packages on the system
-
-rm -r $PKG/usr/include/wlr
-rm -r $PKG/usr/lib64
+#mv $PKG/usr/include/wlr $PKG/usr/include/hyprland/wlroots
+#rm -r $PKG/usr/include/wlr
+rm -r $PKG/usr/lib64/pkgconfig
+rm $PKG/usr/lib64/libwlroots.a
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
