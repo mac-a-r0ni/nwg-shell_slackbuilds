@@ -86,7 +86,7 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 pushd subprojects/wlroots
-    meson build/ --prefix="$TMP/$PRGNAM-$PKGNAM/tmpwlr" --buildtype=release
+    meson build/ --prefix="$TMP/$PRGNAM-$PKGNAM/tmpwlr" --buildtype=release -Dsystemd=disabled
     ninja -C build/
     mkdir -p "$TMP/$PRGNAM-$PKGNAM/tmpwlr"
     ninja -C build/ install
