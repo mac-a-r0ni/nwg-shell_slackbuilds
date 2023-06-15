@@ -104,10 +104,11 @@ cd meson-build
     -Dexamples=false \
     -Drenderers=auto \
     -Dxwayland=enabled \
-    -Dbackends=drm,libinput,x11
 
 "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
+
+#    -Dbackends=drm,libinput,x11
 
 cd $TMP/$PRGNAM-$PKGNAM
 
