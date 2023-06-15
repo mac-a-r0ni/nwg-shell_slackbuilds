@@ -99,16 +99,16 @@ cd meson-build
     --mandir=/usr/man \
     --prefix=/usr \
     --sysconfdir=/etc \
-    -Dstrip=true
+    -Dstrip=true \
+    -Dxcb-errors=disabled \
+    -Dexamples=false \
+    -Drenderers=auto \
+    -Dxwayland=enabled \
+    -Dbackends=drm,libinput,x11
 
 "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
 
-#    -Dbackends=drm,libinput,x11
-#    -Dxcb-errors=disabled \
-#    -Dexamples=false \
-#    -Drenderers=auto \
-#    -Dxwayland=enabled \
 
 cd $TMP/$PRGNAM-$PKGNAM
 
