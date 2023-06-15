@@ -98,13 +98,7 @@ cd meson-build
     --localstatedir=/var \
     --mandir=/usr/man \
     --prefix=/usr \
-    --sysconfdir=/etc \
-    -Dstrip=true \
-    -Dxcb-errors=disabled \
-    -Dexamples=false \
-    -Drenderers=auto \
-    -Dxwayland=enabled \
-    -Dbackends=drm,libinput,x11
+    --sysconfdir=/etc
 
 "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
