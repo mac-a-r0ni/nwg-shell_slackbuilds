@@ -86,7 +86,7 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 pushd subprojects/wlroots
-    meson build/ --prefix="$TMP/$PRGNAM-$PKGNAM/tmpwlr" --buildtype=release -Dsystemd=disabled
+    meson build/ --prefix="$TMP/$PRGNAM-$PKGNAM/tmpwlr" --buildtype=release
     ninja -C build/
     mkdir -p "$TMP/$PRGNAM-$PKGNAM/tmpwlr"
     ninja -C build/ install
@@ -108,7 +108,7 @@ find src -name '*.hpp' -exec install -Dm0644 {} "$pkgdir/usr/include/hyprland/{}
     mkdir -p "$pkgdir/usr/include/hyprland/protocols"
     cp protocols/*-protocol.h "$pkgdir/usr/include/hyprland/protocols"
     pushd build
-    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+    cmake -DSYSTEMD=disabled -DCMAKE_INSTALL_PREFIX=/usr ..
     popd
     install -Dm0644 -t "$pkgdir/usr/share/pkgconfig" build/hyprland.pc
     install -Dm0755 -t "$pkgdir/usr/bin" build/Hyprland
