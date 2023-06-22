@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/azote/archive/v1.12.0/azote-1.12.0.tar.gz
+wget -c https://github.com/nwg-piotr/azote/archive/v1.12.1/azote-1.12.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=azote
-VERSION=${VERSION:-1.12.0}
+VERSION=${VERSION:-1.12.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
