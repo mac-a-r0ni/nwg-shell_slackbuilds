@@ -22,8 +22,6 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-panel/archive/v0.9.7/nwg-panel-0.9.7.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-panel
@@ -75,7 +73,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/v$VERSION.tar.?z || tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
+tar xvf $CWD/$PRGNAM-$VERSION.tar.?z || tar xvf $CWD/v$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 
 # fix reboot/shutdown commands in menu

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for hyprland
+# Slackware build script for gammastep
 
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA
+# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,13 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/hyprwm/Hyprland/releases/download/v0.26.0/source-v0.26.0.tar.gz
+wget -c https://gitlab.com/chinstrap/gammastep/-/archive/v2.0.9/gammastep-v2.0.9.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PKGNAM=source
-PRGNAM=hyprland
-VERSION=${VERSION:-0.26.0}
+PRGNAM=gammastep
+VERSION=${VERSION:-2.0.9}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -75,9 +74,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$PKGNAM
-tar xvf $CWD/$PKGNAM-v$VERSION.tar.?z
-cd $PRGNAM-$PKGNAM
+rm -rf $PRGNAM-v$VERSION
+tar xvf $CWD/$PRGNAM-v$VERSION.tar.?z
+cd $PRGNAM-v$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -85,51 +84,24 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-pushd subprojects/wlroots
-    meson build/ --prefix="$TMP/$PRGNAM-$PKGNAM/tmpwlr" --buildtype=release
-    ninja -C build/
-    mkdir -p "$TMP/$PRGNAM-$PKGNAM/tmpwlr"
-    ninja -C build/ install
-    popd
-    make protocols
-    make release
-    pushd hyprctl
-    make all
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./bootstrap
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --sysconfdir=/etc \
+  --localstatedir=/var \
+  --mandir=/usr/man \
+  --build=$ARCH-slackware-linux
 
-cd $PRGNAM-$PKGNAM
-
-find src -name '*.hpp' -exec install -Dm0644 {} "$pkgdir/usr/include/hyprland/{}" \;
-    pushd subprojects/wlroots/include
-    find . -name '*.h' -exec install -Dm0644 {} "$pkgdir/usr/include/hyprland/wlroots/{}" \;
-    popd
-    pushd subprojects/wlroots/build/include
-    find . -name '*.h' -exec install -Dm0644 {} "$pkgdir/usr/include/hyprland/wlroots/{}" \;
-    popd
-    mkdir -p "$pkgdir/usr/include/hyprland/protocols"
-    cp protocols/*-protocol.h "$pkgdir/usr/include/hyprland/protocols"
-    pushd build
-    cmake -DSYSTEMD=disabled -DCMAKE_INSTALL_PREFIX=/usr ..
-    popd
-    install -Dm0644 -t "$pkgdir/usr/share/pkgconfig" build/hyprland.pc
-    install -Dm0755 -t "$pkgdir/usr/bin" build/Hyprland
-    install -Dm0755 -t "$pkgdir/usr/bin" hyprctl/hyprctl
-    install -Dm0644 -t "$pkgdir/usr/share/$pkgname" assets/*.png
-    install -Dm0644 -t "$pkgdir/usr/share/wayland-sessions" "example/$pkgname.desktop"
-    install -Dm0644 -t "$pkgdir/usr/share/$pkgname" "example/$pkgname.conf"
-    install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
-    install -Dm0755 -t "$pkgdir/usr/lib64" "$srcdir/tmpwlr/lib/libwlroots.so.12032"
-
-cd ..
-
-# remove bundled wlroots-dev package as we ship it seperately (built from the same source)
-# so we don't cause issues with existing packages on the system
-#mv $PKG/usr/include/wlr $PKG/usr/include/hyprland/wlroots
-#rm -r $PKG/usr/include/wlr
-#rm -r $PKG/usr/lib64/pkgconfig
-#rm $PKG/usr/lib64/libwlroots.a
+make || make || exit 1
+make install DESTDIR=$PKG || exit 1
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+rm -rf $PKG/usr/lib${LIBDIRSUFFIX}/*.la
 
 # Compress and link manpages, if any:
 if [ -d $PKG/usr/man ]; then
@@ -147,7 +119,7 @@ if [ -d $PKG/usr/man ]; then
 fi
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a LICENSE README.md \
+cp -a CONTRIBUTING.md COPYING DESIGN NEWS.md README.md \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

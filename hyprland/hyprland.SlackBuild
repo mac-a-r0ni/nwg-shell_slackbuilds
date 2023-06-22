@@ -2,6 +2,9 @@
 
 # Slackware build script for hyprland
 
+# This script is adapted to/for Slackware from the Arch Linux script by Caleb Maclennan
+# https://gitlab.archlinux.org/archlinux/packaging/packages/hyprland/-/blob/main/PKGBUILD
+
 # Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA
 # All rights reserved.
 #
@@ -21,8 +24,6 @@
 #  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-wget -c https://github.com/hyprwm/Hyprland/releases/download/v0.26.0/source-v0.26.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
@@ -54,16 +55,16 @@ PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 if [ "$ARCH" = "i586" ]; then
-  SLKCFLAGS="-O2 -march=i586 -mtune=i686 -Wno-error=undef"
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "i686" ]; then
-  SLKCFLAGS="-O2 -march=i686 -mtune=i686 -Wno-error=undef"
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
-  SLKCFLAGS="-O2 -fPIC -Wno-error=undef"
+  SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
 elif [ "$ARCH" = "aarch64" ]; then
-  SLKCFLAGS="-O2 -fPIC -Wno-error=undef"
+  SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
 else
   SLKCFLAGS="-O2"
@@ -85,52 +86,50 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-cd subprojects/wlroots
-patch -p1 <$CWD/wlroots-meson-build.patch
-mkdir -p meson-build
-cd meson-build
- CFLAGS="$SLKCFLAGS" \
- CXXFLAGS="$SLKCFLAGS" \
-  meson setup .. \
-    --buildtype=release \
-    --infodir=/usr/info \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --localstatedir=/var \
-    --mandir=/usr/man \
-    --prefix=/usr \
-    --sysconfdir=/etc
-
-"${NINJA:=ninja}"
-  DESTDIR=$PKG $NINJA install
-
+# build the included wlroots headers/package
+    make fixwlr
+    sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
 
 cd $TMP/$PRGNAM-$PKGNAM
 
-mkdir -p meson-build
-cd meson-build
- CFLAGS="$SLKCFLAGS" \
- CXXFLAGS="$SLKCFLAGS" \
-  meson setup .. \
-    --buildtype=release \
-    --infodir=/usr/info \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --localstatedir=/var \
-    --mandir=/usr/man \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    -Dsystemd=disabled \
-    -Dxwayland=enabled
+    pushd subprojects/wlroots
+    meson build/ --prefix="$TMP/$PRGNAM-$PKGNAM/tmpwlr" --buildtype=release
+    ninja -C build/
+    mkdir -p "$TMP/$PRGNAM-$PKGNAM/tmpwlr"
+    ninja -C build/ install
+    popd
+    pushd subprojects/udis86
+    cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -H./ -B./build -G Ninja
+    cmake --build ./build --config Release --target all
+    popd
+    make protocols
+    cmake --no-warn-unused-cli -DCMAKE_SKIP_RPATH=ON -DCMAKE_BUILD_TYPE:STRING=Release -DNO_SYSTEMD:STRING=true -S . -B ./build -G Ninja
+    cmake --build ./build --config Release --target all -j5
+    make release
+    pushd hyprctl
+    make all
 
-"${NINJA:=ninja}"
-  DESTDIR=$PKG $NINJA install
-cd ..
+cd $TMP/$PRGNAM-$PKGNAM
 
-# remove bundled wlroots-dev package as we ship it seperately (built from the same source)
-# so we don't cause issues with existing packages on the system
-#mv $PKG/usr/include/wlr $PKG/usr/include/hyprland/wlroots
-#rm -r $PKG/usr/include/wlr
-rm -r $PKG/usr/lib64/pkgconfig
-rm $PKG/usr/lib64/libwlroots.a
+find src -name '*.hpp' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
+    pushd subprojects/wlroots/include
+    find . -name '*.h' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/wlroots/{}" \;
+    popd
+    pushd subprojects/wlroots/build/include
+    find . -name '*.h' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/wlroots/{}" \;
+    popd
+    mkdir -p "$PKG/usr/include/hyprland/protocols"
+    cp protocols/*-protocol.h "$PKG/usr/include/hyprland/protocols"
+    pushd build
+    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+    popd
+    install -Dm0644 -t "$PKG/usr/share/pkgconfig" build/hyprland.pc
+    install -Dm0755 -t "$PKG/usr/bin" build/Hyprland
+    install -Dm0755 -t "$PKG/usr/bin" hyprctl/hyprctl
+    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
+    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "example/$PRGNAM.desktop"
+    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
+    install -Dm0755 -t "$PKG/usr/lib64" "$TMP/$PRGNAM-$PKGNAM/tmpwlr/lib64/libwlroots.so.12032"
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
@@ -149,6 +148,8 @@ if [ -d $PKG/usr/man ]; then
     done
   )
 fi
+
+cd $TMP/$PRGNAM-$PKGNAM
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a LICENSE README.md \
