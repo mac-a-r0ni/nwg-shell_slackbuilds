@@ -1,19 +1,19 @@
 
 This repo contains SlackBuilds (tested on -current) for nwg-shell:  
-[https://nwg-piotr.github.io/nwg-shell/](https://nwg-piotr.github.io/nwg-shell/) - web  
-[https://github.com/nwg-piotr/nwg-shell](https://github.com/nwg-piotr/nwg-shell) - git  
+[https://nwg-piotr.github.io/nwg-shell/](https://nwg-piotr.github.io/nwg-shell/) - website  
+[https://github.com/nwg-piotr/nwg-shell](https://github.com/nwg-piotr/nwg-shell) - github  
 
 Scripts for Slackware 15.0 have been submitted to [SBo](https://slackbulds.org), over half of the
 packages are maintained by other people, but they all adhere to their guidelines for packaging.
-The SBo branch of this repo has a sqf file for use with [sbopkg](https://sbopkg.org/) which
-will pull-in all the dependencies and make/install nwg-shell on your system.[NOTE: The sqf file is untested
-and un-maintained currently, use at your own risk] If you are on
-the stable 15.0 release, it is recommended to use SBo (with sboui) to install. If you're on -current,
-you should clone the main branch of this repo and run the `build-nwg-shell.sh`[also un-maintained currently]
- to make packages, preferably use the package repo for your arch linked below.
+The SBo branch of this repo has a copy of the latest SBo packages for this project. Missing deps
+are available [from the site](https://slackbuilds.org). 
 
-This is currently IN DEVELOPMENT and I consider it to be BETA stage and may very well be broken
-or not work at all. (It does work).
+If you are on the stable 15.0 release, it is recommended to use SBo (with sboui or sbopkg) to install. 
+If you're on -current, you should clone the main branch of this repo and run the `build-nwg-shell.sh`[also un-maintained currently]
+ to make packages, or preferably use the package repo for your arch linked below.
+
+This is currently constantly IN DEVELOPMENT and I consider it to be BETA stage and may very well be broken
+here or there or not work at all. (It does work).
 
 The first package you need to build/install is google-go-lang and you should have python3 already.
 One or two of the nwg packages dep on another, but I haven't done a clean build yet to know for
@@ -28,7 +28,8 @@ nwg-shell.
 
 Some of these scripts were originally from the [SBo](https://slackbuilds.org) website they
 have been edited from their packages on SBo, if you have any of them installed, they should work
-as-is, but I cannot make any guarantees. My advice is to build/install fresh packages.
+as-is, but I cannot make any guarantees. My advice is to build/install fresh packages. Many of the scripts
+on SBo pull in extra and unneeded deps for other modules, the scripts here avoid that but YMMV.
 
 I have put up a repo for testing based on -current, these builds will not run on Slackware
 15.0. Add the repo to your slackpkg+ config in order to have slackpkg manage the packages and
