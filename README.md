@@ -9,7 +9,7 @@ The SBo branch of this repo has a copy of the latest SBo packages for this proje
 are available [from the site](https://slackbuilds.org). 
 
 If you are on the stable 15.0 release, it is recommended to use SBo (with sboui or sbopkg) to install. 
-If you're on -current, you should clone the main branch of this repo and run the `build-nwg-shell.sh`[also un-maintained currently]
+If you're on -current, you should clone the main branch of this repo and run the `build-nwg-shell.sneeds updates currently]
  to make packages, or preferably use the package repo for your arch linked below.
 
 This is currently constantly IN DEVELOPMENT and I consider it to be BETA stage and may very well be broken
