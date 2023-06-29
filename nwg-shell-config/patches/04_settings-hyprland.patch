@@ -1,0 +1,16 @@
+--- a/nwg_shell_config/shell/settings-hyprland
++++ b/nwg_shell_config/shell/settings-hyprland
+@@ -110,9 +110,9 @@
+   "gtklock-logout-command": "swaymsg exit",
+   "gtklock-playerctl": false,
+   "gtklock-powerbar": false,
+-  "gtklock-poweroff-command": "systemctl -i poweroff",
+-  "gtklock-reboot-command": "systemctl reboot",
+-  "gtklock-suspend-command": "systemctl suspend",
++  "gtklock-poweroff-command": "loginctl poweroff",
++  "gtklock-reboot-command": "loginmctl reboot",
++  "gtklock-suspend-command": "loginctl suspend",
+   "gtklock-time-format": "%H:%M:%S",
+   "gtklock-userinfo": false,
+   "gtklock-userswitch-command": "",
+
