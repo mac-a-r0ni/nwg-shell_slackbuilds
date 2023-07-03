@@ -23,7 +23,7 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 wget -c https://github.com/nwg-piotr/nwg-dock/archive/refs/tags/v0.3.5.tar.gz
-wget -c https://slackware.lngn.net/pub/source/nwg-dock/nwg-dock-vendor.tar.gz
+wget -c https://slackware.lngn.net/pub/source/nwg-dock/nwg-dock-vendor-0.3.5.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
