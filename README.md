@@ -9,11 +9,12 @@ The SBo branch of this repo has a copy of the latest SBo packages for this proje
 are available [from the site](https://slackbuilds.org). 
 
 If you are on the stable 15.0 release, it is recommended to use SBo (with sboui or sbopkg) to install. 
-If you're on -current, you should clone the main branch of this repo and run the `build-nwg-shell.sneeds updates currently]
+If you're on -current, you should clone the main branch of this repo and run the `build-nwg-shell.sh [needs updates currently]
  to make packages, or preferably use the package repo for your arch linked below.
 
-This is currently constantly IN DEVELOPMENT and I consider it to be BETA stage and may very well be broken
-here or there or not work at all. (It does work).
+This is currently constantly IN DEVELOPMENT and I consider it to be BETA stage due to some patches being 
+missing for a few packages. Things may occasionally break. (It does work). If you find a broken package
+or something out of date, let me know! Things can slip by me occasionally.
 
 The first package you need to build/install is google-go-lang and you should have python3 already.
 One or two of the nwg packages dep on another, but I haven't done a clean build yet to know for
