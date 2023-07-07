@@ -23,6 +23,8 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://github.com/hsoft/send2trash/archive/1.8.0/send2trash-1.8.0.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=send2trash
