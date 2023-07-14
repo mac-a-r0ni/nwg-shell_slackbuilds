@@ -1,8 +1,8 @@
 PRGNAM="nwg-look"
-VERSION="0.2.1"
+VERSION="0.2.3"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-look/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-look/archive/refs/tags/v0.2.1.tar.gz \
-          https://slackware.lngn.net/pub/source/nwg-look/nwg-look-vendor-0.2.1.tar.gz"
+DOWNLOAD="https://github.com/nwg-piotr/nwg-look/archive/refs/tags/v0.2.3.tar.gz \
+          https://slackware.lngn.net/pub/source/nwg-look/nwg-look-vendor-0.2.3.tar.gz"
 MD5SUM=" \
         "
 DOWNLOAD_x86_64=""
