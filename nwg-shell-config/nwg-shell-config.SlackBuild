@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.9/nwg-shell-config-0.5.9.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.11/nwg-shell-config-0.5.11.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell-config
-VERSION=${VERSION:-0.5.9}
+VERSION=${VERSION:-0.5.11}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}

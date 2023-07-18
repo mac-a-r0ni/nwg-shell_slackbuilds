@@ -26,12 +26,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-wget -c https://go.dev/dl/go1.20.5.src.tar.gz
+wget -c https://go.dev/dl/go1.20.6.src.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=google-go-lang
-VERSION=${VERSION:-1.20.5}
+VERSION=${VERSION:-1.20.6}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
