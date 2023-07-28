@@ -22,11 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://files.pythonhosted.org/packages/c4/e6/c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80/flit_core-3.9.0.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=python-flit_core
 SRCNAM=$(echo $PRGNAM | sed "s/python-//")
-VERSION=${VERSION:-3.8.0}
+VERSION=${VERSION:-3.9.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}

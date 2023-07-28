@@ -22,11 +22,14 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://files.pythonhosted.org/packages/ec/34/903929e15b2657335b2ce8723d92fc804d3569b7ac0f1f8877ed1a7b2024/wheel-0.41.0.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=wheel
 PRGNAM=python-wheel
-VERSION=${VERSION:-0.38.4}
+#0.38.4
+VERSION=${VERSION:-0.41.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
