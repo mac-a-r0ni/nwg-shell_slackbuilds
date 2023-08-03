@@ -137,8 +137,8 @@
    "gtklock-userinfo": false,
    "gtklock-userswitch-command": ""
 
---- a/nwg-shell/a/nwg_shell/skel/config/hypr/hyprland.conf
-+++ b/nwg-shell/b/nwg_shell/skel/config/hypr/hyprland.conf
+--- a/nwg_shell/skel/config/hypr/hyprland.conf
++++ b/nwg_shell/skel/config/hypr/hyprland.conf
 @@ -15,10 +15,9 @@
  # Autostart. Feel free to add your own entries.
  # Shell components will be started in the includes.conf file, which we include below.
