@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-shell/releases/download/v0.5.6/nwg-shell-v0.5.6.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-shell/releases/download/v0.5.7/nwg-shell-v0.5.7.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell
-VERSION=${VERSION:-0.5.6}
+VERSION=${VERSION:-0.5.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -80,7 +80,7 @@ cd $PRGNAM-$VERSION
 chown -R root:root .
 
 # patches removing refs to systemctl & replaced w/ loginctl & disable updater
-patch -Np1 -i $CWD/slackware.patch || exit 1
+patch -Np1 -i $CWD/defaults.patch || exit 1
 
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
