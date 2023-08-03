@@ -25,13 +25,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/hyprwm/Hyprland/releases/download/v0.27.2/source-v0.27.2.tar.gz
+wget -c https://github.com/hyprwm/Hyprland/releases/download/v0.28.0/source-v0.28.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.27.2}
+VERSION=${VERSION:-0.28.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
