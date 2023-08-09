@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://git.sr.ht/~kennylevinsen/seatd/archive/0.7.0.tar.gz
+wget -c https://git.sr.ht/~kennylevinsen/seatd/archive/0.8.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=seatd
-VERSION=${VERSION:-0.7.0}
+VERSION=${VERSION:-0.8.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
