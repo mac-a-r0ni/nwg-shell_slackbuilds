@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-dock-hyprland/archive/refs/tags/v0.1.4.tar.gz
-wget -c https://slackware.lngn.net/pub/source/nwg-dock-hyprland/nwg-dock-hyprland-vendor-0.1.4.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-dock-hyprland/archive/refs/tags/v0.1.5.tar.gz
+wget -c https://slackware.lngn.net/pub/source/nwg-dock-hyprland/nwg-dock-hyprland-vendor-0.1.5.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-dock-hyprland
-VERSION=${VERSION:-0.1.4}
+VERSION=${VERSION:-0.1.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
