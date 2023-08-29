@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://git.sr.ht/~emersion/grim/archive/v1.4.0.tar.gz
+wget -c https://git.sr.ht/~emersion/grim/archive/v1.4.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=grim
-SRCNAM=grim-v1.4.0
-VERSION=${VERSION:-1.4.0}
+SRCNAM=grim-v1.4.1
+VERSION=${VERSION:-1.4.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
