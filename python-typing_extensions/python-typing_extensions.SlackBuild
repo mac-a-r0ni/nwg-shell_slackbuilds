@@ -26,13 +26,13 @@
 # 20220404 bkw: Modified by SlackBuilds.org, BUILD=2:
 # - name SlackBuild correctly in doc dir.
 
-wget -c https://files.pythonhosted.org/packages/source/t/typing_extensions/typing_extensions-4.6.3.tar.gz
+wget -c https://files.pythonhosted.org/packages/source/t/typing_extensions/typing_extensions-4.7.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=python-typing_extensions
 SRCNAM=typing_extensions
-VERSION=${VERSION:-4.6.3}
+VERSION=${VERSION:-4.7.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
