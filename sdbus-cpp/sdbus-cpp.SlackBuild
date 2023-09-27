@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for xdg-desktop-portal-hyprland
+# Slackware build script for sdbus-cpp
 
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA,
+# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/hyprwm/xdg-desktop-portal-hyprland/archive/refs/tags/v1.1.0.tar.gz
+wget -c https://github.com/Kistler-Group/sdbus-cpp/archive/refs/tags/v1.3.0/sdbus-cpp-1.3.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=xdg-desktop-portal-hyprland
-VERSION=${VERSION:-1.1.0}
+PRGNAM=sdbus-cpp
+VERSION=${VERSION:-1.3.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -40,6 +40,9 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
+# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
+# the name of the created package would be, and then exit. This information
+# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -72,7 +75,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/v$VERSION.tar.?z
+tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -81,38 +84,34 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# to submit this to SBo I either need to have a pkg for the protocols or bundle a specific git pull when shipping
-# preferrable to make a pkg if we have a stable release by then.
-# there is a stable release now, but I'm not making a script for it today ;)
-git clone https://github.com/hyprwm/hyprland-protocols $TMP/$PRGNAM-$VERSION/subprojects/hyprland-protocols
+mkdir -p build
+cd build
 
-mkdir meson-build
-cd meson-build
- CFLAGS="$SLKCFLAGS" \
- CXXFLAGS="$SLKCFLAGS" \
-  meson setup .. \
-    --buildtype=release \
-    --infodir=/usr/info \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --localstatedir=/var \
-    --mandir=/usr/man \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    -Dstrip=true \
-    -Dsystemd=disabled
+  CFLAGS="$SLKCFLAGS" \
+  CXXFLAGS="$SLKCFLAGS" \
+  cmake .. \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DPREFIX=/usr \
+  -DCMAKE_INSTALL_PREFIX=/ \
+  -DBUILD_DOC=OFF \
+  -DBUILD_TESTS=OFF \
+  -DBUILD_SHARED_LIBS=ON \
+  -DBUILD_LIBSYSTEMD=OFF \
+  -DBUILD_EXAMPLES=OFF
 
-  "${NINJA:=ninja}"
-  DESTDIR=$PKG $NINJA install
+make
+make install DESTDIR=$PKG
+
+# save for later in case I figure out a good way to package libsystemd
+#  -DLIBSYSTEMD_VERSION=242 \
+#  -DLIBSYSTEMD_EXTRA_CONFIG_OPTS="--buildtype=release" \
+#  -DLIBSYSTEMD_EXTRA_CONFIG_OPTS="--prefix=/usr" \
+
 cd ..
-
-#    -Dsd-bus-provider=libelogind \
-
-rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-# FYI without scdoc no manpages are created
 # Compress and link manpages, if any:
 if [ -d $PKG/usr/man ]; then
   ( cd $PKG/usr/man
@@ -129,11 +128,13 @@ if [ -d $PKG/usr/man ]; then
 fi
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a  CONTRIBUTING.md LICENSE README.md $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a AUTHORS COPYING* ChangeLog INSTALL NEWS README.md \
+  $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+#cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

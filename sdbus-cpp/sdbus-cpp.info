@@ -1,0 +1,11 @@
+PRGNAM="sdbus-cpp"
+VERSION="1.3.0"
+HOMEPAGE="https://github.com/Kistler-Group/sdbus-cpp/"
+DOWNLOAD="https://github.com/Kistler-Group/sdbus-cpp/archive/refs/tags/v1.3.0/sdbus-cpp-1.3.0.tar.gz"
+MD5SUM="37c582a378de5fce4ffc932e552afa36"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES=""
+MAINTAINER="Jay Lanagan"
+EMAIL="j@lngn.net"
+
