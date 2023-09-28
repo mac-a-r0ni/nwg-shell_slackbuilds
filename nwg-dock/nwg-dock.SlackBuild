@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-dock/archive/refs/tags/v0.3.7.tar.gz
-wget -c https://slackware.lngn.net/pub/source/nwg-dock/nwg-dock-vendor-0.3.7.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-dock/archive/refs/tags/v0.3.8.tar.gz
+wget -c https://slackware.lngn.net/pub/source/nwg-dock/nwg-dock-vendor-0.3.8.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-dock
-VERSION=${VERSION:-0.3.7}
+VERSION=${VERSION:-0.3.8}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
