@@ -1,0 +1,9 @@
+sddm-sugar-candy-nwg (nwg-shell artwork for sddm)
+
+This is a SDDM login theme for the nwg-shell project with artwork
+from the nwg-shell-wallpapers contributors on your login screen based
+on the sugar-candy theme.
+
+To enable the theme edit the file "/etc/sddm.conf" and find the
+[Theme] section, edit the line "Current=breeze" to display
+"Current=sugar-candy-nwg"
