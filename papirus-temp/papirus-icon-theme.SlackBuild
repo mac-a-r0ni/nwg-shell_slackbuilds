@@ -70,10 +70,6 @@ chown -R root:root .
 find . -perm /111 -a \! -perm 755 -a -exec chmod 755 {} + \
  -o \! -perm /111 -a \! -perm 644 -a -exec chmod 644 {} +
 
-# Papirus team recommends to remove ePapirus & ePapirus-Dark if the distro
-# does not ship the Pantheon Desktop, so we're going to do that.
-rm -r $PKG/usr/share/icons/{ePapirus,ePapirus-Dark}
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cd $PKG/usr/doc
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz $PRGNAM-$VERSION/{AUTHORS,LICENSE,README.md}
@@ -87,7 +83,6 @@ zcat $CWD/doinst.sh.gz > $PKG/install/doinst.sh
 
 cd $PKG
 
-
 # To create a new doinst.sh, comment the next line, uncomment the lines below
 # it and @THEMES@ above, grab the new one from the package and gzip it.
 find . -type l -delete
@@ -98,6 +93,5 @@ find . -type l -delete
 #find . -type l \
 #  -printf '( cd %h ; rm -rf %f )\n( cd %h ; ln -sf %l %f )\n' -delete | \
 #  sed 's,cd \./,cd ,' >> $PKG/install/doinst.sh
-
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
