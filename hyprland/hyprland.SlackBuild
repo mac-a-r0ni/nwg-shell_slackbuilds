@@ -32,7 +32,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 PKGNAM=source
 PRGNAM=hyprland
 VERSION=${VERSION:-0.30.0}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -129,9 +129,9 @@ find src -name '*.hpp' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \
     install -Dm0755 -t "$PKG/usr/bin" build/Hyprland
     install -Dm0755 -t "$PKG/usr/bin" hyprctl/hyprctl
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
-    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "example/$PRGNAM.desktop"
+    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "$CWD/$PRGNAM.desktop"
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
-    install -Dm0755 -t "$PKG/usr/lib64" "$TMP/$PRGNAM-$PKGNAM/tmpwlr/lib64/libwlroots.so.12032"
+    install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}" "$TMP/$PRGNAM-$PKGNAM/tmpwlr/lib${LIBDIRSUFFIX}/libwlroots.so.12032"
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
