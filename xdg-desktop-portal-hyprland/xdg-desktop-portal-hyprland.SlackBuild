@@ -23,12 +23,12 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #wget -c https://github.com/hyprwm/xdg-desktop-portal-hyprland/archive/refs/tags/v1.1.0.tar.gz
-wget -c https://github.com/hyprwm/xdg-desktop-portal-hyprland/archive/refs/tags/v1.2.2.tar.gz
+wget -c https://github.com/hyprwm/xdg-desktop-portal-hyprland/archive/refs/tags/v1.2.4.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=xdg-desktop-portal-hyprland
-VERSION=${VERSION:-1.2.2}
+VERSION=${VERSION:-1.2.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -105,8 +105,6 @@ cd meson-build
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
 cd ..
-
-#    -Dsd-bus-provider=libelogind \
 
 rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
