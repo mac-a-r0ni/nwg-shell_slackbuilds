@@ -22,9 +22,6 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#wget -c https://github.com/hyprwm/xdg-desktop-portal-hyprland/archive/refs/tags/v1.1.0.tar.gz
-wget -c https://github.com/hyprwm/xdg-desktop-portal-hyprland/archive/refs/tags/v1.2.4.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=xdg-desktop-portal-hyprland
@@ -84,7 +81,6 @@ find -L . \
 
 # to submit this to SBo I either need to have a pkg for the protocols or bundle a specific git pull when shipping
 # preferrable to make a pkg if we have a stable release by then.
-# there is a stable release now, but I'm not making a script for it today ;)
 git clone https://github.com/hyprwm/hyprland-protocols $TMP/$PRGNAM-$VERSION/subprojects/hyprland-protocols
 
 mkdir meson-build
@@ -105,6 +101,8 @@ cd meson-build
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
 cd ..
+#install -Dm0755 -t $PKG/usr/bin $TMP/$PRGNAM-$VERSION/hyprland-share-picker/build/hyprland-share-picker
+install -Dm0644 -t $PKG/usr/share/xdg-desktop-portal $CWD/hyprland-portals.conf
 
 rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
