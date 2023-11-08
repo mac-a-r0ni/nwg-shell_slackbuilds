@@ -1,0 +1,206 @@
+#!/bin/bash
+# Copyright 2011, 2012, 2017, 2018, 2020  Patrick J. Volkerding, Sebeka, MN, USA
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+#  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+#  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+#  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# ----------------------------------------------------------------------------
+
+cd $(dirname $0) ; CWD=$(pwd)
+
+PRGNAM=sddm
+VERSION=${VERSION:-0.21git}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_nwg}
+PKGTYPE=${PKGTYPE:-txz}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i586 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
+# the name of the created package would be, and then exit. This information
+# could be useful to other scripts.
+if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
+  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
+  exit 0
+fi
+
+TMP=${TMP:-/tmp/nwg}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+elif [ "$ARCH" = "aarch64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $PRGNAM-$VERSION
+tar xvf $CWD/v$VERSION.tar.?z || tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
+cd $PRGNAM-$VERSION
+chown -R root:root .
+# patches shipped with slackware's official sddm package
+patch -Np1 -i $CWD/sddm.do.not.source.HOME.xsession.diff || exit 1
+patch -Np1 -i $CWD/sddm.list.X11.sessions.before.Wayland.Sessions.diff || exit 1
+
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+mkdir -p cmake-build
+cd cmake-build
+  cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_C_FLAGS_RELEASE:STRING="$SLKCFLAGS" \
+    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_CXX_FLAGS_RELEASE:STRING="$SLKCFLAGS" \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_MANDIR=/usr/man \
+    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
+    -DBUILD_MAN_PAGES:BOOL=TRUE \
+    -DDBUS_CONFIG_FILENAME="org.freedesktop.sddm.conf" \
+    -DUSE_QT5:BOOL=TRUE \
+    -DENABLE_JOURNALD:BOOL=FALSE \
+    -DENABLE_PAM:BOOL=ON \
+    -DNO_SYSTEMD:BOOL=TRUE \
+    -DUSE_ELOGIND:BOOL=TRUE .. \
+    -G Ninja
+  "${NINJA:=ninja}"
+  DESTDIR=$PKG $NINJA install
+cd ..
+
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+rm -rf $PKG/usr/lib${LIBDIRSUFFIX}/*.la
+
+# Compress and link manpages, if any:
+if [ -d $PKG/usr/man ]; then
+  ( cd $PKG/usr/man
+    for manpagedir in $(find . -type d -name "man*") ; do
+      ( cd $manpagedir
+        for eachpage in $( find . -type l -maxdepth 1) ; do
+          ln -s $( readlink $eachpage ).gz $eachpage.gz
+          rm $eachpage
+        done
+        gzip -9 *.*
+      )
+    done
+  )
+fi
+
+# Replace systemd-centric files with ours:
+rm -f $PKG/etc/pam.d/sddm*
+for FILE in sddm sddm-autologin sddm-greeter ; do
+  install -Dm644 $CWD/pam.d/$FILE $PKG/etc/pam.d/${FILE}.new
+done
+
+# Create the SDDM home directory:
+mkdir -p $PKG/var/lib/sddm
+chmod 755 $PKG/var/lib/sddm
+chown sddm:sddm $PKG/var/lib/sddm
+
+# install the default lang:
+#mkdir -p $PKG/etc/default
+#mv $CWD/default/sddm $PKG/etc/default/sddm.new
+
+# Remove the sddm.conf file because we will generate our own in doinst.sh:
+rm -f $PKG/etc/sddm.conf
+
+# Generate the default sddm.conf:
+$PKG/usr/bin/sddm --example-config > $PKG/etc/sddm.conf
+
+# Set the KDE5 theme 'breeze' as default (integrates better with Plasma 5):
+sed -i -e "/\[AutoLogin\]/,/^\[/s/^Session.*/Session=hyprland/" $PKG/etc/sddm.conf
+sed -i -e "/\[Theme\]/,/^\[/s/^Current.*/Current=sugar-candy-nwg/" $PKG/etc/sddm.conf
+
+# Move the default config file to .new:
+mv $PKG/etc/sddm.conf $PKG/etc/sddm.conf.new
+
+# Make sure that Plasma and SDDM work on older GPUs,
+# by forcing Qt5 to use software GL rendering:
+cat << "EOF" >> $PKG/usr/share/sddm/scripts/Xsetup
+# Make sure that Plasma and SDDM work on older GPUs by forcing Qt5 to use
+# software GL rendering if the OpenGL version is not new enough:
+OPENGL_VERSION=$(LANG=C glxinfo |grep '^OpenGL version string: ' |head -n 1 |sed -e 's/^OpenGL version string: \([0-9]\).*$/\1/g')
+if [ "$OPENGL_VERSION" -lt 2 ]; then
+  QT_XCB_FORCE_SOFTWARE_OPENGL=1
+  export QT_XCB_FORCE_SOFTWARE_OPENGL
+fi
+EOF
+
+# Add a wrapper for the sddm binary, to enable a custom environment:
+mv $PKG/usr/bin/sddm $PKG/usr/bin/sddm.bin
+cat <<"EOT" > $PKG/usr/bin/sddm
+#!/bin/sh
+# Customized environment (LANG definition):
+if [ -f /etc/default/sddm ]; then
+  . /etc/default/sddm
+fi
+
+# Ensure non-world readable permissions on /var/log/sddm.log:
+touch /var/log/sddm.log
+chmod 640 /var/log/sddm.log
+
+# Add a timestamp:
+date >> /var/log/sddm.log
+
+# Redirect stdout/stderr to /dev/null to avoid polluting a virtual
+# console with duplicate log messages:
+exec /usr/bin/sddm.bin "$@" 1> /dev/null 2> /dev/null
+EOT
+chmod 0755 $PKG/usr/bin/sddm
+
+# Let's also add an example customization (localization of the UI):
+mkdir -p  $PKG/etc/default
+echo ". /etc/profile.d/lang.sh" >  $PKG/etc/default/sddm.new
+
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a CONTRIBUTORS ChangeLog LICENSE* README.md  \
+  $PKG/usr/doc/$PRGNAM-$VERSION
+cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
