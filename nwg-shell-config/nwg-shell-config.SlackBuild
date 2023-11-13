@@ -22,12 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.23/nwg-shell-config-0.5.23.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.24/nwg-shell-config-0.5.24.tar.gz
+wget -c https://slackware.lngn.net/pub/source/nwg-shell-config/Slackware_logo.svg
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell-config
-VERSION=${VERSION:-0.5.23}
+VERSION=${VERSION:-0.5.24}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
