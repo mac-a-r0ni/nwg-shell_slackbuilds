@@ -8,9 +8,9 @@
            |-----handy-ruler------------------------------------------------------|
 python-yarl: python-yarl (Yet another URL library)
 python-yarl:
+python-yarl: The module provides handy URL class for URL parsing and changing.
+python-yarl:
 python-yarl: Homepage: https://github.com/aio-libs/yarl/
-python-yarl:
-python-yarl:
 python-yarl:
 python-yarl:
 python-yarl:

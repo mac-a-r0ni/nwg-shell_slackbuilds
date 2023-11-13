@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for python-dasbus
+# Slackware build script for python-hatch_vcs
 
-# Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2022  fourtysixandtwo <fourtysixandtwo@sliderr.net>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://files.pythonhosted.org/packages/37/79/9c5984d723ffbe2e839ee649690f3e1fa6544ab6a17a5150e5ac14a47072/dasbus-1.7.tar.gz
+wget -c https://files.pythonhosted.org/packages/f5/c9/54bb4fa27b4e4a014ef3bb17710cdf692b3aa2cbc7953da885f1bf7e06ea/hatch_vcs-0.4.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-SRCNAM=dasbus
-PRGNAM=python-dasbus
-VERSION=${VERSION:-1.7}
+PRGNAM=python-hatch_vcs
+SRCNAM=${PRGNAM#python-*}
+VERSION=${VERSION:-0.4.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -41,6 +41,9 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
+# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
+# the name of the created package would be, and then exit. This information
+# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -73,7 +76,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAM-$VERSION
-tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
+tar xvf $CWD/$SRCNAM-$VERSION.tar.?z
 cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -82,14 +85,17 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-python3 setup.py install --root=$PKG
+#lower version requirement of setuptools-scm to get rid of warning
+#sed -i 's/6\.4\.0/6.3.2/' pyproject.toml
+
+python3 -m build --no-isolation
+python3 -m installer -d "$PKG" dist/*.whl
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a PKG-INFO README.md LICENSE \
-  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a LICENSE.txt README.md $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install

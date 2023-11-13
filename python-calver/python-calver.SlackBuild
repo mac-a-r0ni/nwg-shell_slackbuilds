@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for python-build
+# Slackware build script for python-calver
 
-# Copyright 2022 toolonely <lonely_@tutanota.com>
+# Copyright 2023  fourtysixandtwo <fourtysixandtwo@sliderr.net>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,17 +22,16 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://files.pythonhosted.org/packages/de/1c/fb62f81952f0e74c3fbf411261d1adbdd2d615c89a24b42d0fe44eb4bcf3/build-0.10.0.tar.gz
+wget -c https://files.pythonhosted.org/packages/b5/00/96cbed7c019c49ee04b8a08357a981983db7698ae6de402e57097cefc9ad/calver-2022.6.26.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-SRCNAM=build
-PRGNAM=python-build
-VERSION=${VERSION:-0.10.0}
+PRGNAM=python-calver
+SRCNAM=${PRGNAM#python-*}
+VERSION=${VERSION:-2022.6.26}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -74,26 +73,23 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAM-$VERSION
-tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
+tar xvf $CWD/$SRCNAM-$VERSION.tar.?z
 cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
-  -o -perm 511 \) -exec chmod 755 {} \; -o \
+  -o -perm 511 \) -exec chmod 755 {} \+ -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
-  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \+
 
-python3 setup.py install --root=$PKG
+python3 -m build --no-isolation
+python3 -m installer -d "$PKG" dist/*.whl
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a \
-  CHANGELOG.rst \
-  README.md \
-  LICENSE \
-  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a LICENSE README.md $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install

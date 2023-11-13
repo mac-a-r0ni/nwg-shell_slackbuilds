@@ -5,10 +5,12 @@
 # Written by Vasilis Papavasileiou <el03020 at mail dot ntua dot gr>
 # Copyright 2018-2020 Hunter Sezen California, USA
 
+wget -c https://files.pythonhosted.org/packages/86/f5/8c0653e5bb54e0cbdfe27bf32d41f27bc4e12faa8742778c17f2a71be2c0/python-xlib-0.33.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=python-xlib
-VERSION=${VERSION:-0.26}
+VERSION=${VERSION:-0.33}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -39,7 +41,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
+tar xvf $CWD/$PRGNAM-$VERSION.tar.?z*
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
