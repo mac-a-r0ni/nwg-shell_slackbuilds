@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-drawer/archive/refs/tags/v0.4.0.tar.gz
-wget -c https://slackware.lngn.net/pub/source/nwg-drawer/nwg-drawer-vendor-0.4.0.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-drawer/archive/refs/tags/v0.4.1.tar.gz
+wget -c https://slackware.lngn.net/pub/source/nwg-drawer/nwg-drawer-vendor-0.4.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-drawer
-VERSION=${VERSION:-0.4.0}
+VERSION=${VERSION:-0.4.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
