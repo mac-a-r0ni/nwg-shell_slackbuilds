@@ -24,7 +24,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sddm
-VERSION=${VERSION:-0.21git}
+VERSION=${VERSION:-0.21_20231113git}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -138,10 +138,6 @@ done
 mkdir -p $PKG/var/lib/sddm
 chmod 755 $PKG/var/lib/sddm
 chown sddm:sddm $PKG/var/lib/sddm
-
-# install the default lang:
-#mkdir -p $PKG/etc/default
-#mv $CWD/default/sddm $PKG/etc/default/sddm.new
 
 # Remove the sddm.conf file because we will generate our own in doinst.sh:
 rm -f $PKG/etc/sddm.conf
