@@ -116,7 +116,6 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 
 cd $PKG
 # Move libs to /usr/lib, except the .so symlinks
-local f
 for f in usr/lib${LIBDIRSUFFIX}/wlroots0.16/*; do
   if [[ $f == *.so ]]; then
     ln -srf -- usr/lib${LIBDIRSUFFIX}/"$(readlink "$f")" "$f"
