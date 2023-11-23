@@ -29,7 +29,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sway
 VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -83,6 +83,7 @@ find -L . \
 
 sed -i "s/'libsystemd', 'libelogind'/'libelogind'/g" meson.build
 
+export PKG_CONFIG_PATH="/usr/lib${LIBDIRSUFFIX}/wlroots0.16/pkgconfig"
 mkdir meson-build
 cd meson-build
  CFLAGS="$SLKCFLAGS" \
@@ -111,9 +112,11 @@ cd meson-build
   DESTDIR=$PKG $NINJA install
 cd ..
 
-# copy our created wayland-session desktop file which starts sway in a dbus session properly
+# install our created wayland-session desktop file which starts sway in a dbus session properly
+# & sway-portals.conf for setting XDG_CURRENT_DESKTOP correctly.
 rm $PKG/usr/share/wayland-sessions/sway.desktop
-cp $CWD/sway.desktop $PKG/usr/share/wayland-sessions
+install -Dm644 $CWD/sway.desktop $PKG/usr/share/wayland-sessions
+install -Dm644 $CWD/sway-portals.conf $PKG/usr/share/xdg-desktop-portal/sway-portals.conf
 
 rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
@@ -122,11 +125,6 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
-
-find $PKG -name perllocal.pod \
-  -o -name ".packlist" \
-  -o -name "*.bs" \
-  | xargs rm -f
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a CONTRIBUTING.md LICENSE *.md  $PKG/usr/doc/$PRGNAM-$VERSION

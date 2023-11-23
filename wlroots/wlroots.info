@@ -5,6 +5,6 @@ DOWNLOAD="https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.17.0/wlroot
 MD5SUM="350b9085b67fc8496c4a5228bb992c22"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES="seatd"
+REQUIRES="seatd libdisplay-info"
 MAINTAINER="Damian Perticone"
 EMAIL="mjolnirdam@gmail.com"
