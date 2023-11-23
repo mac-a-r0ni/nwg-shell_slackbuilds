@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for python-yarl
+# Slackware build script for wlroots0.16
 
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2022 Damian Perticone  Berisso,Argentina
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/aio-libs/yarl/releases/download/v1.9.3/yarl-1.9.3.tar.gz
+wget -c https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.16.2/downloads/wlroots-0.16.2.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-SRCNAM=yarl
-PRGNAM=python-yarl
-VERSION=${VERSION:-1.9.3}
+PKGNAM=wlroots0.16
+SRCNAM=wlroots
+VERSION=${VERSION:-0.16.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -41,9 +41,6 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
-# the name of the created package would be, and then exit. This information
-# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -78,6 +75,9 @@ cd $TMP
 rm -rf $SRCNAM-$VERSION
 tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
 cd $SRCNAM-$VERSION
+# Allow a minor protocol violation until phosh is fixed without this patch
+# phosh crashes on launch.
+patch -Np1 -i $CWD/Revert-layer-shell-error-on-0-dimension-without-anch.patch
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -85,18 +85,51 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-python3 -m build --config-setting=--pure-python= --no-isolation || exit 1
-python3 -m installer -d "$PKG" dist/*.whl
+mkdir build
+cd build
+  CFLAGS="$SLKCFLAGS" \
+  CXXFLAGS="$SLKCFLAGS" \
+  meson setup .. \
+    --buildtype=release \
+    --infodir=/usr/info \
+    --includedir=/usr/include/wlroots0.16 \
+    --libdir=/usr/lib${LIBDIRSUFFIX}/wlroots0.16 \
+    --localstatedir=/var \
+    --mandir=/usr/man \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    -Dstrip=true \
+    -Dxcb-errors=enabled \
+    -Dexamples=false \
+    -Drenderers=gles2,vulkan \
+    -Dxwayland=enabled \
+    -Dbackends=drm,libinput,x11
+
+  "${NINJA:=ninja}"
+  DESTDIR=$PKG $NINJA install
+cd ..
+
+rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a CHANGES.rst README.rst LICENSE $PKG/usr/doc/$PRGNAM-$VERSION
-cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+cd $PKG
+# Move libs to /usr/lib, except the .so symlinks
+local f
+for f in usr/lib${LIBDIRSUFFIX}/wlroots0.16/*; do
+  if [[ $f == *.so ]]; then
+    ln -srf -- usr/lib${LIBDIRSUFFIX}/"$(readlink "$f")" "$f"
+  elif [[ ! -d $f ]]; then
+    mv "$f" usr/lib${LIBDIRSUFFIX}
+  fi
+done
+
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
+cp -a CONTRIBUTING.md LICENSE README.md $PKG/usr/doc/$PKGNAM-$VERSION
+cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
