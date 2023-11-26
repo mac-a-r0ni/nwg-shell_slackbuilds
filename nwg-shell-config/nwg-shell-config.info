@@ -1,12 +1,12 @@
 PRGNAM="nwg-shell-config"
-VERSION="0.5.26"
+VERSION="0.5.27"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-shell-config/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.26/nwg-shell-config-0.5.26.tar.gz \
+DOWNLOAD="https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.27/nwg-shell-config-0.5.27.tar.gz \
           https://slackware.lngn.net/pub/source/nwg-shell-config/Antu_distributor-logo-slackware.svg"
-MD5SUM="020e268159056be910729fbfce5cbb34 \
+MD5SUM="b968234c25203db6eab357c41e181896 \
         bae7126cf7fbb634e09ddedd861a133d"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES="python3-i3ipc python3-geopy playerctl gtklock noto-fonts wlsunset"
+REQUIRES="python-i3ipc python-geopy playerctl gtklock wlsunset"
 MAINTAINER="Jay Lanagan"
 EMAIL="j@lngn.net"
