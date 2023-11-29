@@ -5,6 +5,6 @@ DOWNLOAD="https://github.com/swaywm/sway/releases/download/1.8.1/sway-1.8.1.tar.
 MD5SUM=""
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES="seatd wlroots swaybg"
+REQUIRES="seatd wlroots0.16 swaybg"
 MAINTAINER=""
 EMAIL=""
