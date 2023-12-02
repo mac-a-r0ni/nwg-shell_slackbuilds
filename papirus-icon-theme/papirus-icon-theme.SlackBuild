@@ -23,12 +23,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/20231101/papirus-icon-theme-20231101.tar.gz
+wget -c https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/20231201/papirus-icon-theme-20231201.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=papirus-icon-theme
-VERSION=${VERSION:-20231101}
+VERSION=${VERSION:-20231201}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
