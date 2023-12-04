@@ -25,14 +25,14 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/hyprwm/Hyprland/releases/download/v0.32.3/source-v0.32.3.tar.gz
+wget -c https://github.com/hyprwm/Hyprland/releases/download/v0.30.0/source-v0.30.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.32.3}
-BUILD=${BUILD:-1}
+VERSION=${VERSION:-0.30.0}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -88,15 +88,32 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# build the included wlroots headers/package
+    make fixwlr
     sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
 
 cd $TMP/$PRGNAM-$PKGNAM
 
-    make release
+    pushd subprojects/wlroots
+    meson setup build/ --prefix="$TMP/$PRGNAM-$PKGNAM/tmpwlr" --buildtype=release
+    ninja -C build/
+    mkdir -p "$TMP/$PRGNAM-$PKGNAM/tmpwlr"
+    ninja -C build/ install
+    popd
+    pushd subprojects/udis86
+    cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -H./ -B./build -G Ninja
+    cmake --build ./build --config Release --target all
+    popd
+    make protocols
+    cmake --no-warn-unused-cli -DCMAKE_SKIP_RPATH=ON -DCMAKE_BUILD_TYPE:STRING=Release -DNO_SYSTEMD:STRING=true -S . -B ./build -G Ninja
+    cmake --build ./build --config Release --target all -j5
+    make hyprctl
+    pushd hyprctl
+    make all
 
 cd $TMP/$PRGNAM-$PKGNAM
 
-    find src -name '*.hpp' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
+find src -name '*.hpp' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
     pushd subprojects/wlroots/include
     find . -name '*.h' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/wlroots/{}" \;
     popd
@@ -106,15 +123,15 @@ cd $TMP/$PRGNAM-$PKGNAM
     mkdir -p "$PKG/usr/include/hyprland/protocols"
     cp protocols/*-protocol.h "$PKG/usr/include/hyprland/protocols"
     pushd build
-    cmake -DCMAKE_INSTALL_PREFIX=/usr -DNO_SYSTEMD:STRING=true ..
+    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     popd
     install -Dm0644 -t "$PKG/usr/share/pkgconfig" build/hyprland.pc
     install -Dm0755 -t "$PKG/usr/bin" build/Hyprland
-    install -Dm0755 -t "$PKG/usr/bin" build/hyprctl/hyprctl
+    install -Dm0755 -t "$PKG/usr/bin" hyprctl/hyprctl
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
-    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "example/$PRGNAM.desktop"
+    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "$CWD/$PRGNAM.desktop"
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
-    install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}" "$TMP/$PRGNAM-$PKGNAM/subprojects/wlroots/build/libwlroots.so.12032"
+    install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}" "$TMP/$PRGNAM-$PKGNAM/tmpwlr/lib${LIBDIRSUFFIX}/libwlroots.so.12032"
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
