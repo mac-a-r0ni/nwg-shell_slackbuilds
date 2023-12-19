@@ -24,12 +24,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://files.pythonhosted.org/packages/source/p/pexpect/pexpect-4.8.0.tar.gz
+wget -c https://files.pythonhosted.org/packages/source/p/pexpect/pexpect-4.9.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=python-pexpect
-VERSION=${VERSION:-4.8.0}
+VERSION=${VERSION:-4.9.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
