@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/aio-libs/yarl/releases/download/v1.9.3/yarl-1.9.3.tar.gz
+wget -c https://github.com/aio-libs/yarl/releases/download/v1.9.4/yarl-1.9.4.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=yarl
 PRGNAM=python-yarl
-VERSION=${VERSION:-1.9.3}
+VERSION=${VERSION:-1.9.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
