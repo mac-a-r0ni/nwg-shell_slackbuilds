@@ -82,6 +82,9 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# install slackware specific edited file
+  install -D -m 644 -t $PKG/etc/nwg-hello/ $CWD/nwg-hello.json
+# dist files
   install -D -m 644 -t $PKG/etc/nwg-hello/ nwg-hello-default.json
   install -D -m 644 -t $PKG/etc/nwg-hello/ nwg-hello-default.css
   install -D -m 644 -t $PKG/etc/nwg-hello/ hyprland.conf

@@ -148,9 +148,11 @@ find -L . \
 
 # how da fuck do I get vendor files for rust?
 #cargo fetch --locked --target "$ARCH-unknown-linux-gnu"
-cargo build --offline --frozen --release --all-features --target "$ARCH-unknown-linux-gnu"
+cargo build --offline --frozen --release --all-features
 make -C man all
 
+# install edited greetd.conf to auto-load hyprland for nwg-shell
+install -Dm0644 -t "$PKG/etc/$PRGNAM/" "$CWD/$PRGNAM.conf"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/$PRGNAM"
 # probably remove this, no reason to exist?
 install -Dm0644 -t "$PKG/usr/lib/systemd/system/" "$PRGNAM.service"
