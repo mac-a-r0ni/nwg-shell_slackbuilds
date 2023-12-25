@@ -1,0 +1,4 @@
+greetd (A login manager daemon)
+
+greetd is a minimal and flexible login manager daemon that makes no
+assumptions about what you want to launch.

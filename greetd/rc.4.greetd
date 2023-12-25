@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# rc.4.local    This file is executed by init(8) when the system is being
+#               initialized for run level 4 (greetd)
+#
+#
+# Author:       Jay Lanagan, <j@lngn.net> for the nwg-shell project.
+#
+#               This file is used to override rc.4 to boot directly
+#               to greetd from a cold boot of Slackware.
+
+# Tell the viewers what's going to happen...
+echo "Starting up greetd session manager..."
+
+if [ -x /usr/bin/greetd ]; then
+  exec /usr/bin/greetd
+fi
+
+# All done.

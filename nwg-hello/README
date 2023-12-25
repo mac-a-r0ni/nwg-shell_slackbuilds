@@ -1,0 +1,7 @@
+nwg-hello (GTK3-based greeter for greetd)
+
+ - Multi-monitor support with gtk-layer-shell,
+ - multi-language support,
+ - background & style customization with css,
+ - automatic selection of the last used session and user,
+ - support for setting environment variables.
