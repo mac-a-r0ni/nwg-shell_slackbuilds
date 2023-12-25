@@ -176,8 +176,6 @@ chmod 0755 $PKG/etc/rc.d/rc.4.local
 # create this in pkg to ensure it exists
 mkdir -p $PKG/var/lib/$PRGNAM
 chown -R $PRGUID:$PRGGID $PKG/var/lib/$PRGNAM
-mkdir -p $PKG/var/run/$PRGNAM
-chown -R $PRGUID:$PRGGID $PKG/var/run/$PRGNAM
 
 gzip -9 $PKG/usr/man/man?/*
 
