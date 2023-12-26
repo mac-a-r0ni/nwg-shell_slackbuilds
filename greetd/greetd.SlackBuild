@@ -153,15 +153,13 @@ make -C man all
 
 # install edited greetd.conf to auto-load hyprland for nwg-shell
 install -Dm0644 -t "$PKG/etc/$PRGNAM/" "$CWD/$PRGNAM.conf"
+install -Dm0755 -t "$PKG/usr/bin/" "target/release/agreety"
+install -Dm0755 -t "$PKG/usr/bin/" "target/release/fakegreet"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/$PRGNAM"
 # probably remove this, no reason to exist?
 install -Dm0644 -t "$PKG/usr/lib/systemd/system/" "$PRGNAM.service"
 install -Dm0644 -t "$PKG/etc/$PRGNAM/" config.toml
 install -Dm0644 "$CWD/$PRGNAM.pam" "$PKG/etc/pam.d/$PRGNAM"
-# remove this as well, need to verify if greetd must use "greeter" user and be in "video" group
-# or if I can use "greetd" created user (preferably). apply for uid/gid on sbo.
-install -Dm0644 "$CWD/$PRGNAM.sysusers" "$PKG/usr/lib${LIBDIRSUFFIX}/sysusers.d/$PRGNAM.conf"
-install -Dm0755 -t "$PKG/usr/bin/" "target/release/${PRGNAM#*-}"
 make -C man DESTDIR="$PKG" MANDIR=/usr/man PREFIX=/usr install
 
 cd $TMP/$PRGNAM-$VERSION
