@@ -146,18 +146,18 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# how da fuck do I get vendor files for rust?
 #cargo fetch --locked --target "$ARCH-unknown-linux-gnu"
 cargo build --offline --frozen --release --all-features
 make -C man all
 
 # install edited greetd.conf to auto-load hyprland for nwg-shell
 install -Dm0644 -t "$PKG/etc/$PRGNAM/" "$CWD/$PRGNAM.conf"
+
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/agreety"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/fakegreet"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/$PRGNAM"
 # probably remove this, no reason to exist?
-install -Dm0644 -t "$PKG/usr/lib/systemd/system/" "$PRGNAM.service"
+#install -Dm0644 -t "$PKG/usr/lib/systemd/system/" "$PRGNAM.service"
 install -Dm0644 -t "$PKG/etc/$PRGNAM/" config.toml
 install -Dm0644 "$CWD/$PRGNAM.pam" "$PKG/etc/pam.d/$PRGNAM"
 make -C man DESTDIR="$PKG" MANDIR=/usr/man PREFIX=/usr install
@@ -171,7 +171,7 @@ mkdir -p $PKG/etc/rc.d
 cp -a $CWD/rc.4.$PRGNAM $PKG/etc/rc.d/rc.4.local
 chmod 0755 $PKG/etc/rc.d/rc.4.local
 
-# create this in pkg to ensure it exists
+# create this in pkg to ensure it exists on install
 mkdir -p $PKG/var/lib/$PRGNAM
 chown -R $PRGUID:$PRGGID $PKG/var/lib/$PRGNAM
 

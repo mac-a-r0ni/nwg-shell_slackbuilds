@@ -22,7 +22,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-https://github.com/nwg-piotr/nwg-hello/archive/v0.1.4/nwg-hello-0.1.4.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-hello/archive/v0.1.4/nwg-hello-0.1.4.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
@@ -84,6 +84,10 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# fix default sway conf
+sed -i -e 's,systemctl,loginctl,g' sway-config
+
+#install
   install -D -m 644 -t $PKG/etc/nwg-hello/ nwg-hello-default.json
   install -D -m 644 -t $PKG/etc/nwg-hello/ nwg-hello-default.css
   install -D -m 644 -t $PKG/etc/nwg-hello/ hyprland.conf
@@ -97,7 +101,7 @@ find -L . \
 
   python3 setup.py install --root="$PKG" --optimize=1
 
-# install default config file into package so things work 
+# install default config file into package so things work
 # auto-magically upon install
 cat $CWD/nwg-hello.json > $PKG/etc/nwg-hello/nwg-hello.json
 
