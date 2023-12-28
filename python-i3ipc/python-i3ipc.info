@@ -5,6 +5,6 @@ DOWNLOAD="https://files.pythonhosted.org/packages/61/f3/dfab70c888d85d3e933ff4d6
 MD5SUM="89dd6be829f5cf40ca6a963151c40709"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES="python-xlib pytest pytest-asyncio pytest-timeout yapf flake8 sphinx sphinxcontrib-asyncio sphinxcontrib-fulltoc"
+REQUIRES="python-xlib"
 MAINTAINER=""
 EMAIL=""
