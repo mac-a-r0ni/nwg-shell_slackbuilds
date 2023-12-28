@@ -156,8 +156,6 @@ install -Dm0644 -t "$PKG/etc/$PRGNAM/" "$CWD/$PRGNAM.conf"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/agreety"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/fakegreet"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/$PRGNAM"
-# probably remove this, no reason to exist?
-#install -Dm0644 -t "$PKG/usr/lib/systemd/system/" "$PRGNAM.service"
 install -Dm0644 -t "$PKG/etc/$PRGNAM/" config.toml
 install -Dm0644 "$CWD/$PRGNAM.pam" "$PKG/etc/pam.d/$PRGNAM"
 make -C man DESTDIR="$PKG" MANDIR=/usr/man PREFIX=/usr install
@@ -167,9 +165,16 @@ cd $TMP/$PRGNAM-$VERSION
 find $PKG | xargs file | egrep "ELF.*executable" | cut -f 1 -d : \
           | xargs strip --strip-unneeded 2> /dev/null
 
+# User must either rename this to "rc.4.local" or add to thier
+# existing file and make exec.
 mkdir -p $PKG/etc/rc.d
-cp -a $CWD/rc.4.$PRGNAM $PKG/etc/rc.d/rc.4.local
-chmod 0755 $PKG/etc/rc.d/rc.4.local
+cp -a $CWD/rc.4.$PRGNAM $PKG/etc/rc.d/rc.4.$PRGNAM
+#chmod 0755 $PKG/etc/rc.d/rc.4.$PRGNAM
+
+# setup correct envir vars
+mkdir -p $PKG/etc/profile.d
+cp -a $CWD/greetd.csh $PKG/etc/profile.d
+cp -a $CWD/greetd.sh $PKG/etc/profile.d
 
 # create this in pkg to ensure it exists on install
 mkdir -p $PKG/var/lib/$PRGNAM
