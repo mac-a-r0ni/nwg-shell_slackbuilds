@@ -151,6 +151,7 @@ cargo build --offline --frozen --release --all-features
 make -C man all
 
 # install edited greetd.conf to auto-load hyprland for nwg-shell
+# skip this with a vanilla package
 install -Dm0644 -t "$PKG/etc/$PRGNAM/" "$CWD/$PRGNAM.conf"
 
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/agreety"
@@ -167,6 +168,7 @@ cd $TMP/$PRGNAM-$VERSION
 find $PKG | xargs file | egrep "ELF.*executable" | cut -f 1 -d : \
           | xargs strip --strip-unneeded 2> /dev/null
 
+# I guess this could be done as above but that doesn't feel slackware enough
 mkdir -p $PKG/etc/rc.d
 cp -a $CWD/rc.4.$PRGNAM $PKG/etc/rc.d/rc.4.local
 chmod 0755 $PKG/etc/rc.d/rc.4.local
