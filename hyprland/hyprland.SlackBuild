@@ -114,7 +114,10 @@ cd $TMP/$PRGNAM-$PKGNAM
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
     install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "example/$PRGNAM.desktop"
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
-    install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}" "$TMP/$PRGNAM-$PKGNAM/subprojects/wlroots/build/libwlroots.so.12032"
+    find subprojects/wlroots/build -name 'libwlroots.so.*' -type f -execdir \
+                install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}/" {} \;
+
+#    install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}" "$TMP/$PRGNAM-$PKGNAM/subprojects/wlroots/build/libwlroots.so.*"
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
