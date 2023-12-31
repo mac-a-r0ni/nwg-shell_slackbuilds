@@ -74,8 +74,8 @@ else
 fi
 
 if ! grep -q ^greeter: /etc/group ; then
-  groupadd -g 380 greeter
-  useradd -d /var/lib/greeter -u 380 -g greeter -G video -s /bin/false greeter
+  groupadd -g 381 greeter
+  useradd -d /var/lib/greeter -u 381 -g greeter -G video -s /bin/false greeter
 fi
 
 set -e
