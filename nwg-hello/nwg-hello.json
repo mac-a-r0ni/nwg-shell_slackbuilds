@@ -6,7 +6,7 @@
   "custom_sessions": [
     {
       "name": "Shell",
-      "exec": "/usr/bin/bash"
+      "exec": "/bin/bash"
     }
   ],
   "monitor_nums": [],
