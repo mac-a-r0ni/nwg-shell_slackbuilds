@@ -24,7 +24,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sddm
-VERSION=${VERSION:-0.21_20231207git}
+VERSION=${VERSION:-0.21_20231228git}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
