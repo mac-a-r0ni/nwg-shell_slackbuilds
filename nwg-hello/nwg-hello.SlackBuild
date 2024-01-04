@@ -97,7 +97,7 @@ sed -i -e 's,systemctl,loginctl,g' sway-config
   install -D -m 644 -t $PKG/usr/share/nwg-hello/ img/*
 
   install -d $PKG/var/cache/nwg-hello
-  install -Dm644 -t $PKG/var/cache/nwg-hello cache.json -o gdm
+  install -Dm644 -t $PKG/var/cache/nwg-hello cache.json -o greeter
 
   python3 setup.py install --root="$PKG" --optimize=1
 
