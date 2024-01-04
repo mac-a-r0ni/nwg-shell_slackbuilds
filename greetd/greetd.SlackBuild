@@ -2,7 +2,7 @@
 #
 # Slackware build script for greetd
 #
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023-2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,10 +22,9 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 cd $(dirname $0) ; CWD=$(pwd)
 
-source $CWD/greetd.info
+source greetd.info
 wget $DOWNLOAD
 
 PRGNAM=greetd
@@ -42,6 +41,19 @@ if [ -z "$ARCH" ]; then
     arm*) ARCH=arm ;;
        *) ARCH=$( uname -m ) ;;
   esac
+fi
+
+bailout() {
+  printf "This requires a \"greeter\" user and group.\n"
+  printf "groupadd -g 381 greeter\n"
+  printf "useradd -d /var/lib/greeter -u 381 -g greeter -G video -s /bin/false greeter"
+  exit 1
+}
+
+if ! getent group $PRGGID 2>/dev/null 1>/dev/null ; then
+  bailout
+elif ! getent passwd $PRGUID 2>/dev/null 1>/dev/null ; then
+  bailout
 fi
 
 # If the variable PRINT_PACKAGE_NAME is set, then this script will report what
@@ -73,10 +85,13 @@ else
   LIBDIRSUFFIX=""
 fi
 
-if ! grep -q ^greeter: /etc/group ; then
-  groupadd -g 381 greeter
-  useradd -d /var/lib/greeter -u 381 -g greeter -G video -s /bin/false greeter
-fi
+#uncomment if building on slackware-15.0
+#export PATH="/opt/rust16/bin:$PATH"
+#if [ -z "$LD_LIBRARY_PATH" ]; then
+#  export LD_LIBRARY_PATH="/opt/rust16/lib$LIBDIRSUFFIX"
+#else
+#  export LD_LIBRARY_PATH="/opt/rust16/lib$LIBDIRSUFFIX:$LD_LIBRARY_PATH"
+#fi
 
 set -e
 
@@ -90,6 +105,7 @@ cd $PRGNAM-$VERSION
 # build offline
 # configuration tells cargo to use the configured directory
 # for dependencies instead of downloading from crates.io
+# borrowed from alacritty slackbuild
 mkdir .cargo
 cat << EOF >> .cargo/config
 [source.crates-io]
@@ -150,19 +166,29 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# Set /bin/bash rather than /bin/sh as default shell
+sed -i -e 's,vt = 1,vt = 7,g' config.toml
+sed -i -e 's,bin/sh,bin/bash,g' config.toml
+
+# Adding extra parms to default config to ensure our envir is good
+cat <<EOT >> config.toml
+
+[system]
+source_profile = "true"
+runfile = "/var/run/greetd.run"
+EOT
+
+## to do online rust build uncomment these two lines
 #cargo fetch --locked --target "$ARCH-unknown-linux-gnu"
+#cargo build --frozen --release --all-features
+
+## and comment the line below this
 cargo build --offline --frozen --release --all-features
 make -C man all
-
-# install edited greetd.conf to auto-load hyprland for nwg-shell
-# skip this with a vanilla package
-install -Dm0644 -t "$PKG/etc/$PRGNAM/" "$CWD/$PRGNAM.conf"
 
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/agreety"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/fakegreet"
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/$PRGNAM"
-# probably remove this, no reason to exist?
-#install -Dm0644 -t "$PKG/usr/lib/systemd/system/" "$PRGNAM.service"
 install -Dm0644 -t "$PKG/etc/$PRGNAM/" config.toml
 install -Dm0644 "$CWD/$PRGNAM.pam" "$PKG/etc/pam.d/$PRGNAM"
 make -C man DESTDIR="$PKG" MANDIR=/usr/man PREFIX=/usr install
@@ -172,12 +198,14 @@ cd $TMP/$PRGNAM-$VERSION
 find $PKG | xargs file | egrep "ELF.*executable" | cut -f 1 -d : \
           | xargs strip --strip-unneeded 2> /dev/null
 
-# I guess this could be done as above but that doesn't feel slackware enough
+# move this file to 'rc.4.local' for Slackware to boot directly
+# to greetd from init level 4 startup
+# this is edited for nwg-shell liveslak to enable on boot
 mkdir -p $PKG/etc/rc.d
 cp -a $CWD/rc.4.$PRGNAM $PKG/etc/rc.d/rc.4.local
 chmod 0755 $PKG/etc/rc.d/rc.4.local
 
-# create this in pkg to ensure it exists on install
+# create this in pkg to ensure it exists with proper perms
 mkdir -p $PKG/var/lib/$PRGNAM
 chown -R $PRGUID:$PRGGID $PKG/var/lib/$PRGNAM
 
@@ -189,7 +217,6 @@ cp -a LICENSE README.md \
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
