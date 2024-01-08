@@ -31,7 +31,7 @@ PRGNAM=greetd
 PRGUID=greeter
 PRGGID=greeter
 VERSION=${VERSION:-0.9.0}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -85,7 +85,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-#uncomment if building on slackware-15.0
+# uncomment if building on slackware-15.0
 #export PATH="/opt/rust16/bin:$PATH"
 #if [ -z "$LD_LIBRARY_PATH" ]; then
 #  export LD_LIBRARY_PATH="/opt/rust16/lib$LIBDIRSUFFIX"
@@ -99,7 +99,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$VERSION.tar.?z
+tar xvf $CWD/$VERSION.tar.?z || tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 
 # build offline
@@ -179,11 +179,11 @@ runfile = "/var/run/greetd.run"
 EOT
 
 ## to do online rust build uncomment these two lines
-#cargo fetch --locked --target "$ARCH-unknown-linux-gnu"
-#cargo build --frozen --release --all-features
+#CARGO_HOME=.cargo cargo fetch --locked --target "$ARCH-unknown-linux-gnu"
+#CARGO_HOME=.cargo cargo build --frozen --release --all-features
 
 ## and comment the line below this
-cargo build --offline --frozen --release --all-features
+CARGO_HOME=.cargo cargo build --offline --frozen --release --all-features
 make -C man all
 
 install -Dm0755 -t "$PKG/usr/bin/" "target/release/agreety"
@@ -200,9 +200,8 @@ find $PKG | xargs file | egrep "ELF.*executable" | cut -f 1 -d : \
 
 # move this file to 'rc.4.local' for Slackware to boot directly
 # to greetd from init level 4 startup
-# this is edited for nwg-shell liveslak to enable on boot
 mkdir -p $PKG/etc/rc.d
-cp -a $CWD/rc.4.$PRGNAM $PKG/etc/rc.d/rc.4.local
+cat $CWD/rc.4.$PRGNAM > $PKG/etc/rc.d/rc.4.local
 chmod 0755 $PKG/etc/rc.d/rc.4.local
 
 # create this in pkg to ensure it exists with proper perms
