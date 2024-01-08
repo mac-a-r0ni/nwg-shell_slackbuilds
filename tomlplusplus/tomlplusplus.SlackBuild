@@ -29,7 +29,8 @@ VERSION=${VERSION:-3.4.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-
+source tomlplugplus.info
+wget $DOWNLOAD
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
