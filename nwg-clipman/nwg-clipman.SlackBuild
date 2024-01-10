@@ -29,7 +29,7 @@ VERSION=${VERSION:-0.1.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-wget -c https://github.com/nwg-piotr/$PRGNAM/releases/download/v${VERSION}/$PRGNAM-$VERSION.tar.gz
+wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
