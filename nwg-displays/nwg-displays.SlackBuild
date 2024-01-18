@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-displays/archive/v0.3.11/nwg-displays-0.3.11.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-displays/archive/v0.3.12/nwg-displays-0.3.12.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-displays
-VERSION=${VERSION:-0.3.11}
+VERSION=${VERSION:-0.3.12}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
