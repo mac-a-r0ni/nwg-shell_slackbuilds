@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/rockowitz/ddcutil/archive/v2.0.0/ddcutil-2.0.0.tar.gz
+wget -c https://github.com/rockowitz/ddcutil/archive/v2.1.0/ddcutil-2.1.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=ddcutil
-VERSION=${VERSION:-2.0.0}
+VERSION=${VERSION:-2.1.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
