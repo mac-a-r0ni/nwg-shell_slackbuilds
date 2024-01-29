@@ -89,11 +89,6 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 python3 setup.py install --optimize=1 --root=$PKG
-#mkdir -p $PKG/usr/share/backgrounds $PKG/usr/bin
-#chmod 644 nwg-shell.jpg
-#chmod 755 scripts/*
-#cp nwg-shell.jpg $PKG/usr/share/backgrounds
-#cp scripts/screenshot $PKG/usr/bin
 install -Dm0644 -t $PKG/usr/share/backgrounds nwg-shell.jpg
 install -Dm0755 -t $PKG/usr/bin scripts/screenshot
 
