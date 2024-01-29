@@ -22,8 +22,6 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-hello/archive/v0.1.7/nwg-hello-0.1.7.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-hello
@@ -31,6 +29,8 @@ VERSION=${VERSION:-0.1.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+
+wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -103,7 +103,7 @@ sed -i -e 's,systemctl,loginctl,g' sway-config
 
 # install default config file into package so things work
 # auto-magically upon install
-cat $CWD/nwg-hello.json > $PKG/etc/nwg-hello/nwg-hello.json
+install -Dm0644 -t $PKG/etc/nwg-hello/nwg-hello.json $CWD/nwg-hello.json
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
