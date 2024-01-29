@@ -22,7 +22,6 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/azote/archive/v1.12.4/azote-1.12.4.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
@@ -31,6 +30,8 @@ VERSION=${VERSION:-1.12.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+
+wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -83,16 +84,16 @@ find -L . \
 
 python3 setup.py install --root=$PKG --optimize=1
 
-install -D -m 755 $PRGNAM-$VERSION/dist/azote $PKG/usr/bin/azote
-install -D -t $PKG/usr/share/pixmaps $PRGNAM-$VERSION/dist/azote.svg
-install -D -t $PKG/usr/share/$PRGNAM $PRGNAM-$VERSION/dist/indicator*.png
-install -D -t $PKG/usr/share/applications $PRGNAM-$VERSION/dist/azote.desktop
+install -Dm755 $PRGNAM-$VERSION/dist/azote $PKG/usr/bin/azote
+install -Dm644 -t $PKG/usr/share/pixmaps $PRGNAM-$VERSION/dist/azote.svg
+install -Dm644 -t $PKG/usr/share/$PRGNAM $PRGNAM-$VERSION/dist/indicator*.png
+install -Dm644 -t $PKG/usr/share/applications $PRGNAM-$VERSION/dist/azote.desktop
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a LICENSE LICENSE-COLORTHIEF README.md  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a CREDITS.md LICENSE* README.md  $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
