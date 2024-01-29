@@ -29,7 +29,7 @@ BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://gitlab.freedesktop.org/$PRGNAM/$PRGNAM/-/archive/$VERSION/$PRGNAM-$VERSION.tar.gz
+wget -c https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/$VERSION/geoclue-$VERSION.tar.gz
 
 SRCNAM=geoclue
 
