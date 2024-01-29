@@ -2,7 +2,7 @@
 
 # Slackware build script for nwg-shell
 
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023,2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,15 +22,15 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-shell/releases/download/v0.5.29/nwg-shell-v0.5.29.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell
-VERSION=${VERSION:-0.5.29}
+VERSION=${VERSION:-0.5.30}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+
+wget -c https://github.com/nwg-piotr/$PRGNAM/releases/download/v${VERSION}/$PRGNAM-v${VERSION}.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -79,7 +79,7 @@ tar xvf $CWD/$PRGNAM-v$VERSION.tar.?z
 cd $PRGNAM-$VERSION
 chown -R root:root .
 
-# patches removing refs to systemctl & replaced w/ loginctl & disable updater
+# patches removing refs to systemctl, replaced w/ loginctl & disable updater
 patch -Np1 -i $CWD/defaults.patch || exit 1
 
 find -L . \
@@ -89,11 +89,13 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 python3 setup.py install --optimize=1 --root=$PKG
-mkdir -p $PKG/usr/share/backgrounds $PKG/usr/bin
-chmod 644 nwg-shell.jpg
-chmod 755 scripts/*
-cp nwg-shell.jpg $PKG/usr/share/backgrounds
-cp scripts/screenshot $PKG/usr/bin
+#mkdir -p $PKG/usr/share/backgrounds $PKG/usr/bin
+#chmod 644 nwg-shell.jpg
+#chmod 755 scripts/*
+#cp nwg-shell.jpg $PKG/usr/share/backgrounds
+#cp scripts/screenshot $PKG/usr/bin
+install -Dm0644 -t $PKG/usr/share/backgrounds nwg-shell.jpg
+install -Dm0755 -t $PKG/usr/bin scripts/screenshot
 
 # Remove Arch updaters from our Slackware package, users are recommended
 # to use sbopkg, sboui, or their favorite SBo updater to get package updates.
