@@ -23,13 +23,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/swaywm/sway/releases/download/1.8.1/sway-1.8.1.tar.gz
+wget -c https://github.com/swaywm/sway/releases/download/1.9-rc1/sway-1.9-rc1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sway
-VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-1.9rc1}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -71,9 +71,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+rm -rf $PRGNAM-1.9-rc1
+tar xvf $CWD/$PRGNAM-1.9-rc1.tar.gz
+cd $PRGNAM-1.9-rc1
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -81,9 +81,9 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-sed -i "s/'libsystemd', 'libelogind'/'libelogind'/g" meson.build
+#sed -i "s/'libsystemd', 'libelogind'/'libelogind'/g" meson.build
+#export PKG_CONFIG_PATH="/usr/lib${LIBDIRSUFFIX}/wlroots0.16/pkgconfig"
 
-export PKG_CONFIG_PATH="/usr/lib${LIBDIRSUFFIX}/wlroots0.16/pkgconfig"
 mkdir meson-build
 cd meson-build
  CFLAGS="$SLKCFLAGS" \
