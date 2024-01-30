@@ -89,7 +89,7 @@ find -L . \
 
 CGO_CFLAGS="$SLKCFLAGS" \
 CGO_CXXFLAGS="$SLKCFLAGS" \
-go build -o bin/$PRGNAM *.go || exit 1
+go build -mod vendor -mod=readonly -o bin/$PRGNAM *.go || exit 1
 
 install -D -t $PKG/usr/share/$PRGNAM/icons_light $TMP/$PRGNAM-$VERSION/icons_light/*
 install -D -t $PKG/usr/share/$PRGNAM/icons_dark $TMP/$PRGNAM-$VERSION/icons_dark/*
