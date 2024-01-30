@@ -62,9 +62,6 @@ find -L . \
 
 install -Dm0644 -t $PKG/usr/share/backgrounds/nwg-shell/ wallpapers/*
 
-#mkdir -p $PKG/usr/share/backgrounds/nwg-shell/
-#cp wallpapers/* $PKG/usr/share/backgrounds/nwg-shell/
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a LICENSE README.md  \
   $PKG/usr/doc/$PRGNAM-$VERSION
