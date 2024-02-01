@@ -4,7 +4,7 @@ HOMEPAGE="https://github.com/nwg-piotr/nwg-bar/"
 DOWNLOAD="https://github.com/nwg-piotr/nwg-bar/archive/refs/tags/v0.1.6.tar.gz \
           https://slackware.lngn.net/pub/source/nwg-bar/nwg-bar-vendor-0.1.6.tar.gz"
 MD5SUM="1dce147a62eb2478e1025c779b04b631 \
-        4b31d30223bf72e14daaac5ae4adcaf4"
+        242376bf5f16bceecd57dec6a1578a5c"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES="gtk-layer-shell google-go-lang"

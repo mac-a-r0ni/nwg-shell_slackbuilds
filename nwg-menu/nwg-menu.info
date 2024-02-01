@@ -1,7 +1,7 @@
 PRGNAM="nwg-menu"
 VERSION="0.1.2"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-menu/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-menu/archive/refs/tags/v0.1.2.tar.gz \
+DOWNLOAD="https://github.com/nwg-piotr/nwg-menu/archive/v0.1.2/nwg-menu-0.1.2.tar.gz \
           https://slackware.lngn.net/pub/source/nwg-menu/nwg-menu-vendor-0.1.2.tar.gz"
 MD5SUM="47a4d4fc41cb69a05ab3232097432605 \
         b7bb51bfa386b93bbddcc1887506f5f7"

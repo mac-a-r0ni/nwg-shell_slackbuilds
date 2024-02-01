@@ -91,9 +91,9 @@ CGO_CFLAGS="$SLKCFLAGS" \
 CGO_CXXFLAGS="$SLKCFLAGS" \
 go build -mod vendor -mod=readonly -o bin/$PRGNAM *.go || exit 1
 
-install -D -t $PKG/usr/share/$PRGNAM/icons_light $TMP/$PRGNAM-$VERSION/icons_light/*
-install -D -t $PKG/usr/share/$PRGNAM/icons_dark $TMP/$PRGNAM-$VERSION/icons_dark/*
-install -Dm755 -t $PKG/usr/bin $TMP/$PRGNAM-$VERSION/bin/$PRGNAM
+install -D -t $PKG/usr/share/$PRGNAM/icons_light icons_light/*
+install -D -t $PKG/usr/share/$PRGNAM/icons_dark icons_dark/*
+install -Dm755 -t $PKG/usr/bin bin/$PRGNAM
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
