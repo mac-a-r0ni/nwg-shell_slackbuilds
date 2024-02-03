@@ -84,7 +84,7 @@ find -L . \
 
 python3 setup.py install --root=$PKG --optimize=1
 
-install -Dm755 -t $PRGNAM-$VERSION/dist/azote $PKG/usr/bin/azote
+install -Dm755 -T $PRGNAM-$VERSION/dist/azote $PKG/usr/bin/azote
 install -Dm644 -t $PKG/usr/share/pixmaps $PRGNAM-$VERSION/dist/azote.svg
 install -Dm644 -t $PKG/usr/share/$PRGNAM $PRGNAM-$VERSION/dist/indicator*.png
 install -Dm644 -t $PKG/usr/share/applications $PRGNAM-$VERSION/dist/azote.desktop
