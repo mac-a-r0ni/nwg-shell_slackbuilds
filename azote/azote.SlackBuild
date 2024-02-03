@@ -84,10 +84,10 @@ find -L . \
 
 python3 setup.py install --root=$PKG --optimize=1
 
-install -Dm755 -T $PRGNAM-$VERSION/dist/azote $PKG/usr/bin/azote
-install -Dm644 -t $PKG/usr/share/pixmaps $PRGNAM-$VERSION/dist/azote.svg
-install -Dm644 -t $PKG/usr/share/$PRGNAM $PRGNAM-$VERSION/dist/indicator*.png
-install -Dm644 -t $PKG/usr/share/applications $PRGNAM-$VERSION/dist/azote.desktop
+install -Dm755 -T dist/azote $PKG/usr/bin/azote
+install -Dm644 -t $PKG/usr/share/pixmaps dist/azote.svg
+install -Dm644 -t $PKG/usr/share/$PRGNAM dist/indicator*.png
+install -Dm644 -t $PKG/usr/share/applications dist/azote.desktop
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
