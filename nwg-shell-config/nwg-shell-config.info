@@ -1,9 +1,9 @@
 PRGNAM="nwg-shell-config"
-VERSION="0.5.32"
+VERSION="0.5.33"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-shell-config/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.32/nwg-shell-config-0.5.32.tar.gz \
+DOWNLOAD="https://github.com/nwg-piotr/nwg-shell-config/archive/v0.5.33/nwg-shell-config-0.5.33.tar.gz \
           https://slackware.lngn.net/pub/source/nwg-shell-config/Antu_distributor-logo-slackware.svg"
-MD5SUM=" \
+MD5SUM="36515c838f4b2da95409e691d4204e96 \
         bae7126cf7fbb634e09ddedd861a133d"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
