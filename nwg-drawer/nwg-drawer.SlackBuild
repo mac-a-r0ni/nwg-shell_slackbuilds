@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/nwg-piotr/nwg-drawer/archive/refs/tags/v0.4.3.tar.gz
-wget -c https://slackware.lngn.net/pub/source/nwg-drawer/nwg-drawer-vendor-0.4.3.tar.gz
+wget -c https://github.com/nwg-piotr/nwg-drawer/archive/v0.4.5/nwg-drawer-0.4.5.tar.gz
+wget -c https://slackware.lngn.net/pub/source/nwg-drawer/nwg-drawer-vendor-0.4.5.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-drawer
-VERSION=${VERSION:-0.4.3}
+VERSION=${VERSION:-0.4.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -91,9 +91,9 @@ CGO_CXXFLAGS="$SLKCFLAGS" \
 go build -mod vendor -o bin/"$PRGNAM" *.go || exit 1
 
 install -d $PKG/usr/share/$PRGNAM/desktop-directories
-install -Dm644 -t $PKG/usr/share/$PRGNAM/desktop-directories/ $TMP/$PRGNAM-$VERSION/desktop-directories/*
-install -Dm644 -t $PKG/usr/share/$PRGNAM $TMP/$PRGNAM-$VERSION/drawer.css
-install -Dm755 -t $PKG/usr/bin $TMP/$PRGNAM-$VERSION/bin/$PRGNAM
+install -Dm644 -t $PKG/usr/share/$PRGNAM/desktop-directories/ desktop-directories/*
+install -Dm644 -t $PKG/usr/share/$PRGNAM drawer.css
+install -Dm755 -t $PKG/usr/bin bin/$PRGNAM
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
