@@ -26,12 +26,12 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=webkit2gtk
 SRCNAM=webkitgtk
-VERSION=${VERSION:-2.42.4}
+VERSION=${VERSION:-2.42.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://www.webkitgtk.org/releases/webkitgtk-2.42.4.tar.xz
+wget -c https://www.webkitgtk.org/releases/webkitgtk-2.42.5.tar.xz
 
 TMP=${TMP:-/build/nwg}
 PKG=$TMP/package-$PRGNAM
