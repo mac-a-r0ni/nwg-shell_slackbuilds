@@ -26,19 +26,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-wget -c https://go.dev/dl/go1.22.0.src.tar.gz
+wget -c https://go.dev/dl/go1.21.7.src.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=google-go-lang
-VERSION=${VERSION:-1.22.0}
+VERSION=${VERSION:-1.21.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
 RELEASE=${RELEASE:-linux}
 
-RUN_TEST=${RUN_TEST:-true}
+RUN_TEST=${RUN_TEST:-false}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
