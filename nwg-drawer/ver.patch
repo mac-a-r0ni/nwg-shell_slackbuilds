@@ -1,5 +1,5 @@
---- /home/jbl/Documents/GitHub/nwg-shell_slackbuilds/nwg-drawer/a/go.mod
-+++ /home/jbl/Documents/GitHub/nwg-shell_slackbuilds/nwg-drawer/b/go.mod
+--- a/go.mod
++++ b/go.mod
 @@ -1,6 +1,6 @@
  module github.com/nwg-piotr/nwg-drawer
  
