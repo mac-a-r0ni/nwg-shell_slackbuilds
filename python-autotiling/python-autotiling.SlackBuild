@@ -2,7 +2,7 @@
 
 # Slackware build script for python-autotiling
 
-# Copyright 2022 Jay Lanagan (j@lngn.net),Detroit, MI, USA.
+# Copyright 2022-2024 Jay Lanagan (j@lngn.net),Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://files.pythonhosted.org/packages/2d/1c/4950554c12351751d48e87e095f5fc7464220dedb45201c086c025639b5c/autotiling-1.8.tar.gz
+wget -c https://github.com/nwg-piotr/autotiling/archive/v1.9/autotiling-1.9.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=python-autotiling
 SRCNAM=autotiling
-VERSION=${VERSION:-1.8}
+VERSION=${VERSION:-1.9}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
