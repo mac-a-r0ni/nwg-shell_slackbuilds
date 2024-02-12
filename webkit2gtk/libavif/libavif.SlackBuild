@@ -25,12 +25,12 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=libavif
-VERSION=${VERSION:-1.0.3}
+VERSION=${VERSION:-1.0.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://github.com/AOMediaCodec/libavif/archive/v1.0.3/libavif-1.0.3.tar.gz
+wget -c https://github.com/AOMediaCodec/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
