@@ -28,11 +28,11 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sway
-VERSION=${VERSION:-1.9rc4}
+VERSION=${VERSION:-1.9}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-wget -c https://github.com/swaywm/sway/releases/download/1.9-rc4/sway-1.9-rc4.tar.gz
+wget -c https://github.com/swaywm/sway/releases/download/1.9/sway-1.9.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -72,9 +72,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-1.9-rc4
-tar xvf $CWD/$PRGNAM-1.9-rc4.tar.gz
-cd $PRGNAM-1.9-rc4
+rm -rf $PRGNAM-$VERSION
+tar xvf $CWD/$PRGNAM-$VERSION
+cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
