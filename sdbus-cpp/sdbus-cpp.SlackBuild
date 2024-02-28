@@ -103,7 +103,7 @@ cd build
 make
 make install DESTDIR=$PKG
 
-# save for later in case I figure out a good way to package libsystemd
+# save for later in case I decide to package libsystemd
 #  -DLIBSYSTEMD_VERSION=242 \
 #  -DLIBSYSTEMD_EXTRA_CONFIG_OPTS="--buildtype=release" \
 #  -DLIBSYSTEMD_EXTRA_CONFIG_OPTS="--prefix=/usr" \
