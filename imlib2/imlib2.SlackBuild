@@ -22,15 +22,15 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://sourceforge.net/projects/enlightenment/files/imlib2-src/1.12.1/imlib2-1.12.1.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=imlib2
-VERSION=${VERSION:-1.12.1}
+VERSION=${VERSION:-1.12.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://sourceforge.net/projects/enlightenment/files/$PRGNAM-src/$VERSION/$PRGNAM-$VERSION.tar.xz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
