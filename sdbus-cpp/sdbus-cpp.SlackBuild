@@ -111,7 +111,7 @@ make install DESTDIR=$PKG
 cd ..
 
 # fix finding libelogind by pkgconfig
-sed -i -e 's,elogind,libelogind,g' $PKG/usr/lib${LIBDIRSUFFIX}/pkgconfig/sdbus-c++.pc
+#sed -i -e 's,elogind,libelogind,g' $PKG/usr/lib${LIBDIRSUFFIX}/pkgconfig/sdbus-c++.pc
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
