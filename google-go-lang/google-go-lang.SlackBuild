@@ -81,7 +81,7 @@ set -e
 
 rm -rf $PKG
 install -d $TMP/$PRGNAM-$VERSION/go${VERSION}
-bsdtar -xf $CWD/go${VERSION}.linux-amd64.tar.gz \
+bsdtar -xf $CWD/go${VERSION}.linux-${GOARCH}.tar.gz \
   -C $TMP/$PRGNAM-$VERSION/go${VERSION} --strip-components=1
 bsdtar -xf $CWD/go${VERSION}.src.tar.gz \
   -C $TMP/$PRGNAM-$VERSION
