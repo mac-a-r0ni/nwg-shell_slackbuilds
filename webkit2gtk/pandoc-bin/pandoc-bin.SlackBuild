@@ -26,13 +26,13 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=pandoc-bin
 SRCNAM=pandoc
-VERSION=${VERSION:-3.1.11.1}
+VERSION=${VERSION:-3.1.12.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-1-arm64.deb
-#wget -c https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-1-amd64.deb
+wget -c https://github.com/jgm/$SRCNAM/releases/download/$VERSION/$SRCNAM-${VERSION}-1-arm64.deb
+wget -c https://github.com/jgm/$SRCNAM/releases/download/$VERSION/$SRCNAM-${VERSION}-1-amd64.deb
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
