@@ -30,13 +30,14 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=google-go-lang
-VERSION=${VERSION:-1.22.0}
+VERSION=${VERSION:-1.22.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
 wget -c https://go.dev/dl/go$VERSION.src.tar.gz
 wget -c https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
+wget -c https://go.dev/dl/go$VERSION.linux-arm64.tar.gz
 
 RELEASE=${RELEASE:-linux}
 RUN_TEST=${RUN_TEST:-false}
