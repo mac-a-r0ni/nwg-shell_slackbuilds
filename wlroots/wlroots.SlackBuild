@@ -22,15 +22,15 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.17.1/downloads/wlroots-0.17.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=wlroots
-VERSION=${VERSION:-0.17.1}
+VERSION=${VERSION:-0.17.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://gitlab.freedesktop.org/$PRGNAM/$PRGNAM/-/releases/$VERSION/downloads/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
