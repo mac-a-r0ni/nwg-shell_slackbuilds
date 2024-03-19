@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+          |-----handy-ruler------------------------------------------------------|
+hyprcursor: hyprcursor (hyprland cursor format, library and utilities)
+hyprcursor:
+hyprcursor: XCursor sucks, and we still use it today.
+hyprcursor: - Scaling of XCursors is horrible
+hyprcursor: - XCursor does not support vector cursors
+hyprcursor: - XCursor is ridiculously space-inefficient
+hyprcursor:
+hyprcursor: Hyprcursor fixes all three. It's an efficient cursor theme format
+hyprcursor: that doesn't suck as much.
+hyprcursor:
+hyprcursor: Homepage: https://hyprland.org/

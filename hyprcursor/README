@@ -1,0 +1,9 @@
+hyprcursor (hyprland cursor format, library and utilities)
+
+XCursor sucks, and we still use it today.
+ - Scaling of XCursors is horrible
+ - XCursor does not support vector cursors
+ - XCursor is ridiculously space-inefficient
+
+Hyprcursor fixes all three. It's an efficient cursor theme format
+that doesn't suck as much.
