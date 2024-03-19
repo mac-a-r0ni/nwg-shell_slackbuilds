@@ -1,6 +1,6 @@
 #!/bin/bash
 # ----------------------------------------------------------------------
-# Slackware build script for aom
+# Slackware build script for libaom
 #
 # Copyright (c) 2018-2023 Andrew Strong, Blue Mountains, Australia.
 #
@@ -26,12 +26,12 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=libaom
-VERSION=${VERSION:-3.8.1}
+VERSION=${VERSION:-3.8.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://storage.googleapis.com/aom-releases/libaom-3.8.1.tar.gz
+wget -c https://storage.googleapis.com/aom-releases/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in

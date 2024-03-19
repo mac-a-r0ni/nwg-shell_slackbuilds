@@ -26,12 +26,12 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=webkit2gtk
 SRCNAM=webkitgtk
-VERSION=${VERSION:-2.42.5}
+VERSION=${VERSION:-2.44.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://www.webkitgtk.org/releases/webkitgtk-2.42.5.tar.xz
+wget -c https://www.$SRCNAM.org/releases/$SRCNAM-$VERSION.tar.xz
 
 TMP=${TMP:-/home/tmp}
 PKG=$TMP/package-$PRGNAM
@@ -94,17 +94,19 @@ cd build
 	-DLIBEXEC_INSTALL_DIR=/usr/lib${LIBDIRSUFFIX}/webkit2gtk-4.0 \
 	-DENABLE_GAMEPAD=OFF \
 	-DENABLE_MINIBROWSER=ON \
-        -DUSE_SOUP2=ON \
-        -DENABLE_JOURNALD_LOG=OFF \
+	-DUSE_SOUP2=ON \
+	-DENABLE_JOURNALD_LOG=OFF \
 	-DENABLE_DOCUMENTATION=OFF \
 	-DENABLE_BUBBLEWRAP_SANDBOX=ON \
 	-DUSE_SYSTEM_MALLOC=ON \
-        -DUSE_GSTREAMER_TRANSCODER=ON \
-        -DUSE_AVIF=ON \
-        -DUSE_JPEGXL=OFF \
-        -Wno-dev \
-        -G Ninja \
-        ..
+	-DUSE_GSTREAMER_TRANSCODER=ON \
+	-DUSE_GTK4=OFF \
+	-DUSE_LIBBACKTRACE=OFF \
+	-DUSE_AVIF=ON \
+	-DUSE_JPEGXL=OFF \
+	-Wno-dev \
+	-G Ninja \
+	..
 
 # The build might crash on high specs machines because ninja eat all
 # of the resources, so let's try to limit it to half the available ones
