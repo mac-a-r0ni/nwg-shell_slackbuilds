@@ -25,12 +25,12 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=libwpe
-VERSION=${VERSION:-1.14.2}
+VERSION=${VERSION:-1.16.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://wpewebkit.org/releases/libwpe-1.14.2.tar.xz
+wget -c https://wpewebkit.org/releases/$PRGNAM-$VERSION.tar.xz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
