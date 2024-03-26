@@ -2,7 +2,7 @@
 
 # Slackware build script for sddm-sugar-candy-nwg
 
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023-2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -30,6 +30,8 @@ BUILD=${BUILD:-1}
 ARCH=noarch
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+
+wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
