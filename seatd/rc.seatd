@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# Start/stop/restart seatd
+#
+
+seatd_start() {
+  if [ -x /usr/bin/seatd ]; then
+    echo "Starting seatd daemon:  /usr/bin/seatd "
+    /usr/bin/seatd -g video 1> /dev/null 2> /dev/null &
+  fi
+}
+
+seatd_stop() {
+  echo "Stopping seatd daemon:  /usr/bin/seatd "
+  killall seatd 1> /dev/null 2> /dev/null &
+}
+
+seatd_restart() {
+  seatd_stop
+  sleep 1
+  seatd_start
+}
+
+case "$1" in
+'start')
+ seatd_start
+  ;;
+'stop')
+  seatd_stop
+  ;;
+'restart')
+ seatd_restart
+  ;;
+*)
+  echo "usage $0 start|stop|restart"
+esac
