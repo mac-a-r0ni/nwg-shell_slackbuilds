@@ -27,7 +27,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 PRGNAM=webkit2gtk
 SRCNAM=webkitgtk
 VERSION=${VERSION:-2.44.0}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -103,7 +103,7 @@ cd build
 	-DUSE_GTK4=OFF \
 	-DUSE_LIBBACKTRACE=OFF \
 	-DUSE_AVIF=ON \
-	-DUSE_JPEGXL=OFF \
+	-DUSE_JPEGXL=ON \
 	-Wno-dev \
 	-G Ninja \
 	..
@@ -130,7 +130,6 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/slack-required > $PKG/install/slack-required
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

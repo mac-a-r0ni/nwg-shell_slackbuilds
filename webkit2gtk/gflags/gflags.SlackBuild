@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for pandoc-bin
+# Slackware build script for GFlags
 
-# Copyright 2019-2023 Andrew Payne <phalange@komputermatrix.com>
+# Copyright 2015 Jack Hunt, United Kingdom
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -24,15 +24,13 @@
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=pandoc-bin
-SRCNAM=pandoc
-VERSION=${VERSION:-3.1.12.3}
+PRGNAM=gflags
+VERSION=${VERSION:-2.2.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://github.com/jgm/$SRCNAM/releases/download/$VERSION/$SRCNAM-${VERSION}-1-arm64.deb
-wget -c https://github.com/jgm/$SRCNAM/releases/download/$VERSION/$SRCNAM-${VERSION}-1-amd64.deb
+wget -c https://github.com/$PRGNAM/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -54,21 +52,31 @@ TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-if   [ "$ARCH" = "aarch64" ]; then
-    DEBARCH="arm64"
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
-    DEBARCH="amd64"
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+elif [ "$ARCH" = "aarch64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
 else
-    echo "Sorry, the pandoc binary is currently available for 64-bit architectures only."
-    exit 1
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
 fi
 
 set -e
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
-cd $PKG
-ar p $CWD/$SRCNAM-$VERSION-1-$DEBARCH.deb data.tar.gz | tar xvz
+cd $TMP
+rm -rf $PRGNAM-$VERSION
+tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -76,19 +84,29 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-mkdir -p $PKG/usr/bin
-rm usr/bin/{pandoc-lua,pandoc-server}
-mv usr/share/man $PKG/usr/
+mkdir -p build
+cd build
+  cmake \
+    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DGFLAGS_LIBRARY_INSTALL_DIR="lib${LIBDIRSUFFIX}" \
+    -DGFLAGS_BUILD_SHARED_LIBS:BOOL=ON \
+    -DREGISTER_BUILD_DIR:BOOL=OFF \
+    -DREGISTER_INSTALL_PREFIX:BOOL=OFF ..
+  make
+  make install DESTDIR=$PKG
+cd ..
+
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+cp -rf *.txt $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
-mv usr/share/doc/pandoc/copyright \
-   $PKG/usr/doc/$PRGNAM-$VERSION
-rm -rf usr/share
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

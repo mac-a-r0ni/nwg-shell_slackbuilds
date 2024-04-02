@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for bubblewrap
+# Slackware build script for libjxl
 
-# Copyright 2017, 2018, 2019 Vincent Batts <vbatts@hashbangbash.com>
+# Copyright 2022-2024 Vijay Marcel
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -24,13 +24,13 @@
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=bubblewrap
-VERSION=${VERSION:-0.9.0}
+PRGNAM=libjxl
+VERSION=${VERSION:-0.10.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://github.com/containers/$PRGNAM/releases/download/v${VERSION}/$PRGNAM-$VERSION.tar.xz
+wget -c https://github.com/$PRGNAM/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -50,16 +50,16 @@ PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 if [ "$ARCH" = "i586" ]; then
-  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
+  SLKCFLAGS="-march=i586 -mtune=i686 -pipe -O2 -fPIC"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "i686" ]; then
-  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  SLKCFLAGS="-march=i686 -mtune=i686 -pipe -O2 -fPIC"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
-  SLKCFLAGS="-O2 -fPIC"
+  SLKCFLAGS="-march=x86-64 -mtune=generic -pipe -O2 -fPIC"
   LIBDIRSUFFIX="64"
 elif [ "$ARCH" = "aarch64" ]; then
-  SLKCFLAGS="-O2 -fPIC"
+  SLKCFLAGS="-pipe -O2 -fPIC"
   LIBDIRSUFFIX="64"
 else
   SLKCFLAGS="-O2"
@@ -67,13 +67,15 @@ else
 fi
 
 set -e
+trap 'echo "$0 FAILED at line $LINENO!" | tee -a $OUTPUT/error-${PRGNAM}.log' ERR
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
 cd $PRGNAM-$VERSION
+
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -81,34 +83,60 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-mkdir meson-build
-cd meson-build
- CFLAGS="$SLKCFLAGS" \
- CXXFLAGS="$SLKCFLAGS" \
-  meson setup .. \
-    --buildtype=release \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --localstatedir=/var \
-    --mandir=/usr/man \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    -Dstrip=true
-  "${NINJA:=ninja}"
-  DESTDIR=$PKG $NINJA install
-cd ..
+#want to build from git instead?
+#git clone https://github.com/libjxl/libjxl.git --recursive --shallow-submodules $TMP/$PRGNAM-$VERSION
+#git submodule update --init --recursive --depth 1 --recommend-shallow
+
+cmake  -B build -S $TMP/$PRGNAM-$VERSION \
+	-DBUILD_TESTING:BOOL='false' \
+	-DENABLE_FUZZERS_DEFAULT:BOOL='false' \
+	-DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+	-DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+	-DBUNDLE_LIBPNG_DEFAULT='NO' \
+	-DCMAKE_BUILD_TYPE:STRING='Release' \
+	-DCMAKE_INSTALL_PREFIX:PATH='/usr' \
+	-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib${LIBDIRSUFFIX} \
+	-DCMAKE_INSTALL_BINDIR:PATH=/usr/bin \
+	-DCMAKE_INSTALL_MANDIR:PATH=/usr/man \
+	-DBUILD_SHARED_LIBS:BOOL='true' \
+	-DJPEGXL_ENABLE_JNI:BOOL='false' \
+	-DJPEGXL_ENABLE_JPEGLI:BOOL='false' \
+	-DJPEGXL_ENABLE_OPENEXR:BOOL='true' \
+	-DJPEGXL_ENABLE_DEVTOOLS:BOOL='false' \
+	-DJPEGXL_ENABLE_DOXYGEN:BOOL='false' \
+	-DJPEGXL_ENABLE_MANPAGES:BOOL='true' \
+	-DJPEGXL_ENABLE_SKCMS:BOOL='false' \
+	-DJPEGXL_BUNDLE_SKCMS:BOOL='false' \
+	-DJPEGXL_ENABLE_BENCHMARK:BOOL='false' \
+	-DJPEGXL_ENABLE_EXAMPLES:BOOL='false' \
+	-DJPEGXL_ENABLE_FUZZERS:BOOL='false' \
+	-DJPEGXL_ENABLE_PLUGINS:BOOL='true' \
+	-DJPEGXL_ENABLE_VIEWERS:BOOL='false' \
+	-DJPEGXL_ENABLE_TOOLS:BOOL='true' \
+	-DJPEGXL_ENABLE_SIZELESS_VECTORS:BOOL='false' \
+	-DJPEGXL_ENABLE_TCMALLOC:BOOL='true' \
+	-DJPEGXL_WARNINGS_AS_ERRORS:BOOL='false' \
+	-DJPEGXL_FORCE_SYSTEM_BROTLI:BOOL='true' \
+	-DJPEGXL_FORCE_SYSTEM_GTEST:BOOL='false' \
+	-DJPEGXL_FORCE_SYSTEM_HWY:BOOL='true' \
+	-DJPEGXL_FORCE_SYSTEM_LCMS2:BOOL='true' \
+	-DJPEGXL_ENABLE_SJPEG:BOOL='false' \
+	-DJPEGXL_STATIC:BOOL='false'
+
+make -C build DESTDIR="$PKG" install
+
+rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
-  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+  | cut -f 1 -d : | xargs strip --strip-unneeded --remove-section=.comment --remove-section=.note 2> /dev/null || true
 
-if [ -d $PKG/usr/man ]; then
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
-fi
+
+find $PKG -name perllocal.pod -o -name ".packlist" -o -name "*.bs" | xargs rm -f || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a \
-  COPYING \
-  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a AUTHORS CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTORS LICENSE PATENTS README.md SECURITY.md BUILDING.md $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
