@@ -30,7 +30,7 @@ BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://github.com/google/$PRGNAM/archive/$PRGNAM/$PRGNAM-$VERSION.tar.gz
+wget -c https://github.com/google/$PRGNAM/archive/$VERSION/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in

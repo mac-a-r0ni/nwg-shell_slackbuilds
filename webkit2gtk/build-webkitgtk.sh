@@ -3,7 +3,7 @@
 # Copyright 2012  Patrick J. Volkerding, Sebeka, Minnesota, USA
 # All rights reserved.
 #
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Based on the xfce-build-all.sh script by Patrick J. Volkerding
