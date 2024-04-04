@@ -26,7 +26,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=azote
-VERSION=${VERSION:-1.12.5}
+VERSION=${VERSION:-1.12.6}
 BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
