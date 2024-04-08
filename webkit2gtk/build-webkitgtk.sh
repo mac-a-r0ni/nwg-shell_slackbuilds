@@ -44,8 +44,6 @@ for dir in \
   pandoc-bin \
   libyuv \
   svt-av1 \
-  dav1d \
-  libaom \
   libavif \
   unifdef \
   xdg-dbus-proxy \
