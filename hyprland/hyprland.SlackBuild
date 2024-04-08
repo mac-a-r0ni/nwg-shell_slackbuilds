@@ -30,7 +30,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.38.0}
+VERSION=${VERSION:-0.38.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
