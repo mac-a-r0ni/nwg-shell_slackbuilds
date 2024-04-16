@@ -30,11 +30,11 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.38.1}
+VERSION=${VERSION:-0.39.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-wget -c https://github.com/hyprwm/Hyprland/releases/download/v${VERSION}/$PKGNAM-v${VERSION}.tar.gz
+wget -c https://github.com/hyprwm/Hyprland/releases/download/v${VERSION}/$PKGNAM-v${VERSION}-rev1.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -79,7 +79,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$PKGNAM
-tar xvf $CWD/$PKGNAM-v$VERSION.tar.?z
+tar xvf $CWD/$PKGNAM-v$VERSION-rev1.tar.?z
 cd $PRGNAM-$PKGNAM
 chown -R root:root .
 find -L . \
@@ -89,18 +89,12 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
     sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
-
-cd $TMP/$PRGNAM-$PKGNAM
-
     make release
-
-cd $TMP/$PRGNAM-$PKGNAM
-
-    find src -name '*.hpp' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
-    pushd subprojects/wlroots/include
+    find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
+    pushd subprojects/wlroots-hyprland/include
     find . -name '*.h' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/wlroots/{}" \;
     popd
-    pushd subprojects/wlroots/build/include
+    pushd subprojects/wlroots-hyprland/build/include
     find . -name '*.h' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/wlroots/{}" \;
     popd
     mkdir -p "$PKG/usr/include/hyprland/protocols"
@@ -109,15 +103,13 @@ cd $TMP/$PRGNAM-$PKGNAM
     cmake -DCMAKE_INSTALL_PREFIX=/usr -DNO_SYSTEMD:STRING=true ..
     popd
     install -Dm0644 -t "$PKG/usr/share/pkgconfig" build/hyprland.pc
-    install -Dm0755 -t "$PKG/usr/bin" build/Hyprland
-    install -Dm0755 -t "$PKG/usr/bin" build/hyprctl/hyprctl
+    install -Dm0644 -t "$PKG/usr/man/man1" docs/{Hyprland,hyprctl}.1
+    install -Dm0755 -t "$PKG/usr/bin" build/Hyprland build/hyprctl/hyprctl build/hyprpm/hyprpm
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
     install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "$CWD/$PRGNAM.desktop"
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
-    find subprojects/wlroots/build -name 'libwlroots.so.*' -type f -execdir \
+    find subprojects/wlroots-hyprland/build -name 'libwlroots.so.*' -type f -execdir \
                 install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}/" {} \;
-
-#    install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}" "$TMP/$PRGNAM-$PKGNAM/subprojects/wlroots/build/libwlroots.so.*"
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
