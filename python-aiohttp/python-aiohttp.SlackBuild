@@ -21,17 +21,16 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://pypi.python.org/packages/source/a/aiohttp/aiohttp-3.9.4.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=aiohttp
 PRGNAM=python-aiohttp
-VERSION=${VERSION:-3.9.4}
+VERSION=${VERSION:-3.9.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
+wget -c https://pypi.python.org/packages/source/a/$SRCNAM/$SRCNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
