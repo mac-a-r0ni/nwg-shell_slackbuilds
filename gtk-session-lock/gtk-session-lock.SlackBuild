@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Slackware build script for gtklock-playerctl-module
+# Slackware build script for gtk-session-lock
 
-# Copyright 2023-2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -24,27 +24,22 @@
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=gtklock-playerctl-module
-VERSION=${VERSION:-3.0.0}
+PRGNAM=gtk-session-lock
+VERSION=${VERSION:-0.2.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://github.com/jovanlanik/$PRGNAM/archive/refs/tags/v${VERSION}.tar.gz
+wget -c https://github.com/Cu3PO42/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
-# Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
-    # Unless $ARCH is already set, use uname -m for all other archs:
        *) ARCH=$( uname -m ) ;;
   esac
 fi
 
-# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
-# the name of the created package would be, and then exit. This information
-# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -77,9 +72,8 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.?z || tar xvf $CWD/v$VERSION.tar.?z
+tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
-patch -Np1 -i $CWD/makefile.patch || exit 1
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -87,16 +81,28 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-make || exit 1
-make install DESTDIR=$PKG || exit 1
+mkdir -p meson-build
+cd meson-build
+ CFLAGS="$SLKCFLAGS" \
+ CXXFLAGS="$SLKCFLAGS" \
+  meson setup .. \
+    --buildtype=release \
+    --infodir=/usr/info \
+    --libdir=/usr/lib${LIBDIRSUFFIX} \
+    --localstatedir=/var \
+    --mandir=/usr/man \
+    --prefix=/usr \
+    --sysconfdir=/etc
+
+"${NINJA:=ninja}"
+  DESTDIR=$PKG $NINJA install
+cd ..
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-rm -rf $PKG/usr/lib${LIBDIRSUFFIX}/*.la
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a LICENSE README.md  \
+cp -a CHANGELOG.md LICENSE_* compatibility.md README.md release_process.md \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

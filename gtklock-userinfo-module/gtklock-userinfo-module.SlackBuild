@@ -2,7 +2,7 @@
 
 # Slackware build script for gtklock-userinfo-module
 
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023-2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,15 +22,15 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/jovanlanik/gtklock-userinfo-module/archive/refs/tags/v2.1.0.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=gtklock-userinfo-module
-VERSION=${VERSION:-2.1.0}
+VERSION=${VERSION:-3.0.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+
+wget -c https://github.com/jovanlanik/$PRGNAM/archive/refs/tags/v${VERSION}.tar.gz
 
 # Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
