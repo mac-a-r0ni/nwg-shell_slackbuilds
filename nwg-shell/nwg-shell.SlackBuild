@@ -26,7 +26,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell
 VERSION=${VERSION:-0.5.34}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -80,7 +80,7 @@ cd $PRGNAM-$VERSION
 chown -R root:root .
 
 # patches removing refs to systemctl, replaced w/ loginctl & disable updater
-patch -Np1 -i $CWD/defaults.patch || exit 1
+patch -Np1 -i $CWD/slackware.diff || exit 1
 
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
