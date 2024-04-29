@@ -28,6 +28,8 @@ VERSION=${VERSION:-2.0}
 BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 
+wget -c https://files.pythonhosted.org/packages/96/cd/90271fd195d79a9c2af0ca21632b297a6cc3e852e0413a2e4519e67be213/$SRCNAM-$VERSION.tar.gz
+
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
