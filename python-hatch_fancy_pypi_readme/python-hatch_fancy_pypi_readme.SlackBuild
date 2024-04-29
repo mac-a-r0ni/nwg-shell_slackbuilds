@@ -22,16 +22,17 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://files.pythonhosted.org/packages/source/h/hatch_fancy_pypi_readme/hatch_fancy_pypi_readme-23.2.0.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=python-hatch_fancy_pypi_readme
 SRCNAM=${PRGNAM#python-*}
-VERSION=${VERSION:-23.2.0}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-24.1.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+
+wget -c https://files.pythonhosted.org/packages/source/h/$SRCNAM/$SRCNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
