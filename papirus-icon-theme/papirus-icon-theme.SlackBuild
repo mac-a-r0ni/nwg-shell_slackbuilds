@@ -3,7 +3,7 @@
 # Slackware build script for papirus-icon-theme
 
 # Copyright 2018 Azure Zanculmarktum <zanculmarktum@gmail.com>
-# Updates/Maintenance 2023 Jay Lanagan (j@lngn.net), Detroit, MI.
+# Updates/Maintenance 2023-2024 Jay Lanagan (j@lngn.net), Detroit, MI.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -23,16 +23,17 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/20240201/papirus-icon-theme-20240201.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=papirus-icon-theme
-VERSION=${VERSION:-20240201}
+VERSION=${VERSION:-20240501}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 ARCH=noarch
+
+wget -c https://github.com/PapirusDevelopmentTeam/$PRGNAM/archive/$VERSION/$PRGNAM-$VERSION.tar.gz
 
 # If the variable PRINT_PACKAGE_NAME is set, then this script will report what
 # the name of the created package would be, and then exit. This information
