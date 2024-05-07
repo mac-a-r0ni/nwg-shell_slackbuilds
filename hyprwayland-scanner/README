@@ -1,0 +1,3 @@
+hyprwayland-scanner (Hyprland wayland-scanner implementation)
+
+A Hyprland implementation of wayland-scanner, in and for C++.
