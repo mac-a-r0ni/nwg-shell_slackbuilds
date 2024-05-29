@@ -84,7 +84,6 @@ find -L . \
 
 python3 -m build --wheel --no-isolation
 
-#install -Dm755 -T dist/azote $PKG/usr/bin/azote
 install -Dm644 -t $PKG/usr/share/pixmaps dist/azote.svg
 install -Dm644 -t $PKG/usr/share/$PRGNAM dist/indicator*.png
 install -Dm644 -t $PKG/usr/share/applications dist/azote.desktop
