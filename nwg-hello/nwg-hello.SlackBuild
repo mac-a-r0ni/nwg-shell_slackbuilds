@@ -87,6 +87,8 @@ find -L . \
 # fix default sway conf
 sed -i -e 's,systemctl,loginctl,g' sway-config
 
+  python3 -m build --wheel --no-isolation
+
   install -Dm0644 -t $PKG/etc/nwg-hello/ nwg-hello-default.json
   install -Dm0644 -t $PKG/etc/nwg-hello/ nwg-hello-default.css
   install -Dm0644 -t $PKG/etc/nwg-hello/ hyprland.conf
@@ -98,7 +100,7 @@ sed -i -e 's,systemctl,loginctl,g' sway-config
   install -d $PKG/var/cache/nwg-hello
   install -Dm0644 -t $PKG/var/cache/nwg-hello cache.json -o greeter
 
-  python3 setup.py install --root="$PKG" --optimize=1
+  python3 -m installer --destdir=$PKG dist/*.whl
 
 # install default config file into package so things work
 # auto-magically upon install
