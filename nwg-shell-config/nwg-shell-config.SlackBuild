@@ -26,7 +26,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell-config
-VERSION=${VERSION:-0.5.38}
+VERSION=${VERSION:-0.5.39}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -53,22 +53,22 @@ TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-#if [ "$ARCH" = "i586" ]; then
-#  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
-#  LIBDIRSUFFIX=""
-#elif [ "$ARCH" = "i686" ]; then
-#  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
-#  LIBDIRSUFFIX=""
-#elif [ "$ARCH" = "x86_64" ]; then
-#  SLKCFLAGS="-O2 -fPIC"
-#  LIBDIRSUFFIX="64"
-#elif [ "$ARCH" = "aarch64" ]; then
-#  SLKCFLAGS="-O2 -fPIC"
-#  LIBDIRSUFFIX="64"
-#else
-#  SLKCFLAGS="-O2"
-#  LIBDIRSUFFIX=""
-#fi
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+elif [ "$ARCH" = "aarch64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
 
 set -e
 
@@ -89,8 +89,13 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-python3 setup.py install --optimize=1 --root=$PKG
+python3 -m build --wheel --no-isolation
+python3 -m installer --destdir=$PKG dist/*.whl
+
+# install desktop file
 install -Dm0644 -t $PKG/usr/share/applications nwg-shell-config.desktop
+
+# install wallpapers
 install -Dm0644 -t $PKG/usr/share/pixmaps *.svg
 
 # Include Slackware logo on System Info screen

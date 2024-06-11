@@ -96,7 +96,7 @@ MD5SUM="fdfbe819b079678795b1ee1e1c61b9cb \
         f41cbc66ecf1f5006d0f0a7df2726c73 \
         b04135c0705b10e9866585e1d75e68a3 \
         404688aa3e82019927df8a16c7d258d1 \
-        af714594386b3e648f20d6d923d2357d"
+        72ed0ce68d0cd22911d486e4e407c733"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES="gtk-layer-shell scdoc"

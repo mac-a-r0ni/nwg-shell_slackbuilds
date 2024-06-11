@@ -22,15 +22,15 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://gitlab.freedesktop.org/emersion/libliftoff/-/releases/v0.4.1/downloads/libliftoff-0.4.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=libliftoff
-VERSION=${VERSION:-0.4.1}
+VERSION=${VERSION:-0.5.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://gitlab.freedesktop.org/emersion/$PRGNAM/-/releases/v${VERSION}/downloads/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in

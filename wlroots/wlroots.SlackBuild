@@ -27,7 +27,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=wlroots
 VERSION=${VERSION:-0.17.3}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://gitlab.freedesktop.org/$PRGNAM/$PRGNAM/-/releases/$VERSION/downloads/$PRGNAM-$VERSION.tar.gz
@@ -80,6 +80,9 @@ find -L . \
   -o -perm 511 \) -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+# add support for libliftoff-0.5.0
+patch -Np1 -i $CWD/4699.diff || exit 1
 
 mkdir build
 cd build

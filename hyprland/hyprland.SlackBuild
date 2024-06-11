@@ -30,7 +30,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.40.0}
+VERSION=${VERSION:-0.41.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -89,7 +89,7 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 # a patch to fix the patch of the patch to the patch
-patch -Np1 -i $CWD/patch_fix.patch || exit 1
+#patch -Np1 -i $CWD/patch_fix.patch || exit 1
 
     sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
     make release

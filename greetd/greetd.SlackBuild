@@ -109,6 +109,7 @@ find -L . \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 # Set /bin/bash rather than /bin/sh as default shell
+# and the virtual terminal to our standard "7".
 sed -i -e 's,vt = 1,vt = 7,g' config.toml
 sed -i -e 's,bin/sh,bin/bash,g' config.toml
 
@@ -143,8 +144,8 @@ find $PKG | xargs file | egrep "ELF.*executable" | cut -f 1 -d : \
 # move this file to 'rc.4.local' for Slackware to boot directly
 # to greetd from init level 4 startup
 mkdir -p $PKG/etc/rc.d
-cat $CWD/rc.4.$PRGNAM > $PKG/etc/rc.d/rc.4.$PRGNAM
-chmod 0644 $PKG/etc/rc.d/rc.4.$PRGNAM
+cat $CWD/rc.4.$PRGNAM > $PKG/etc/rc.d/rc.4.local
+chmod 0755 $PKG/etc/rc.d/rc.4.local
 
 # create this in pkg to ensure it exists with proper perms
 mkdir -p $PKG/var/lib/$PRGNAM
