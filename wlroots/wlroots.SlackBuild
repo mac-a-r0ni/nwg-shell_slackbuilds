@@ -27,7 +27,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=wlroots
 VERSION=${VERSION:-0.17.3}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://gitlab.freedesktop.org/$PRGNAM/$PRGNAM/-/releases/$VERSION/downloads/$PRGNAM-$VERSION.tar.gz
