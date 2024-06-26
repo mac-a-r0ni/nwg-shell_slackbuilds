@@ -1,14 +1,5 @@
-if [ -x /usr/bin/update-desktop-database ]; then
-  /usr/bin/update-desktop-database -q usr/share/applications >/dev/null 2>&1
-fi
+# putting this here because it's a hyprland specific issue
+# hyprland will link against libdisplay-info 0.2.0 but unless it's symlinked
+# to the old lib, it fails to start
+( cd usr/lib64 ; ln -sf libdisplay-info.so.0.2.0 libdisplay-info.so.1 )
 
-if [ -e usr/share/icons/hicolor/icon-theme.cache ]; then
-  if [ -x /usr/bin/gtk-update-icon-cache ]; then
-    /usr/bin/gtk-update-icon-cache usr/share/icons/hicolor >/dev/null 2>&1
-  fi
-fi
-if [ -e usr/share/glib-2.0/schemas ]; then
-  if [ -x /usr/bin/glib-compile-schemas ]; then
-    /usr/bin/glib-compile-schemas usr/share/glib-2.0/schemas >/dev/null 2>&1
-  fi
-fi
