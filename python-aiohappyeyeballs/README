@@ -1,0 +1,4 @@
+python-aiohappyeyeballs (Happy Eyeballs for asyncio)
+
+This library exists to allow connecting with Happy Eyeballs when you
+already have a list of addrinfo and not a DNS name.
