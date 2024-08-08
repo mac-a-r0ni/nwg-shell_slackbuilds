@@ -25,13 +25,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.41.2}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-0.42.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://github.com/hyprwm/Hyprland/releases/download/v${VERSION}/$PKGNAM-v${VERSION}.tar.gz
@@ -88,22 +87,11 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# a patch to fix the patch of the patch to the patch
-#patch -Np1 -i $CWD/patch_fix.patch || exit 1
-
     sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
     make release
     find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
-    pushd subprojects/wlroots-hyprland/include
-    find . -name '*.h' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/wlroots/{}" \;
-    popd
-    pushd subprojects/wlroots-hyprland/build/include
-    find . -name '*.h' -exec install -Dm0644 {} "$PKG/usr/include/hyprland/wlroots/{}" \;
-    popd
-    mkdir -p "$PKG/usr/include/hyprland/protocols"
-    cp protocols/*-protocol.h "$PKG/usr/include/hyprland/protocols"
     pushd build
-    cmake -DCMAKE_INSTALL_PREFIX=/usr -DNO_SYSTEMD:STRING=true ..
+    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     popd
     install -Dm0644 -t "$PKG/usr/share/pkgconfig" build/hyprland.pc
     install -Dm0644 -t "$PKG/usr/man/man1" docs/{Hyprland,hyprctl}.1
@@ -111,8 +99,6 @@ find -L . \
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
     install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "$CWD/$PRGNAM.desktop"
     install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
-    find subprojects/wlroots-hyprland/build -name 'libwlroots.so.*' -type f -execdir \
-                install -Dm0755 -t "$PKG/usr/lib${LIBDIRSUFFIX}/" {} \;
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
