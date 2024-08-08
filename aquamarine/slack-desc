@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+          |-----handy-ruler------------------------------------------------------|
+aquamarine: aquamarine (light linux rendering backend library)
+aquamarine:
+aquamarine: Aquamarine is a very light linux rendering backend library. It
+aquamarine: provides basic abstractions for an application to render on a Wayland
+aquamarine: session (in a window) or a native DRM session. It is agnostic of the
+aquamarine: rendering API (Vulkan/OpenGL) and designed to be lightweight,
+aquamarine: performant, and minimal. Aquamarine provides no bindings for other
+aquamarine: languages. It is C++-only.
+aquamarine:
+aquamarine: https://github.com/hyprwm/aquamarine
+aquamarine:
