@@ -1,10 +1,10 @@
 PRGNAM="nwg-dock-hyprland"
-VERSION="0.1.9"
+VERSION="0.2.0"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-dock-hyprland/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-dock-hyprland/archive/v0.1.9/nwg-dock-hyprland-0.1.9.tar.gz \
-          https://slackware.lngn.net/pub/source/nwg-dock-hyprland/nwg-dock-hyprland-vendor-0.1.9.tar.gz"
-MD5SUM="71ea45c6017e7523dd9d6264405310f5 \
-        "
+DOWNLOAD="https://github.com/nwg-piotr/nwg-dock-hyprland/archive/v0.2.0/nwg-dock-hyprland-0.2.0.tar.gz \
+          https://slackware.lngn.net/pub/source/nwg-dock-hyprland/nwg-dock-hyprland-vendor-0.2.0.tar.gz"
+MD5SUM="8efef7ef6b368280dc26eb2437aba418 \
+        2a75fe831c5fa54b3471c9a1df841181"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES="google-go-lang gtk-layer-shell nwg-drawer"
