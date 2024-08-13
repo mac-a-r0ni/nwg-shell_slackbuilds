@@ -1,8 +1,8 @@
 PRGNAM="nwg-dock-hyprland"
-VERSION="0.2.0"
+VERSION="0.2.1"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-dock-hyprland/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-dock-hyprland/archive/v0.2.0/nwg-dock-hyprland-0.2.0.tar.gz \
-          https://slackware.lngn.net/pub/source/nwg-dock-hyprland/nwg-dock-hyprland-vendor-0.2.0.tar.gz"
+DOWNLOAD="https://github.com/nwg-piotr/nwg-dock-hyprland/archive/v0.2.1/nwg-dock-hyprland-0.2.1.tar.gz \
+          https://slackware.lngn.net/pub/source/nwg-dock-hyprland/nwg-dock-hyprland-vendor-0.2.1.tar.gz"
 MD5SUM="8efef7ef6b368280dc26eb2437aba418 \
         2a75fe831c5fa54b3471c9a1df841181"
 DOWNLOAD_x86_64=""
