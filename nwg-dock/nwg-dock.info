@@ -1,8 +1,8 @@
 PRGNAM="nwg-dock"
-VERSION="0.4.0"
+VERSION="0.4.1"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-dock/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-dock/archive/refs/tags/v0.4.0.tar.gz \
-          https://slackware.lngn.net/pub/source/nwg-dock/nwg-dock-vendor-0.4.0.tar.gz"
+DOWNLOAD="https://github.com/nwg-piotr/nwg-dock/archive/refs/tags/v0.4.1.tar.gz \
+          https://slackware.lngn.net/pub/source/nwg-dock/nwg-dock-vendor-0.4.1.tar.gz"
 MD5SUM="422472f53722230dd3a5b97932471051 \
         e590308b0b5a203e694a2438c88fdbec"
 DOWNLOAD_x86_64=""
