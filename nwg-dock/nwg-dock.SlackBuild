@@ -32,7 +32,7 @@ TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
 wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
-wget -c https://slackware.lngn.net/pub/source/$PRGNAM/$PRGNAM-vendor-$VERSION.tar.gz
+wget -c https://slackware.lngn.net/pub/source/$PRGNAM/$PRGNAM-vendor-$VERSION.tar.xz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
