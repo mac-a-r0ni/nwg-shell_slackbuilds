@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://codeberg.org/dnkl/foot/archive/1.18.0.tar.gz
+wget -c https://codeberg.org/dnkl/foot/archive/1.18.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=foot
-VERSION=${VERSION:-1.18.0}
+VERSION=${VERSION:-1.18.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
