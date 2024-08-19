@@ -6,7 +6,7 @@
  
 -PREFIX = /usr/local
 +PREFIX = /usr
+ LIBDIR = $(PREFIX)/lib
  INSTALL = install
  
- LIBS := gtk+-3.0 gmodule-export-2.0 playerctl libsoup-2.4
 
