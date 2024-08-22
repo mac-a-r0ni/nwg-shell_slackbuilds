@@ -26,7 +26,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=azote
-VERSION=${VERSION:-1.12.9}
+VERSION=${VERSION:-1.13.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -84,9 +84,9 @@ find -L . \
 
 python3 -m build --wheel --no-isolation
 
-install -Dm644 -t $PKG/usr/share/pixmaps dist/azote.svg
+install -Dm644 -t $PKG/usr/share/pixmaps dist/$PRGNAM.svg
 install -Dm644 -t $PKG/usr/share/$PRGNAM dist/indicator*.png
-install -Dm644 -t $PKG/usr/share/applications dist/azote.desktop
+install -Dm644 -t $PKG/usr/share/applications dist/$PRGNAM.desktop
 
 python3 -m installer --destdir=$PKG dist/*.whl
 
