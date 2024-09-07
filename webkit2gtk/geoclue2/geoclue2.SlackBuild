@@ -24,7 +24,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=geoclue2
-VERSION=${VERSION:-2.7.1}
+VERSION=${VERSION:-2.7.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -82,9 +82,6 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-[ "${AVAHI:-no}" != "no" ] && avahi_opts=true || avahi_opts=false
-[ "${GTK_DOC:-no}" != "no" ] && doc_opts=true || doc_opts=false
-
 mkdir meson-build
 cd meson-build
   CFLAGS="$SLKCFLAGS" \
@@ -100,8 +97,8 @@ cd meson-build
     --mandir=/usr/man \
     --infodir=/usr/info \
     --buildtype=release \
-    -Dnmea-source=$avahi_opts \
-    -Dgtk-doc=$doc_opts \
+    -Dnmea-source=true \
+    -Dgtk-doc=false \
     -Dstrip=true
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
