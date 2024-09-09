@@ -23,12 +23,12 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://feh.finalrewind.org/feh-3.10.2.tar.bz2
+wget -c https://feh.finalrewind.org/feh-3.10.3.tar.bz2
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=feh
-VERSION=${VERSION:-3.10.2}
+VERSION=${VERSION:-3.10.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
