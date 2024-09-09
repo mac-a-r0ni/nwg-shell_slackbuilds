@@ -29,8 +29,8 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.42.0}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-0.43.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://github.com/hyprwm/Hyprland/releases/download/v${VERSION}/$PKGNAM-v${VERSION}.tar.gz
