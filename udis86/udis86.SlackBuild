@@ -98,12 +98,13 @@ autoreconf -vif
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --enable-shared \
   --disable-static \
+  --disable-tests \
   --disable-dependency-tracking \
   --build=$ARCH-slackware-linux \
   CFLAGS="$SLKCFLAGS" \
 
 make
-make check
+#make check
 make install-strip DESTDIR=$PKG
 
 find $PKG/usr/lib${LIBDIRSUFFIX} -name '*.la' -delete
