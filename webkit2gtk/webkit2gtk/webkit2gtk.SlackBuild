@@ -26,7 +26,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=webkit2gtk
 SRCNAM=webkitgtk
-VERSION=${VERSION:-2.44.3}
+VERSION=${VERSION:-2.46.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -110,7 +110,7 @@ cd build
 
 # The build might crash on high specs machines because ninja eat all
 # of the resources, so let's try to limit it to half the available ones
-"${NINJA:=ninja}" -j$(expr $(nproc))
+"${NINJA:=ninja}" -j$(expr $(nproc) +1)
 DESTDIR=$PKG $NINJA -j1 install
 
 cd ..
