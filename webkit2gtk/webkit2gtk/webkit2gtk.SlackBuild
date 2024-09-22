@@ -104,6 +104,7 @@ cd build
 	-DUSE_LIBBACKTRACE=OFF \
 	-DUSE_AVIF=ON \
 	-DUSE_JPEGXL=ON \
+	-DUSE_SYSTEM_SYSPROF_CAPTURE=NO \
 	-Wno-dev \
 	-G Ninja \
 	..
