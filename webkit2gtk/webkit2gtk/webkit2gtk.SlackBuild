@@ -111,7 +111,7 @@ cd build
 
 # The build might crash on high specs machines because ninja eat all
 # of the resources, so let's try to limit it to half the available ones
-"${NINJA:=ninja}" -j$(expr $(nproc) +1)
+"${NINJA:=ninja}" -j6
 DESTDIR=$PKG $NINJA -j1 install
 
 cd ..
