@@ -4,9 +4,9 @@ HOMEPAGE="http://golang.org"
 DOWNLOAD="https://go.dev/dl/go1.23.2.src.tar.gz \
           https://go.dev/dl/go1.23.2.linux-amd64.tar.gz \
           https://go.dev/dl/go1.23.2.linux-arm64.tar.gz"
-MD5SUM="b74d06bc271cf602a3812398ad0b1b26 \
-        754ecad1a2f4164de2e8fb6b9b4afc06 \
-        8ffab29a7093980f7a6c850f6a976b42"
+MD5SUM="12f74843bb7a1d0abfcd41c65c0e6372 \
+        cefc091ace139627c04dbda518e5b67f \
+        3dd5ee5e38c6717706a8085f44c12a13"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES=""
