@@ -28,11 +28,11 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sway
-VERSION=${VERSION:-1.9}
+VERSION=${VERSION:-1.10-rc2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-wget -c https://github.com/swaywm/sway/releases/download/1.9/sway-1.9.tar.gz
+wget -c https://github.com/swaywm/sway/releases/download/1.10-rc2/sway-1.10-rc2.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -97,7 +97,6 @@ cd meson-build
     -Dstrip=true \
     -Ddefault-wallpaper=true \
     -Dswaybar=true \
-    -Dxwayland=enabled \
     -Dtray=enabled \
     -Dgdk-pixbuf=enabled \
     -Dswaynag=true \
