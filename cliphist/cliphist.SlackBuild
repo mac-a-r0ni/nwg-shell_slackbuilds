@@ -25,12 +25,12 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=cliphist
-VERSION=${VERSION:-0.5.0}
+VERSION=${VERSION:-0.6.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://github.com/sentriz/cliphist/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
-wget -c https://slackware.lngn.net/pub/source/cliphist/$PRGNAM-vendor-$VERSION.tar.gz
+wget -c https://slackware.lngn.net/pub/source/cliphist/$PRGNAM-vendor-$VERSION.tar.xz
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
@@ -76,7 +76,7 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-vendor-$VERSION.tar.gz
+tar xvf $CWD/$PRGNAM-vendor-$VERSION.tar.xz
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
