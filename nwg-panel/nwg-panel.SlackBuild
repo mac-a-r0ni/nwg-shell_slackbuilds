@@ -27,7 +27,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-panel
 VERSION=${VERSION:-0.9.43}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -81,6 +81,8 @@ cd $PRGNAM-$VERSION
 
 # fix reboot/shutdown commands in menu
 patch -Np1 -i $CWD/loginctl.patch || exit 1
+# re-unsanitize string *broken commit*
+patch -Np1 -i $CWD/1034a5c.diff || exit 1
 
 chown -R root:root .
 find -L . \
