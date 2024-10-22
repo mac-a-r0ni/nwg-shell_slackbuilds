@@ -26,7 +26,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=xdg-desktop-portal-hyprland
 VERSION=${VERSION:-1.3.6}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://github.com/hyprwm/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
