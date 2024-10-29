@@ -23,15 +23,14 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/naelstrof/maim/archive/v5.7.4/maim-5.7.4.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=maim
-VERSION=${VERSION:-5.7.4}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-5.8.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://github.com/naelstrof/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -86,6 +85,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+sed -i 's#CXX_STANDARD 11#CXX_STANDARD 17#' CMakeLists.txt
 cmake -DCMAKE_INSTALL_PREFIX="/usr/" -DCMAKE_INSTALL_MANDIR="/usr/man/" ./
 
 make
