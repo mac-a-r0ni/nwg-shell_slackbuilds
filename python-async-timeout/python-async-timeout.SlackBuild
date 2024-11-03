@@ -21,15 +21,14 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/aio-libs/async-timeout/releases/download/v4.0.3/async-timeout-4.0.3.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
-SRCNAM=async-timeout
+SRCNAM=async_timeout
 PKGNAM=python-async-timeout
-VERSION=${VERSION:-4.0.3}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-5.0.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://github.com/aio-libs/$SRCNAM/releases/download/v${VERSION}/$SRCNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -83,7 +82,8 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-python3 setup.py install --root=$PKG
+python3 -m build --no-isolation || exit 1
+python3 -m installer -d "$PKG" dist/*.whl
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
