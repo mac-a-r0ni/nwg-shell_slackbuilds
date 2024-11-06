@@ -26,13 +26,13 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=gopsuinfo
-VERSION=${VERSION:-0.1.7}
+VERSION=${VERSION:-0.1.9}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
 wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
-wget -c https://slackware.lngn.net/pub/source/$PRGNAM/$PRGNAM-vendor-$VERSION.tar.xz
+#wget -c https://slackware.lngn.net/pub/source/$PRGNAM/$PRGNAM-vendor-$VERSION.tar.xz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -79,7 +79,7 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
-tar xvf $CWD/gopsuinfo-vendor-$VERSION.tar.?z
+#tar xvf $CWD/gopsuinfo-vendor-$VERSION.tar.?z
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -89,7 +89,8 @@ find -L . \
 
 CGO_CFLAGS="$SLKCFLAGS" \
 CGO_CXXFLAGS="$SLKCFLAGS" \
-go build -mod vendor -mod=readonly -o bin/$PRGNAM *.go || exit 1
+go build -o bin/$PRGNAM *.go || exit 1
+#go build -mod vendor -mod=readonly -o bin/$PRGNAM *.go || exit 1
 
 install -D -t $PKG/usr/share/$PRGNAM/icons_light icons_light/*
 install -D -t $PKG/usr/share/$PRGNAM/icons_dark icons_dark/*
