@@ -29,7 +29,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.45.1}
+VERSION=${VERSION:-0.45.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -88,17 +88,28 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
     sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
-    make release
-    find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
-    pushd build
-    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-    popd
-    install -Dm0644 -t "$PKG/usr/share/pkgconfig" build/hyprland.pc
-    install -Dm0644 -t "$PKG/usr/man/man1" docs/{Hyprland,hyprctl}.1
-    install -Dm0755 -t "$PKG/usr/bin" build/Hyprland build/hyprctl/hyprctl build/hyprpm/hyprpm
-    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
-    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "$CWD/$PRGNAM.desktop"
-    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
+    rm -fv scripts/generateVersion.sh
+    make release PREFIX=/usr MANDIR=/usr
+    make DESTDIR="$PKG" install
+
+    rm -fv $PKG/usr/include/hyprland/src/version.h.in
+    rm -frv $PKG/usr/include/hyprland/protocols
+    rm -frv $PKG/usr/share/xdg-desktop-portal
+#    mkdir $PKG/usr/man/man1
+#    mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
+#    rm -rf $PKG/usr/share/man
+
+# old steps, keeping for now.
+#    find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
+#    pushd build
+#    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+#    popd
+#    install -Dm0644 -t "$PKG/usr/share/pkgconfig" build/hyprland.pc
+#    install -Dm0644 -t "$PKG/usr/man/man1" docs/{Hyprland,hyprctl}.1
+#    install -Dm0755 -t "$PKG/usr/bin" build/Hyprland build/hyprctl/hyprctl build/hyprpm/hyprpm
+#    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
+#    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "$CWD/$PRGNAM.desktop"
+#    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
