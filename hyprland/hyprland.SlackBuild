@@ -95,7 +95,7 @@ find -L . \
     rm -fv $PKG/usr/include/hyprland/src/version.h.in
     rm -frv $PKG/usr/include/hyprland/protocols
     rm -frv $PKG/usr/share/xdg-desktop-portal
-    mkdir $PKG/usr/man/man1
+    mkdir -p $PKG/usr/man/man1
     mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
     rm -rf $PKG/usr/share/man
 
