@@ -89,15 +89,15 @@ find -L . \
 
     sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
     rm -fv scripts/generateVersion.sh
-    make release PREFIX=/usr MANDIR=/usr
+    make release PREFIX=/usr
     make DESTDIR="$PKG" install
 
     rm -fv $PKG/usr/include/hyprland/src/version.h.in
     rm -frv $PKG/usr/include/hyprland/protocols
     rm -frv $PKG/usr/share/xdg-desktop-portal
-#    mkdir $PKG/usr/man/man1
-#    mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
-#    rm -rf $PKG/usr/share/man
+    mkdir $PKG/usr/man/man1
+    mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
+    rm -rf $PKG/usr/share/man
 
 # old steps, keeping for now.
 #    find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
