@@ -23,15 +23,16 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/arsenetar/send2trash/archive/1.8.2/send2trash-1.8.2.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=send2trash
-VERSION=${VERSION:-1.8.2}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-1.8.3}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+
+wget -c https://github.com/arsenetar/$PRGNAM/archive/$VERSION/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in

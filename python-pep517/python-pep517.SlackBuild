@@ -29,7 +29,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 SRCNAM=pep517
 PRGNAM=python-pep517
 VERSION=${VERSION:-0.13.1}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 

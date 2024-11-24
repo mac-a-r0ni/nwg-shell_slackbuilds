@@ -27,7 +27,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 PRGNAM=python-poetry-core
 SRCNAM=poetry_core
 VERSION=${VERSION:-1.9.0}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 

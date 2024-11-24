@@ -25,7 +25,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 SRCNAM=async_timeout
 PKGNAM=python-async-timeout
 VERSION=${VERSION:-5.0.1}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://github.com/aio-libs/$SRCNAM/releases/download/v${VERSION}/$SRCNAM-$VERSION.tar.gz

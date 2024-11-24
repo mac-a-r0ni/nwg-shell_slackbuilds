@@ -30,7 +30,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=python-pexpect
 VERSION=${VERSION:-4.9.0}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
