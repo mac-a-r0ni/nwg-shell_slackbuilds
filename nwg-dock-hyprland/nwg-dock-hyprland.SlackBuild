@@ -26,7 +26,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-dock-hyprland
-VERSION=${VERSION:-0.3.3}
+VERSION=${VERSION:-0.4.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
