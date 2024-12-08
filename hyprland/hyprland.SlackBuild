@@ -98,6 +98,8 @@ find -L . \
     mkdir -p $PKG/usr/man/man1
     mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
     rm -rf $PKG/usr/share/man
+# remove unneeded sysd desktop session file
+    rm $PKG/usr/share/wayland-sessions/$PRGNAM-systemd.desktop
 
 # old steps, keeping for now.
 #    find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
