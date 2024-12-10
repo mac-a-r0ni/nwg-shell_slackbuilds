@@ -25,8 +25,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-shell
-VERSION=${VERSION:-0.5.42}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-0.5.43}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -94,7 +94,7 @@ install -Dm0644 -t $PKG/usr/share/applications nwg-readme.desktop
 
 # Remove Arch updaters from our Slackware package, users are recommended
 # to use sbopkg, sboui, or their favorite SBo updater to get package updates.
-rm $PKG/usr/bin/nwg-shell-check-updates
+#rm $PKG/usr/bin/nwg-shell-check-updates
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
