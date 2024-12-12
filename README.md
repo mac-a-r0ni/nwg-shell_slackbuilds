@@ -41,11 +41,13 @@ Packages for x86_64:
 Packages for aarch64:  
 [https://slackware.lngn.net/pub/aarch64/slackwareaarch64-current/nwg-shell/](https://slackware.lngn.net/pub/aarch64/slackwareaarch64-current/nwg-shell/)  
 
+If you would like to try a portable version of the system, I do periodically create a liveslak
+which has a full install of nwg-shell on a slackware64-current system available here: [https://rekt.lngn.net/liveslak/](https://rekt.lngn.net/liveslak/) 
+
 I will likely not produce a 15.0 file repo, please use SBo scripts. I'll only maintain the -current package repos as time allows.  
 ## Notes
 
-* nwg-shell 0.5.X has added hyprland support, while I've added it, it's mostly un-tested currently.  
-* If you intend to use hyprland instead of sway, please remove the 'xdg-deskop-portal-wlr' package.
+* nwg-shell 0.5.X has added hyprland support, we officially support using Sway or Hyprland.  
 * The Go code is using the standard Slackware optimizations.  
 * nwg-drawer has small graphic issues above icons with some themes, I've found Adwaita-dark to look the best.  
 * The package repos are signed with my GPG key, you can trust them with slackpkg+.  
