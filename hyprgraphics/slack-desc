@@ -9,7 +9,7 @@
 hyprgraphics: hyprgraphics (Hyprland graphics / resource utilities)
 hyprgraphics:
 hyprgraphics: Hyprgraphics is a small C++ library with graphics / resource related
-hyprgraphics:  utilities used across the hypr* ecosystem.
+hyprgraphics: utilities used across the hypr* ecosystem.
 hyprgraphics:
 hyprgraphics: Homepage: https://hyprland.org/
 hyprgraphics:
