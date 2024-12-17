@@ -29,7 +29,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PKGNAM=source
 PRGNAM=hyprland
-VERSION=${VERSION:-0.45.2}
+VERSION=${VERSION:-0.46.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -99,7 +99,7 @@ find -L . \
     mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
     rm -rf $PKG/usr/share/man
 # remove unneeded sysd desktop session file
-    rm $PKG/usr/share/wayland-sessions/$PRGNAM-systemd.desktop
+#    rm $PKG/usr/share/wayland-sessions/$PRGNAM-systemd.desktop
 
 # old steps, keeping for now.
 #    find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
