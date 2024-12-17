@@ -43,9 +43,6 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
-# the name of the created package would be, and then exit. This information
-# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -98,20 +95,8 @@ find -L . \
     mkdir -p $PKG/usr/man/man1
     mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
     rm -rf $PKG/usr/share/man
-# remove unneeded sysd desktop session file
-#    rm $PKG/usr/share/wayland-sessions/$PRGNAM-systemd.desktop
-
-# old steps, keeping for now.
-#    find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$PKG/usr/include/hyprland/{}" \;
-#    pushd build
-#    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-#    popd
-#    install -Dm0644 -t "$PKG/usr/share/pkgconfig" build/hyprland.pc
-#    install -Dm0644 -t "$PKG/usr/man/man1" docs/{Hyprland,hyprctl}.1
-#    install -Dm0755 -t "$PKG/usr/bin" build/Hyprland build/hyprctl/hyprctl build/hyprpm/hyprpm
-#    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" assets/*.png
-#    install -Dm0644 -t "$PKG/usr/share/wayland-sessions" "$CWD/$PRGNAM.desktop"
-#    install -Dm0644 -t "$PKG/usr/share/$PRGNAM" "example/$PRGNAM.conf"
+# remove unneeded uwsm desktop session file
+    rm $PKG/usr/share/wayland-sessions/$PRGNAM-uwsm.desktop
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
