@@ -22,16 +22,16 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/aio-libs/aiosignal/releases/download/v1.3.1/aiosignal-1.3.1.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=aiosignal
 PKGNAM=python-aiosignal
-VERSION=${VERSION:-1.3.1}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-1.3.2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://github.com/aio-libs/$SRCNAM/releases/download/v${VERSION}/$SRCNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
