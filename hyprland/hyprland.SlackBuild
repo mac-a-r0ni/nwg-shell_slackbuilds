@@ -95,8 +95,9 @@ find -L . \
     mkdir -p $PKG/usr/man/man1
     mv $PKG/usr/share/man/man1/* $PKG/usr/man/man1
     rm -rf $PKG/usr/share/man
-# remove unneeded uwsm desktop session file
-    rm $PKG/usr/share/wayland-sessions/$PRGNAM-uwsm.desktop
+# remove unneeded uwsm desktop session file & replace with dbus calling desktop file
+    rm $PKG/usr/share/wayland-sessions/*.desktop
+    cp $CWD/hyprland.desktop $PKG/usr/share/wayland-sessions/
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

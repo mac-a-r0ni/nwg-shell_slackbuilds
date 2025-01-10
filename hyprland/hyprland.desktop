@@ -3,3 +3,5 @@ Name=Hyprland
 Comment=An intelligent dynamic tiling Wayland compositor
 Exec=dbus-run-session -- Hyprland
 Type=Application
+DesktopNames=Hyprland
+Keywords=tiling;wayland;compositor;
