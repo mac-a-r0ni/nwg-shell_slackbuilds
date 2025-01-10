@@ -1,0 +1,13 @@
+diff --git a/xcur2png.c b/xcur2png.c
+index 8723a10..ea235ff 100644
+--- a/xcur2png.c
++++ b/xcur2png.c
+@@ -671,7 +671,7 @@ int saveConfAndPNGs (const XcursorImages* xcIs, const char* xcurFilePart, int su
+   int ret;
+   int count = 0;
+   char pngName[PATH_MAX] = {0};
+-  extern dry_run;
++  extern int dry_run;
+   
+   //Write comment on config-file.
+   fprintf (conffp,"#size\txhot\tyhot\tPath to PNG image\tdelay\n");
