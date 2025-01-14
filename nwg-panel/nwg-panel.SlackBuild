@@ -26,12 +26,12 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=nwg-panel
-VERSION=${VERSION:-0.9.60}
+VERSION=${VERSION:-0.9.61}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
-wget -c https://github.com/nwg-piotr/$PRGNAM/archive/$VERSION/$PRGNAM-$VERSION.tar.gz
+wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v$VERSION/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
