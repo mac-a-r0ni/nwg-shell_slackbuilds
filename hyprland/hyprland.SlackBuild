@@ -84,7 +84,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-    sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
+    sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -DNO_SYSTEMD:STRING=true -D/}' Makefile
     rm -fv scripts/generateVersion.sh
     make release PREFIX=/usr
     make DESTDIR="$PKG" install
