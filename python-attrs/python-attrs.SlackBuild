@@ -22,17 +22,15 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=attrs
 PRGNAM=python-attrs
-VERSION=${VERSION:-24.2.0}
+VERSION=${VERSION:-25.1.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-
+wget -c https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
