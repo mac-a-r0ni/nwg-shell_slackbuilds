@@ -1,10 +1,10 @@
 PRGNAM="nwg-drawer"
-VERSION="0.6.2"
+VERSION="0.6.3"
 HOMEPAGE="https://github.com/nwg-piotr/nwg-drawer/"
-DOWNLOAD="https://github.com/nwg-piotr/nwg-drawer/archive/0.6.2/nwg-drawer-0.6.2.tar.gz \
-          https://slackware.lngn.net/pub/source/nwg-drawer/nwg-drawer-vendor-0.6.2.tar.xz"
-MD5SUM="6b6186f86ba8188252b5fda3412304b4 \
-        bda71a367edac3b717c704a1af5f43be"
+DOWNLOAD="https://github.com/nwg-piotr/nwg-drawer/archive/0.6.3/nwg-drawer-0.6.3.tar.gz \
+          https://slackware.lngn.net/pub/source/nwg-drawer/nwg-drawer-vendor-0.6.3.tar.xz"
+MD5SUM="a4377a647c4afff32326e993f6d721e6 \
+        c583271ff9d962ab784b652a71c61bd3"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES="google-go-lang gtk-layer-shell"
