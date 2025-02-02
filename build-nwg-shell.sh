@@ -67,7 +67,6 @@ for dir in \
   python-psutil \
   python-typing_extensions \
   python-netifaces \
-  gtk-layer-shell \
   SwayNotificationCenter \
   light \
   brightnessctl \
