@@ -42,11 +42,8 @@ CHECKDUPLICATE=0
 # Loop for all packages
 for dir in \
   google-go-lang \
-  scdoc \
   xdg-desktop-portal-wlr \
   papirus-icon-theme \
-  seatd \
-  wlroots \
   swaybg \
   sway \
   python-wheel \
