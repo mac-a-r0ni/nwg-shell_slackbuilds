@@ -30,7 +30,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=google-go-lang
-VERSION=${VERSION:-1.23.6}
+VERSION=${VERSION:-1.24.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -81,9 +81,9 @@ set -e
 
 rm -rf $PKG
 install -d $TMP/$PRGNAM-$VERSION/go${VERSION}
-bsdtar -xf $CWD/go${VERSION}.linux-${GOARCH}.tar.gz \
+tar xvf $CWD/go${VERSION}.linux-${GOARCH}.tar.gz \
   -C $TMP/$PRGNAM-$VERSION/go${VERSION} --strip-components=1
-bsdtar -xf $CWD/go${VERSION}.src.tar.gz \
+tar xvf $CWD/go${VERSION}.src.tar.gz \
   -C $TMP/$PRGNAM-$VERSION
 
 mkdir -p $TMP $PKG/usr/lib${LIBDIRSUFFIX}/go${VERSION} $OUTPUT
