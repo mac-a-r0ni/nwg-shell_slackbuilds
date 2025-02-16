@@ -2,7 +2,7 @@
 
 # Slackware build script for typobuster
 
-# Copyright 2024 Jay Lanagan (j@lngn.net), Detroit, MI, USA,
+# Copyright 2025 Jay Lanagan (j@lngn.net), Detroit, MI, USA,
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,37 +22,14 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This script pulls the latest git contents and makes a package. It will
-# always be the latest pull available and saves a tarball as well.
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=typobuster
-CLONE_URL=https://github.com/nwg-piotr/$PRGNAM.git
-
-set -e
-
-GITDIR=$( mktemp -dt $PRGNAM.git.XXXXXX )
-rm -rf $GITDIR
-git clone --depth 1 $CLONE_URL $GITDIR
-
-CWD="$( pwd )"
-cd $GITDIR
-
-VERSION=$( git log --date=format:%Y%m%d --pretty=format:%cd.%h -n1 )
-
-rm -rf .git
-find . -name .gitignore -print0 | xargs -0 rm -f
-
-cd "$CWD"
-rm -rf $PRGNAM-$VERSION $PRGNAM-$VERSION.tar.xz
-mv $GITDIR $PRGNAM-$VERSION
-tar cvfJ $PRGNAM-$VERSION.tar.xz $PRGNAM-$VERSION
-
+VERSION=${VERSION:-0.1.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
-
+wget -c https://github.com/nwg-piotr/$PRGNAM/archive/v$VERSION/$PRGNAM-$VERSION.tar.gz
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
@@ -66,7 +43,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/home/tmp}
+TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
@@ -106,7 +83,6 @@ python3 -m build --wheel --no-isolation
 python3 -m installer --destdir=$PKG dist/*.whl
 
 install -Dm0644 -t $PKG/usr/share/pixmaps $PRGNAM.svg
-#install -Dm0755 -t $PKG/usr/bin scripts/screenshot
 install -Dm0644 -t $PKG/usr/share/applications $PRGNAM.desktop
 
 rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
@@ -136,8 +112,6 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 mkdir -p $PKG/install
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cat $CWD/slack-desc > $PKG/install/slack-desc
-
-rm -r $CWD/$PRGNAM-$VERSION
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
