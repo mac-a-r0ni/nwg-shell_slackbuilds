@@ -25,8 +25,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=ddcutil
-VERSION=${VERSION:-2.1.4}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-2.2.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
