@@ -1,4 +1,4 @@
-python3-autotiling (i3/sway window tiling switches)
+python-autotiling (i3/sway window tiling switches)
 
 This script uses the i3ipc-python library to switch the layout
 splith/splitv depending on the currently focused window dimensions.
