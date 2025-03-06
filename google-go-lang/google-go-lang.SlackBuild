@@ -163,6 +163,10 @@ EOF
 chmod 0755 $PKG/etc/profile.d/go.csh
 chmod 0755 $PKG/etc/profile.d/go.sh
 
+# remove some junk
+rm $PKG/usr/lib${LIBDIRSUFFIX}/go/src/*.bat
+rm $PKG/usr/lib${LIBDIRSUFFIX}/go/src/debug/elf/testdata/libtiffxx.so_
+
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
   CONTRIBUTING.md LICENSE PATENTS README.md SECURITY.md VERSION \
