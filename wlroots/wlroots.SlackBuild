@@ -81,6 +81,10 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+patch -Np1 -i $CWD/0001-Revert-layer-shell-error-on-0-dimension-without-anch.patch
+patch -Np1 -i $CWD/0001-xwm-Handle-NET_WM_WINDOW_OPACITY.patch
+patch -Np1 -i $CWD/0001-seat-Don-t-forget-to-destroy-touch-points-on-touch-u.patch
+
 mkdir build
 cd build
   CFLAGS="$SLKCFLAGS" \

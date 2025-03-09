@@ -1,0 +1,38 @@
+From 3c8b98066cc39a3c06dd9d09d3f4ad542dfa13b1 Mon Sep 17 00:00:00 2001
+Message-ID: <3c8b98066cc39a3c06dd9d09d3f4ad542dfa13b1.1737996779.git.agx@sigxcpu.org>
+From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
+Date: Mon, 27 Jan 2025 17:48:39 +0100
+Subject: [PATCH] seat: Don't forget to destroy touch points on touch up
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Otherwise number of touch points goes up constantly and d'n'd via touch
+can't work as validation always fails.
+
+Fixes 75ecba44 ("seat: add serials to touch up events")
+
+Signed-off-by: Guido Günther <agx@sigxcpu.org>
+---
+ types/seat/wlr_seat_touch.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/types/seat/wlr_seat_touch.c b/types/seat/wlr_seat_touch.c
+index 09f33d6..cc5b7c8 100644
+--- a/types/seat/wlr_seat_touch.c
++++ b/types/seat/wlr_seat_touch.c
+@@ -214,9 +214,10 @@ uint32_t wlr_seat_touch_notify_up(struct wlr_seat *seat, uint32_t time,
+ 		return 0;
+ 	}
+ 
+-	return grab->interface->up(grab, time, point);
++	uint32_t serial = grab->interface->up(grab, time, point);
+ 
+ 	touch_point_destroy(point);
++	return serial;
+ }
+ 
+ void wlr_seat_touch_notify_motion(struct wlr_seat *seat, uint32_t time,
+-- 
+2.45.2
+
