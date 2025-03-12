@@ -22,11 +22,10 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=fcft
-VERSION=${VERSION:-3.1.10}
+VERSION=${VERSION:-3.3.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -81,8 +80,8 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-mkdir build
-cd build
+mkdir meson-build
+cd meson-build
   CFLAGS="$SLKCFLAGS" \
   CXXFLAGS="$SLKCFLAGS" \
   meson setup .. \
@@ -93,12 +92,14 @@ cd build
     --mandir=/usr/man \
     --prefix=/usr \
     --sysconfdir=/etc \
+    --wrap-mode=nofallback \
     -Dstrip=true \
     -Ddocs=enabled \
     -Dgrapheme-shaping=enabled \
     -Drun-shaping=enabled \
     -Dtest-text-shaping=true \
-    -Dexamples=false \
+    -Dsvg-backend=nanosvg \
+    -Dexamples=false
 
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
