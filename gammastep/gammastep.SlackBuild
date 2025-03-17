@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://gitlab.com/chinstrap/gammastep/-/archive/v2.0.9/gammastep-v2.0.9.tar.gz
+wget -c https://gitlab.com/chinstrap/gammastep/-/archive/v2.0.10/gammastep-v2.0.10.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=gammastep
-VERSION=${VERSION:-2.0.9}
+VERSION=${VERSION:-2.0.10}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
