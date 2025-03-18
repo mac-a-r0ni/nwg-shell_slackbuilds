@@ -25,8 +25,8 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=multidict
 PRGNAM=python-multidict
-VERSION=${VERSION:-6.1.0}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-6.2.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
