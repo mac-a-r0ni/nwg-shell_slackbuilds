@@ -20,6 +20,10 @@
   "gtk-cursor-theme": "",
   "prefer-dark-theme": true,
   "template-name": "",
+  "time-format": "%H:%M:%S",
+  "date-format": "%A, %d. %B",
+  "layer": "overlay",
+  "keyboard-mode": "exclusive",
   "lang": "",
   "env-vars": []
 }
