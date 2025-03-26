@@ -22,15 +22,14 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/bugaevc/wl-clipboard/archive/refs/tags/v2.1.0/wl-clipboard-2.1.0.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=wl-clipboard
-VERSION=${VERSION:-2.1.0}
+VERSION=${VERSION:-2.2.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://github.com/bugaevc/$PRGNAM/archive/refs/tags/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
