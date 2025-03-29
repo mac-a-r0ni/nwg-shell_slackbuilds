@@ -28,7 +28,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 PRGNAM=re2
 VERSION=${VERSION:-2024_07_02}
 PKGVER=$(echo $VERSION | tr _ -)
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 wget -c https://github.com/google/$PRGNAM/archive/$PKGVER/$PRGNAM-$PKGVER.tar.gz
