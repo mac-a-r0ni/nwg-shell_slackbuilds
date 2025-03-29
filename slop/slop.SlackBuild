@@ -29,7 +29,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=slop
 VERSION=${VERSION:-7.6}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -86,7 +86,7 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 sed -i 's#CXX_STANDARD 11#CXX_STANDARD 17#' CMakeLists.txt
-cmake ./
+cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -Wno-dev ./
 make
 make install DESTDIR=$PKG
 
