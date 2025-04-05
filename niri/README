@@ -1,0 +1,9 @@
+niri (scrollable-tiling Wayland compositor)
+
+Built from the ground up for scrollable tiling, Dynamic workspaces
+like in GNOME, Built-in screenshot UI, Monitor and window screen-
+casting through xdg-desktop-portal-gnome, You can block out sensitive
+windows from screencasts, Touchpad and mouse gestures, Configurable
+layout: gaps, borders, struts, window sizes, Gradient borders with
+Oklab and Oklch support, Animations with support for custom shaders,
+Live-reloading config.

@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+    |-----handy-ruler------------------------------------------------------|
+niri: niri (scrollable-tiling Wayland compositor)
+niri:
+niri: Built from the ground up for scrollable tiling, Dynamic workspaces
+niri: like in GNOME, Built-in screenshot UI, Monitor and window screen-
+niri: casting through xdg-desktop-portal-gnome, You can block out sensitive
+niri: windows from screencasts, Touchpad and mouse gestures, Configurable
+niri: layout: gaps, borders, struts, window sizes, Gradient borders with
+niri: Oklab and Oklch support, Animations with support for custom shaders,
+niri: Live-reloading config.
+niri:
+niri: Homepage: https://github.com/YaLTeR/niri
