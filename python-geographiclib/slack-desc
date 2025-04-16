@@ -6,13 +6,13 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
                     |-----handy-ruler------------------------------------------------------|
-python-geographiclib: python-geographiclib ()
+python-geographiclib: python-geographiclib (geodesic routines from GeographicLib)
 python-geographiclib:
-python-geographiclib: 
+python-geographiclib: This is a library to solve geodesic problems on an ellipsoid model of
+python-geographiclib: the earth.
 python-geographiclib:
 python-geographiclib:
-python-geographiclib:
-python-geographiclib: Homepage: 
+python-geographiclib: Homepage: https://geographiclib.sourceforge.io/Python/2.0
 python-geographiclib:
 python-geographiclib:
 python-geographiclib:
