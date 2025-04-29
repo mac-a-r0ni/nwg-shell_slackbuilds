@@ -27,9 +27,9 @@
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=python3-maturin
-SRCNAM=${PRGNAM#python3-*}
-VERSION=${VERSION:-1.8.1}
+PRGNAM=python-maturin
+SRCNAM=maturin
+VERSION=${VERSION:-1.8.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -73,7 +73,7 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAM-$VERSION
 tar xvf $CWD/$SRCNAM-$VERSION.tar.?z
-tar xvf $CWD/$SRCNAM-vendored-sources-$VERSION-$VSBUILD.tar.?z
+#tar xvf $CWD/$SRCNAM-vendored-sources-$VERSION-$VSBUILD.tar.?z
 cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -82,23 +82,8 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \+
 
-# prevent cargo from using the network.
-# this only works because we have a vendored sources tarball with
-# everything cargo would have downloaded.
-export CARGO_NET_OFFLINE=true
-
 # prevent cargo from writing outside of $TMP
 export CARGO_HOME=$(pwd)/.cargo
-
-export PATH="/opt/rust/bin:$PATH"
-if [ -z "$LD_LIBRARY_PATH" ]; then
-  export LD_LIBRARY_PATH="/opt/rust/lib$LIBDIRSUFFIX"
-else
-  export LD_LIBRARY_PATH="/opt/rust/lib$LIBDIRSUFFIX:$LD_LIBRARY_PATH"
-fi
-
-PYVER=$(python3 -c 'import sys; print("%d.%d" % sys.version_info[:2])')
-export PYTHONPATH=/opt/python$PYVER/site-packages
 
 python3 -m build --no-isolation
 python3 -m installer -d "$PKG" dist/*.whl
