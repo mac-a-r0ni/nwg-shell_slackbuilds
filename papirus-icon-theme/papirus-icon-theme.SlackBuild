@@ -73,7 +73,7 @@ find . -perm /111 -a \! -perm 755 -a -exec chmod 755 {} + \
 
 # Papirus team recommends to remove ePapirus & ePapirus-Dark if the distro
 # does not ship the Pantheon Desktop, so we're going to do that.
-rm -r $PKG/usr/share/icons/{ePapirus,ePapirus-Dark}
+#rm -r $PKG/usr/share/icons/{ePapirus,ePapirus-Dark}
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cd $PKG/usr/doc
