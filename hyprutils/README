@@ -1,6 +1,3 @@
-hyprlang (Official implementation library for the hypr config language)
+hyprutils (hypr utilities library)
 
-The hypr configuration language is an extremely efficient, yet easy to
-work with, configuration language for linux applications.
-
-It's user-friendly, easy to grasp, and easy to implement.
+Hyprland utilities library used across the ecosystem.
