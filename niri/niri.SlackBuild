@@ -24,7 +24,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=niri
-VERSION=${VERSION:-25.02}
+VERSION=${VERSION:-25.05}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -79,7 +79,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-export NIRI_BUILD_COMMIT="b94a5db"
+export NIRI_BUILD_COMMIT="ae89cb6"
 cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 cargo build --frozen --release --no-default-features --features dbus,xdp-gnome-screencast
 
