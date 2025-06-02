@@ -1,0 +1,11 @@
+wlopm - Wayland output power management
+
+Simple client implementing zwlr-output-power-management-v1.
+
+wlopm is licensed under the GPLv3.
+
+Contributions are  welcome in  the form of  patches via  EMail. Please
+reach  out before  working on  larger  changes. Please  note that  any
+contributions  making  use  of  language  models  or  similar  machine
+learning abominations will not be accepted and will lead to a lifetime
+ban from contributing to or requesting help with any of my projects.

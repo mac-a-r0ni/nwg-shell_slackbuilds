@@ -1,0 +1,24 @@
+Fix a bug with bash completion installation
+Make this slackware compliant - /usr/bin /usr/man
+diff -Nur wlopm-1.0.0.orig/Makefile wlopm-1.0.0/Makefile
+--- wlopm-1.0.0.orig/Makefile	2025-06-02 12:20:30.935973529 +1000
++++ wlopm-1.0.0/Makefile	2025-06-02 12:22:50.389971993 +1000
+@@ -1,8 +1,8 @@
+ SCANNER := wayland-scanner
+ 
+-PREFIX=/usr/local
++PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+-MANDIR=$(PREFIX)/share/man
++MANDIR=$(PREFIX)/man
+ BASHCOMPDIR=$(PREFIX)/share/bash-completion/completions
+ 
+ CFLAGS+=-Wall -Werror -Wextra -Wpedantic -Wno-unused-parameter -Wconversion -Wformat-security -Wformat -Wsign-conversion -Wfloat-conversion -Wunused-result -Wno-strict-prototypes
+@@ -26,6 +26,7 @@
+ 	install wlopm $(DESTDIR)$(BINDIR)
+ 	install -d $(DESTDIR)$(MANDIR)/man1
+ 	install -m 644 wlopm.1 $(DESTDIR)$(MANDIR)/man1
++	install -d $(DESTDIR)$(PREFIX)/share/bash-completion/completions
+ 	install bash-completion $(DESTDIR)$(BASHCOMPDIR)/wlopm
+ 
+ uninstall:
