@@ -6,14 +6,14 @@
 # customary to leave one space after the ':'.
 
      |-----handy-ruler------------------------------------------------------|
-wlopm: wlopm - Wayland output power management
+wlopm: wlopm (Wayland output power management)
 wlopm: Simple client implementing zwlr-output-power-management-v1.
 wlopm: wlopm is licensed under the GPLv3.
-wlopm: 
-wlopm: 
+wlopm:
+wlopm: Homepage: https://git.sr.ht/~leon_plickat/wlopm
 wlopm:
 wlopm:
 wlopm:
 wlopm:
-wlopm: Home: https://git.sr.ht/~leon_plickat/wlopm
+wlopm:
 wlopm:
