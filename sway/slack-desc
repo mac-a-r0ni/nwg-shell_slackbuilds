@@ -6,13 +6,13 @@
 # customary to leave one space after the ':'.
 
     |-----handy-ruler------------------------------------------------------|
-sway: sway (wayland i3 clone)
+sway: sway (wayland compositor)
 sway:
-sway: Sway is an "i3 like" desktop environment for wayland, built on
-sway: top of the wlroots wayland compositor library.
+sway: sway is an i3-compatible Wayland compositor.
+sway:
+sway: Homepage: https://swaywm.org/
 sway:
 sway:
-sway: Home: https://swaywm.org/
 sway:
 sway:
 sway:
