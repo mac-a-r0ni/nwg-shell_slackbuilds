@@ -2,7 +2,7 @@
 
 # Slackware build script for wlroots
 
-# Copyright 2022 Damian Perticone  Berisso,Argentina
+# Copyright 2022 Damian Perticone Berisso, Argentina
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -24,9 +24,9 @@
 
 
 cd $(dirname $0) ; CWD=$(pwd)
-
-PRGNAM=wlroots
-VERSION=${VERSION:-0.18.2}
+SRCNAM=wlroots
+PRGNAM=wlroots019
+VERSION=${VERSION:-0.19.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
@@ -71,19 +71,15 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+rm -rf $SRCNAM-$VERSION
+tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
+cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
   -o -perm 511 \) -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
-
-patch -Np1 -i $CWD/0001-Revert-layer-shell-error-on-0-dimension-without-anch.patch
-patch -Np1 -i $CWD/0001-xwm-Handle-NET_WM_WINDOW_OPACITY.patch
-patch -Np1 -i $CWD/0001-seat-Don-t-forget-to-destroy-touch-points-on-touch-u.patch
 
 mkdir build
 cd build
@@ -119,5 +115,5 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cd $PKG
+
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

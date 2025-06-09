@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+          |-----handy-ruler------------------------------------------------------|
+wlroots019: wlroots019 (wayland compositor library)
+wlroots019:
+wlroots019: Pluggable, composable, unopinionated modules for building a Wayland
+wlroots019: compositor; or about 60,000 lines of code you were going to write
+wlroots019: anyway.
+wlroots019:
+wlroots019: Homepage: https://gitlab.freedesktop.org/wlroots/wlroots/
+wlroots019:
+wlroots019:
+wlroots019:
+wlroots019:
