@@ -93,9 +93,9 @@ CXXFLAGS="$SLKCFLAGS" \
     -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=Release .. \
+    -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_TESTING=OFF \
-    -G Ninja
+    .. -G Ninja
 
 "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
