@@ -12,7 +12,7 @@ wdisplays: wdisplays is a graphical application for configuring displays in
 wdisplays: Wayland compositors. It borrows some code from kanshi. It should work
 wdisplays: in any compositor that implements the wlr-output-management-unstable
 wdisplays: -v1 protocol. Compositors that are known to support the protocol are
-wdisplays: Sway and Wayfire. The goal of this project is to allow precise 
+wdisplays: Sway and Wayfire. The goal of this project is to allow precise
 wdisplays: adjustment of display settings in kiosks, digital signage, and other
 wdisplays: elaborate multi-monitor setups.
 wdisplays:
