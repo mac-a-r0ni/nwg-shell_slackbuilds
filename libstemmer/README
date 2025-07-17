@@ -1,0 +1,4 @@
+libstemmer (stemming library supporting multiple languages)
+
+All you need to include the snowball stemming algorithms into a
+C project.
