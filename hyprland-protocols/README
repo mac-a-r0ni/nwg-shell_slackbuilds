@@ -1,0 +1,5 @@
+hyprland-protocols (Wayland protocol extensions for Hyprland)
+
+This package exists in an effort to bridge the gap between Hyprland
+and KDE/Gnome's functionality, as well as allow apps for some extra
+neat functionality under Hyprland.
