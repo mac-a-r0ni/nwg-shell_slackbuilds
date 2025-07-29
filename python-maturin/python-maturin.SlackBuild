@@ -29,12 +29,11 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=python-maturin
 SRCNAM=maturin
-VERSION=${VERSION:-1.8.3}
+VERSION=${VERSION:-1.9.2}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
-PKGTYPE=${PKGTYPE:-tgz}
-VSBUILD=${VSBUILD:-1}
-
+TAG=${TAG:-_nwg}
+PKGTYPE=${PKGTYPE:-txz}
+wget -c https://files.pythonhosted.org/packages/source/m/$SRCNAM/$SRCNAM-$VERSION.tar.gz
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i686 ;;
@@ -48,7 +47,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/nwg}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
@@ -73,7 +72,6 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAM-$VERSION
 tar xvf $CWD/$SRCNAM-$VERSION.tar.?z
-#tar xvf $CWD/$SRCNAM-vendored-sources-$VERSION-$VSBUILD.tar.?z
 cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
