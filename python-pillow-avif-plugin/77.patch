@@ -1,0 +1,28 @@
+From 16abb50310aa36a4ee459adc4dc331dab116a464 Mon Sep 17 00:00:00 2001
+From: Zhou Qiankang <wszqkzqk@qq.com>
+Date: Sun, 15 Jun 2025 17:43:59 +0800
+Subject: [PATCH] fix: add Py_UNUSED parameters to AvifCodecVersions function
+ to fix incompatible pointer types
+
+Modified the AvifCodecVersions function signature to properly declare
+Py_UNUSED parameters for self and args, making it consistent with
+Python C extension conventions when arguments are unused.
+
+Signed-off-by: Zhou Qiankang <wszqkzqk@qq.com>
+---
+ src/pillow_avif/_avif.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/pillow_avif/_avif.c b/src/pillow_avif/_avif.c
+index ffbc196..eeea0c0 100644
+--- a/src/pillow_avif/_avif.c
++++ b/src/pillow_avif/_avif.c
+@@ -1064,7 +1064,7 @@ static PyTypeObject AvifDecoder_Type = {
+ };
+ 
+ PyObject *
+-AvifCodecVersions() {
++AvifCodecVersions(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+     char codecVersions[256];
+     avifCodecVersions(codecVersions);
+     return PyUnicode_FromString(codecVersions);
