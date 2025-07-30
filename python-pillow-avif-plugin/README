@@ -1,0 +1,4 @@
+python-pillow-avif-plugin (plugin that adds avif support to pillow)
+
+This is a plugin that adds support for AVIF files until official
+support has been added.
