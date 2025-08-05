@@ -3,7 +3,7 @@
 # Copyright 2012  Patrick J. Volkerding, Sebeka, Minnesota, USA
 # All rights reserved.
 #
-# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
+# Copyright 2023-2025 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Based on the xfce-build-all.sh script by Patrick J. Volkerding
@@ -41,69 +41,92 @@ CHECKDUPLICATE=0
 
 # Loop for all packages
 for dir in \
-  google-go-lang \
   xdg-desktop-portal-wlr \
-  papirus-icon-theme \
+  wlsunset \
+  wl-clipboard \
+  typobuster \
+  swaylock \
+  swayidle \
   swaybg \
   sway \
-  python-wheel \
-  python-installer \
-  python-pep517 \
-  python-aiohttp \
-  python-aiosignal \
-  python-async-timeout \
-  python-attrs \
-  python-multidict \
-  python-yarl \
-  python-autotiling \
-  python-frozenlist \
+  swappy \
+  slurp \
   python-xlib \
   python-i3ipc \
-  python-build \
-  python-dasbus \
-  python-flit_core \
+  python-autotiling \
+  playerctl \
+  papirus-icon-theme \
+  wlr-randr \
+  nwg-displays \
+  nwg-wrapper \
+  nwg-shell-wallpapers \
+  libxmlb \
+  libstemmer \
+  appstream \
+  libadwaita \
+  gtksourceview5 \
+  libpanel \
+  libdex \
+  sysprof \
+  rav1e \
+  pandoc-bin \
+  libyuv \
+  svt-av1 \
+  libavif \
+  unifdef \
+  xdg-dbus-proxy \
+  highway \
+  gperftools \
+  gflags \
+  libjxl \
+  libwpe \
+  wpebackend-fdo \
+  geoclue2 \
+  bubblewrap \
+  webkit2gtk4.1 \
+  python-markdown2 \
+  nwg-readme-browser \
+  gtk-session-lock \
+  gtklock \
   python-geographiclib \
   python-geopy \
-  python-psutil \
-  python-typing_extensions \
-  python-netifaces \
+  nwg-shell-config \
+  ddcutil \
+  gtk4-layer-shell \
+  granite7 \
+  xvfb-run \
+  blueprint-compiler \
   SwayNotificationCenter \
-  light \
+  python-netifaces \
+  python-dasbus \
+  nwg-icon-picker \
   brightnessctl \
-  imlib2 \
-  feh \
-  glm \
-  slop \
-  maim \
-  send2trash \
-  wlr-randr \
-  azote \
+  nwg-panel \
+  xcur2png \
+  nwg-look \
+  nwg-menu \
+  greetd \
+  nwg-hello \
+  nwg-drawer \
+  nwg-dock \
+  cliphist \
+  nwg-clipman \
+  jq \
+  gopsuinfo \
+  python-distutils-extra \
+  python-ptyprocess \
+  python-pexpect \
+  mugshot \
+  gtklock-userinfo-module \
+  gtklock-powerbar-module \
+  gtklock-playerctl-module \
+  grim \
   tllist \
   fcft \
   foot \
-  gopsuinfo \
-  grim \
-  jq \
-  lxappearance \
-  slurp \
-  swayidle \
-  swaylock \
-  wdisplays \
-  wl-clipboard \
-  wlsunset \
-  nwg-icon-picker \
-  nwg-bar \
-  nwg-displays \
-  nwg-dock \
-  nwg-drawer \
-  nwg-launchers \
-  nwg-look \
-  nwg-menu \
-  nwg-panel \
+  python-send2trash \
+  azote \
   nwg-shell \
-  nwg-shell-config \
-  nwg-shell-wallpapers \
-  nwg-wrapper \
   ; do
   # Get the package name
   package=$(echo $dir | cut -f2- -d /)
