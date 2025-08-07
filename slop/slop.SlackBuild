@@ -23,8 +23,6 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/naelstrof/slop/archive/v7.7/slop-7.7.tar.gz
-
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=slop
@@ -32,6 +30,7 @@ VERSION=${VERSION:-7.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_nwg}
 PKGTYPE=${PKGTYPE:-txz}
+wget -c https://github.com/naelstrof/$PRGNAM/archive/v${VERSION}/$PRGNAM-$VERSION.tar.gz
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -41,9 +40,6 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
-# the name of the created package would be, and then exit. This information
-# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -85,8 +81,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-sed -i 's#CXX_STANDARD 11#CXX_STANDARD 17#' CMakeLists.txt
-cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -Wno-dev ./
+cmake -Wno-dev ./
 make
 make install DESTDIR=$PKG
 
